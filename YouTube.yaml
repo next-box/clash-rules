@@ -1,0 +1,41 @@
+payload:
+  # 内容：YouTube（完整增强版）
+  # 来源：blackmatrix7 + 常用补充
+  - DOMAIN-KEYWORD,youtube
+  # 核心域名
+  - DOMAIN,youtubei.googleapis.com
+  - DOMAIN-SUFFIX,youtube.googleapis.com
+  - DOMAIN-SUFFIX,yt3.ggpht.com
+  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,ggpht.cn
+  - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,gvt1.com
+  - DOMAIN-SUFFIX,gvt2.com
+  # 其他重要域名
+  - DOMAIN-SUFFIX,withyoutube.com
+  - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,youtube-nocookie.com
+  - DOMAIN-SUFFIX,yt.be
+  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,wide-youtube.l.google.com
+  - DOMAIN-SUFFIX,youtube-ui.l.google.com
+  - DOMAIN-SUFFIX,video.google.com
+  - DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com
+  # 子站
+  - DOMAIN-SUFFIX,youtubeeducation.com
+  - DOMAIN-SUFFIX,youtubegaming.com
+  - DOMAIN-SUFFIX,youtubekids.com
+  - DOMAIN-SUFFIX,youtubemobilesupport.com
+  # 全球 YouTube 国家/地区域名（重要，防止区域解析漏网）
+  - DOMAIN-SUFFIX,youtube.com
+  - DOMAIN-SUFFIX,youtube.co
+  - DOMAIN-SUFFIX,youtube.co.uk
+  - DOMAIN-SUFFIX,youtube.co.jp
+  - DOMAIN-SUFFIX,youtube.co.in
+  - DOMAIN-SUFFIX,youtube.com.tw
+  - DOMAIN-SUFFIX,youtube.com.hk
+  # ...（更多国家域名可直接用下面 RULE-SET）
+  # IP 段（强烈建议加上，提升稳定性）
+  - IP-CIDR,172.110.32.0/21,no-resolve
+  - IP-CIDR,216.73.80.0/20,no-resolve
+  - IP-CIDR6,2620:120:e000::/40,no-resolve
