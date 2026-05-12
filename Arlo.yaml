@@ -1,0 +1,51 @@
+payload:
+  # 内容：ARLO
+  # ARLO
+  # --- 域名部分 (控制流与登录) ---
+  - DOMAIN-SUFFIX,arlo.com
+  - DOMAIN-SUFFIX,netgear.com
+  - DOMAIN-SUFFIX,okta.com
+  - DOMAIN-SUFFIX,arloxcld.com
+  # --- 核心子域名 ---
+  - DOMAIN-SUFFIX,auth.arlo.com
+  - DOMAIN-SUFFIX,api.arlo.com
+  - DOMAIN-SUFFIX,my.arlo.com
+  - DOMAIN-SUFFIX,mcs.arlo.com
+  - DOMAIN-SUFFIX,updates.arlo.com
+  - DOMAIN-SUFFIX,messaging.arlo.com
+  - DOMAIN-SUFFIX,presence.arloxcld.com
+  - DOMAIN-SUFFIX,registration.arloxcld.com
+  - DOMAIN-SUFFIX,ocapi-app.arlo.com
+  - DOMAIN-SUFFIX,deviceapi.messaging.arlo.com
+  - DOMAIN-SUFFIX,edgekey.net
+  - DOMAIN-KEYWORD,arlo
+  # --- 手机APP部分 (控制流与登录) ---
+  - DOMAIN-SUFFIX,launchdarkly.com
+  - DOMAIN-SUFFIX,app-measurement.com
+  #- DOMAIN,api.swrve.com
+  #- DOMAIN-SUFFIX,swrve.com
+  #- DOMAIN-SUFFIX,amplitude.com
+  - DOMAIN,api.pingone.eu
+  - DOMAIN,cdn.cookielaw.org
+  #- DOMAIN-SUFFIX,doubleclick.net
+  - DOMAIN-SUFFIX,onetrust.io
+# --- IP段部分: 亚太/新加坡接入 (视频流核心) ---
+  - IP-CIDR,3.0.0.0/15,no-resolve
+  - IP-CIDR,13.212.0.0/14,no-resolve
+  - IP-CIDR,13.250.0.0/16,no-resolve
+  - IP-CIDR,18.136.0.0/15,no-resolve
+  - IP-CIDR,18.141.0.0/16,no-resolve
+  - IP-CIDR,47.128.0.0/14,no-resolve
+  - IP-CIDR,54.169.0.0/16,no-resolve
+  # --- IP段部分: 美国西岸 (针对 44.253.x.x 等验证流量) ---
+  # 建议把你刚才抓到的 44.224.0.0/11 也补在这里
+  - IP-CIDR,44.224.0.0/11,no-resolve
+  - IP-CIDR,52.34.0.0/15,no-resolve
+  - IP-CIDR,54.148.0.0/15,no-resolve
+  # --- IP段部分: 全球加速与云存储 ---
+  - IP-CIDR,104.16.0.0/12,no-resolve
+  - IP-CIDR,172.64.0.0/13,no-resolve
+  - IP-CIDR,52.216.0.0/15,no-resolve
+  - IP-CIDR,52.84.0.0/14,no-resolve
+  - IP-CIDR,54.231.0.0/16,no-resolve
+  - IP-CIDR,13.224.0.0/12,no-resolve
