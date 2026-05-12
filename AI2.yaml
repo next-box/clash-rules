@@ -1,0 +1,90 @@
+payload:
+  # === 核心 LLM 平台 ===
+  - DOMAIN-KEYWORD,anthropic
+  - DOMAIN-KEYWORD,claude
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,claude.com
+  - DOMAIN-SUFFIX,claudeusercontent.com
+  # === OPENAI ===
+  - DOMAIN-KEYWORD,openai
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,chatgpt.live.com
+  - DOMAIN-SUFFIX,oaistatic.com
+  - DOMAIN-SUFFIX,oaiusercontent.com
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+  # === XAI ===
+  - DOMAIN-KEYWORD,grok
+  - DOMAIN-SUFFIX,grok.com
+  - DOMAIN-SUFFIX,grokipedia.com
+  - DOMAIN-SUFFIX,x.ai
+  # === GEMINI ===
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN,aistudio.google.com
+  - DOMAIN,ai.google.dev
+  - DOMAIN,generativelanguage.googleapis.com
+  - DOMAIN,bard.google.com
+  - DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN,notebooklm.google.com
+  - DOMAIN,makersuite.google.com
+  # === OT ===
+  - DOMAIN-SUFFIX,perplexity.ai
+  - DOMAIN-SUFFIX,mistral.ai
+  - DOMAIN-SUFFIX,meta.ai
+  # === Microsoft / Copilot / Bing ===
+  - DOMAIN-KEYWORD,copilot
+  - DOMAIN-SUFFIX,copilot.ai
+  - DOMAIN-SUFFIX,copilot.microsoft.com
+  - DOMAIN-SUFFIX,copilot.cloud.microsoft
+  - DOMAIN-SUFFIX,ai.azure.com
+  - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,bing.com.cn
+  - DOMAIN-SUFFIX,bingvisualsearch.com
+  - DOMAIN-SUFFIX,bingapis.com
+  - DOMAIN-SUFFIX,edgeservices.bing.com
+  - DOMAIN,sydney.bing.com
+  - DOMAIN-SUFFIX,msn.com
+  - DOMAIN-SUFFIX,skype.com
+  - DOMAIN-SUFFIX,vortex.data.microsoft.com
+  # === Groq & 推理加速 ===
+  - DOMAIN,api.groq.com
+  - DOMAIN,console.groq.com
+  # === 其他 API / 开发平台 ===
+  - DOMAIN,api.githubcopilot.com
+  - DOMAIN,copilot-proxy.githubusercontent.com
+  - DOMAIN,api.together.xyz
+  - DOMAIN-SUFFIX,cursor.com
+  - DOMAIN-SUFFIX,cursor.sh
+  - DOMAIN-SUFFIX,jetbrains.ai
+  - DOMAIN-SUFFIX,grazie.ai
+  - DOMAIN-SUFFIX,grazie.aws.intellij.net
+  # === 图像/视频/语音生成 ===
+  - DOMAIN-SUFFIX,midjourney.com          # Midjourney 主要通过 Discord，但网页/账号相关
+  - DOMAIN-SUFFIX,stability.ai
+  - DOMAIN-SUFFIX,runwayml.com
+  - DOMAIN-SUFFIX,leonardo.ai
+  - DOMAIN-SUFFIX,elevenlabs.io           # 语音
+  - DOMAIN-SUFFIX,character.ai            # 角色聊天
+  - DOMAIN-SUFFIX,sora.com                # 已包含，可保留
+  # === 开源/模型平台 ===
+  - DOMAIN-SUFFIX,huggingface.co
+  - DOMAIN-SUFFIX,hf.co
+  - DOMAIN-KEYWORD,huggingface          # 含 cdn-lfs.huggingface.co 等
+  - DOMAIN-SUFFIX,replicate.com
+  # === 其他值得补充的 ===
+  - DOMAIN-SUFFIX,cohere.com              # Cohere
+  - DOMAIN-SUFFIX,deepseek.com            # DeepSeek（国外访问常用）
+  - DOMAIN-SUFFIX,pi.ai                   # Inflection Pi
+  - DOMAIN-SUFFIX,fireworks.ai            # Fireworks（推理）
+  - DOMAIN-SUFFIX,together.ai             # Together AI（已部分覆盖）
+  - DOMAIN-SUFFIX,poe.com                 # Poe（Quora 多模型）
+  - DOMAIN-SUFFIX,you.com                 # You.com AI 搜索
+  # === 通用/依赖域名（推荐保留）===
+  - DOMAIN-SUFFIX,auth0.com
+  - DOMAIN-SUFFIX,identrust.com
+  - DOMAIN-SUFFIX,intercom.io
+  - DOMAIN-SUFFIX,intercomcdn.com
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com
+  - DOMAIN-SUFFIX,events.statsigapi.net
+  - DOMAIN-SUFFIX,featuregates.org
