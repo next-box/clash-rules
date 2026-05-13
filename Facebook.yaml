@@ -1,61 +1,64 @@
 payload:
-  # 内容：Facebook
-  # 1. 關鍵字過濾 (最廣泛的保護)
+  # =========================================================
+  # Meta 全家桶 (2026 最終彙整版)
+  # 適用：AC86U Clash / iPhone Shadowrocket
+  # 特點：排除重複、優化快取載入速度、確保 WhatsApp 語音通暢
+  # =========================================================
+  # --- 1. 核心域名 (主站與跳轉) ---
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,fb.com
+  - DOMAIN-SUFFIX,fb.me
+  - DOMAIN-SUFFIX,m.me               # Facebook Messenger 短連結
+  - DOMAIN-SUFFIX,messenger.com
+  - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-SUFFIX,ig.me              # Instagram 私訊/個人檔案短連結
+  - DOMAIN-SUFFIX,threads.net
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,wa.me              # WhatsApp 一鍵對話短連結
+  - DOMAIN-SUFFIX,meta.com
+  - DOMAIN-SUFFIX,aboutfacebook.com
+  # --- 2. 內容分發與 CDN (圖片、影片、靜態資源) ---
+  # 重點：只要有這幾條，video.xxx 或 scontent.xxx 都會自動走代理
+  - DOMAIN-SUFFIX,fbcdn.net          # 最核心：所有 FB/IG 的圖片影片 CDN
+  - DOMAIN-SUFFIX,fbcdn.com
+  - DOMAIN-SUFFIX,fbsbx.com          # 附件、沙盒內容
+  - DOMAIN-SUFFIX,cdninstagram.com   # IG 專用靜態資源
+  - DOMAIN-SUFFIX,fbedge.net         # 邊緣計算節點，影響首屏加載
+  - DOMAIN-SUFFIX,akamaihd.net       # 協力廠商 CDN，FB 仍有大量資源託管於此
+  - DOMAIN-SUFFIX,tfbnw.net          # Facebook 骨幹網傳輸 (The Facebook Network)
+  # --- 3. 多媒體、底層與廣告支援 ---
+  - DOMAIN-SUFFIX,fbaddins.com
+  - DOMAIN-SUFFIX,fbiov.com          # 影片流量相關
+  - DOMAIN-SUFFIX,fbthirdpartymedia.com
+  - DOMAIN-SUFFIX,accountkit.com     # 登錄校驗服務
+  # --- 4. 企業服務與生態硬體 ---
+  - DOMAIN-SUFFIX,workplace.com
+  - DOMAIN-SUFFIX,work.facebook.com
+  - DOMAIN-SUFFIX,fb.work
+  - DOMAIN-SUFFIX,oculus.com         # VR 設備支援
+  - DOMAIN-SUFFIX,oculuscdn.com
+  # --- 5. 核心關鍵字 (兜底防護) ---
+  # 放在後綴之後，用於捕捉沒被列出的冷門域名
   - DOMAIN-KEYWORD,facebook
   - DOMAIN-KEYWORD,instagram
   - DOMAIN-KEYWORD,whatsapp
-  - DOMAIN-KEYWORD,messenger 
-  # 核心域名
-  - DOMAIN-SUFFIX,facebook.com
-  - DOMAIN-SUFFIX,fb.com
-  - DOMAIN-SUFFIX,fb.me
-  - DOMAIN-SUFFIX,fbcdn.com
-  - DOMAIN-SUFFIX,fbcdn.net
-  - DOMAIN-SUFFIX,fbsbx.com
-  - DOMAIN-SUFFIX,messenger.com
-  - DOMAIN-SUFFIX,instagram.com
-  - DOMAIN-SUFFIX,threads.net
-  - DOMAIN-SUFFIX,meta.com
-  - DOMAIN-SUFFIX,whatsapp.com
-  - DOMAIN-SUFFIX,wa.me
-  - DOMAIN-SUFFIX,aboutfacebook.com
-  - DOMAIN-SUFFIX,facebook.net
-  # 常用额外域名（可选，根据需求增删）
-  - DOMAIN-SUFFIX,workplace.com
-  - DOMAIN-SUFFIX,tfbnw.net
-  - DOMAIN-SUFFIX,akamaihd.net
-  # Instagram
-  - DOMAIN-SUFFIX,ig.me
-  - DOMAIN-SUFFIX,instagram.com
-  - DOMAIN-SUFFIX,cdninstagram.com
-  # Facebook CDN
-  - DOMAIN-SUFFIX,fbedge.net
-  # 5. 多媒體與影片快取 (修正通配符錯誤)
-  # 在 Clash 中，DOMAIN-SUFFIX 會自動包含 *.fbcdn.net，無需寫成 video.*.fbcdn.net
-  - DOMAIN-SUFFIX,fbaddins.com
-  - DOMAIN-SUFFIX,fbiov.com
-  - DOMAIN-SUFFIX,fbthirdpartymedia.com
-  # 6. Meta 生態 (Oculus, VR, 企業服務)
-  - DOMAIN-SUFFIX,oculus.com
-  - DOMAIN-SUFFIX,oculuscdn.com
-  - DOMAIN-SUFFIX,work.facebook.com
-  - DOMAIN-SUFFIX,fb.work
-  - DOMAIN-SUFFIX,accountkit.com
-  # IP-CIDR（精选常用大段 + 关键小段，推荐结合 GEOSITE 或更多 CIDR）
+  # --- 6. IP-CIDR 物理層分流 (防止 DNS 污染) ---
+  # 加入 no-resolve，避免路由器在判斷 IP 時發生 DNS 查詢造成的卡頓
   - IP-CIDR,31.13.24.0/21,no-resolve
   - IP-CIDR,31.13.64.0/18,no-resolve
   - IP-CIDR,45.64.40.0/22,no-resolve
-  - IP-CIDR,57.144.0.0/14,no-resolve     # 大段，强烈建议加上
+  - IP-CIDR,57.144.0.0/14,no-resolve      # Meta 擁有的巨量 IP 段
   - IP-CIDR,66.220.144.0/20,no-resolve
   - IP-CIDR,69.63.176.0/20,no-resolve
   - IP-CIDR,69.171.224.0/19,no-resolve
   - IP-CIDR,74.119.76.0/22,no-resolve
   - IP-CIDR,103.4.96.0/22,no-resolve
   - IP-CIDR,129.134.0.0/17,no-resolve
-  - IP-CIDR,157.240.0.0/17,no-resolve     # 加大覆盖
-  - IP-CIDR,163.70.128.0/17,no-resolve    # 新段建议
+  - IP-CIDR,157.240.0.0/17,no-resolve
+  - IP-CIDR,163.70.128.0/17,no-resolve
   - IP-CIDR,173.252.64.0/18,no-resolve
   - IP-CIDR,179.60.192.0/22,no-resolve
   - IP-CIDR,185.60.216.0/22,no-resolve
-  - IP-CIDR,185.89.216.0/22,no-resolve     # 补充
+  - IP-CIDR,185.89.216.0/22,no-resolve
   - IP-CIDR,204.15.20.0/22,no-resolve
