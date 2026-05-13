@@ -6,6 +6,7 @@ payload:
   - DOMAIN-SUFFIX,netgear.com
   - DOMAIN-SUFFIX,okta.com
   - DOMAIN-SUFFIX,arloxcld.com
+  - DOMAIN-SUFFIX,ngxcld.com
   # --- 核心子域名 ---
   - DOMAIN-SUFFIX,auth.arlo.com
   - DOMAIN-SUFFIX,api.arlo.com
@@ -29,7 +30,7 @@ payload:
   - DOMAIN,cdn.cookielaw.org
   #- DOMAIN-SUFFIX,doubleclick.net
   - DOMAIN-SUFFIX,onetrust.io
-# --- IP段部分: 亚太/新加坡接入 (视频流核心) ---
+  # --- IP段部分: 亚太/新加坡接入 (视频流核心) ---
   - IP-CIDR,3.0.0.0/15,no-resolve
   - IP-CIDR,13.212.0.0/14,no-resolve
   - IP-CIDR,13.250.0.0/16,no-resolve
