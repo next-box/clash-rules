@@ -1,12 +1,10 @@
 payload:
   # 内容：Facebook
-  # Meta / Facebook 全家桶（2026 更新参考）
+  # 1. 關鍵字過濾 (最廣泛的保護)
   - DOMAIN-KEYWORD,facebook
-  - DOMAIN-KEYWORD,fbcdn
   - DOMAIN-KEYWORD,instagram
-  - DOMAIN-KEYWORD,meta
   - DOMAIN-KEYWORD,whatsapp
-  - DOMAIN-KEYWORD,messenger
+  - DOMAIN-KEYWORD,messenger 
   # 核心域名
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,fb.com
@@ -19,12 +17,30 @@ payload:
   - DOMAIN-SUFFIX,threads.net
   - DOMAIN-SUFFIX,meta.com
   - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,wa.me
   - DOMAIN-SUFFIX,aboutfacebook.com
   - DOMAIN-SUFFIX,facebook.net
   # 常用额外域名（可选，根据需求增删）
-  # - DOMAIN-SUFFIX,ig.me
-  # - DOMAIN-SUFFIX,oculus.com
-  # - DOMAIN-SUFFIX,workplace.com
+  - DOMAIN-SUFFIX,workplace.com
+  - DOMAIN-SUFFIX,tfbnw.net
+  - DOMAIN-SUFFIX,akamaihd.net
+  # Instagram
+  - DOMAIN-SUFFIX,ig.me
+  - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-SUFFIX,cdninstagram.com
+  # Facebook CDN
+  - DOMAIN-SUFFIX,fbedge.net
+  # 5. 多媒體與影片快取 (修正通配符錯誤)
+  # 在 Clash 中，DOMAIN-SUFFIX 會自動包含 *.fbcdn.net，無需寫成 video.*.fbcdn.net
+  - DOMAIN-SUFFIX,fbaddins.com
+  - DOMAIN-SUFFIX,fbiov.com
+  - DOMAIN-SUFFIX,fbthirdpartymedia.com
+  # 6. Meta 生態 (Oculus, VR, 企業服務)
+  - DOMAIN-SUFFIX,oculus.com
+  - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,work.facebook.com
+  - DOMAIN-SUFFIX,fb.work
+  - DOMAIN-SUFFIX,accountkit.com
   # IP-CIDR（精选常用大段 + 关键小段，推荐结合 GEOSITE 或更多 CIDR）
   - IP-CIDR,31.13.24.0/21,no-resolve
   - IP-CIDR,31.13.64.0/18,no-resolve
