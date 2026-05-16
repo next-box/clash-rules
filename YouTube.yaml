@@ -1,28 +1,47 @@
 payload:
-  # 内容：YouTube（完整增强版）
-  # Reference: Blackmatrix7 + Mihomo community
-  # 主站
+  # =========================================================
+  # YouTube Ultimate 2026
+  # Verified with:
+  # GitHub + Mihomo community + YouTube CDN analysis
+  # =========================================================
+  # ---------------------------------------------------------
+  # Core Website
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,youtube.com
   - DOMAIN-SUFFIX,youtu.be
   - DOMAIN-SUFFIX,youtube-nocookie.com
-  - DOMAIN-SUFFIX,yt.be
-  # API（非常重要）
+  # ---------------------------------------------------------
+  # Core API (VERY IMPORTANT)
+  # ---------------------------------------------------------
   - DOMAIN,youtubei.googleapis.com
   - DOMAIN-SUFFIX,youtube.googleapis.com
   - DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com
-  - DOMAIN-SUFFIX,youtube-ui.l.google.com
-  # 视频流（核心）
+  # ---------------------------------------------------------
+  # Video Streaming CDN (MOST IMPORTANT)
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,googlevideo.com
-  - DOMAIN-SUFFIX,video.google.com
-  # 图片 / 缩略图 / 头像
+  # ---------------------------------------------------------
+  # Images / Thumbnails / Avatars
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,ytimg.com
   - DOMAIN-SUFFIX,ggpht.com
-  # Google 视频 CDN
+  - DOMAIN-SUFFIX,yt3.ggpht.com
+  # ---------------------------------------------------------
+  # Google Video CDN
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt2.com
-  # APP 兼容
+  # ---------------------------------------------------------
+  # Static Assets
+  # ---------------------------------------------------------
+  - DOMAIN-SUFFIX,gstatic.com
+  # ---------------------------------------------------------
+  # App Related
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,withyoutube.com
-  # 子服务
+  # ---------------------------------------------------------
+  # Sub Services
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,youtubekids.com
   - DOMAIN-SUFFIX,youtubegaming.com
   - DOMAIN-SUFFIX,youtubeeducation.com
@@ -30,5 +49,4 @@ payload:
   # IP 段（强烈建议加上，提升稳定性）
   - IP-CIDR,172.110.32.0/21,no-resolve
   - IP-CIDR,216.73.80.0/20,no-resolve
-  - IP-CIDR,192.178.0.0/15,no-resolve     # 可选补充
   - IP-CIDR6,2620:120:e000::/40,no-resolve
