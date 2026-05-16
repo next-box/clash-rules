@@ -1,63 +1,70 @@
 payload:
-  # 内容：内容：AI平台-国外
-  - DOMAIN-KEYWORD,anthropic
-  - DOMAIN-KEYWORD,claude
+  # === OpenAI / ChatGPT ===
   - DOMAIN-KEYWORD,openai
-  - DOMAIN,ai.google.dev
-  - DOMAIN,aistudio.google.com
-  - DOMAIN,api.githubcopilot.com
-  - DOMAIN,api.groq.com
-  - DOMAIN,api.together.xyz
-  - DOMAIN,bard.google.com
-  - DOMAIN-KEYWORD,copilot
-  - DOMAIN-SUFFIX,copilot.ai
-  - DOMAIN,console.groq.com
-  - DOMAIN,copilot-proxy.githubusercontent.com
-  - DOMAIN,gemini.google.com
-  - DOMAIN,generativelanguage.googleapis.com
-  - DOMAIN,notebooklm.google.com
-  - DOMAIN,sydney.bing.com
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,oaistatic.com
+  - DOMAIN-SUFFIX,oaiusercontent.com
+  - DOMAIN,openaiapi-site.azureedge.net
+  - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,chatgpt.live.com
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+  # === 微软 AI / Bing AI / Copilot / Azure / MSN ===
   - DOMAIN-SUFFIX,bing.com
-  - DOMAIN-SUFFIX,bing.com.cn
   - DOMAIN-SUFFIX,bingvisualsearch.com
   - DOMAIN-SUFFIX,bingapis.com
   - DOMAIN-SUFFIX,edgeservices.bing.com
   - DOMAIN-SUFFIX,ai.azure.com
-  - DOMAIN-SUFFIX,anthropic.com
-  - DOMAIN-SUFFIX,auth0.com
+  - DOMAIN-SUFFIX,copilot.microsoft.com
+  - DOMAIN-SUFFIX,copilot.cloud.microsoft
+  - DOMAIN-SUFFIX,vortex.data.microsoft.com
+  - DOMAIN-SUFFIX,skype.com
+  - DOMAIN-SUFFIX,msn.com  # 微软新闻源避免国内跳转
+  # === 谷歌 AI / Gemini / Bard / Vertex AI ===
+  - DOMAIN,ai.google.dev
+  - DOMAIN,aistudio.google.com
+  - DOMAIN,gemini.google.com
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN,notebooklm.google.com
+  - DOMAIN-SUFFIX,makersuite.google.com
   - DOMAIN-SUFFIX,bard.google.com
-  - DOMAIN-SUFFIX,chatgpt.live.com
-  - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com
+  # === Anthropic / Claude ===
+  - DOMAIN-KEYWORD,anthropic
+  - DOMAIN-KEYWORD,claude
+  - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claude.com
   - DOMAIN-SUFFIX,claudeusercontent.com
-  - DOMAIN-SUFFIX,client-api.arkoselabs.com
-  - DOMAIN-SUFFIX,copilot.cloud.microsoft
-  - DOMAIN-SUFFIX,copilot.microsoft.com
-  - DOMAIN-SUFFIX,cursor.com
-  - DOMAIN-SUFFIX,cursor.sh
-  - DOMAIN-SUFFIX,events.statsigapi.net
-  - DOMAIN-SUFFIX,featuregates.org
-  - DOMAIN-SUFFIX,gemini.google.com
+  # === XAI (独立项目) ===
+  - DOMAIN-KEYWORD,xai
+  - DOMAIN-SUFFIX,x.ai
+  - DOMAIN,api.x.ai
+  - DOMAIN-SUFFIX,xaiusercontent.com  # 官方内容/资源 CDN（假设常用）
+  # === JetBrains AI / Copilot / 其他 AI 工具 ===
+  - DOMAIN-KEYWORD,copilot
+  - DOMAIN-SUFFIX,copilot.ai
+  - DOMAIN,copilot-proxy.githubusercontent.com
+  - DOMAIN-SUFFIX,jetbrains.ai
   - DOMAIN-SUFFIX,grazie.ai
   - DOMAIN-SUFFIX,grazie.aws.intellij.net
-  - DOMAIN-SUFFIX,grokipedia.com
+  - DOMAIN,api.githubcopilot.com
+  - DOMAIN,api.groq.com
+  - DOMAIN,api.together.xyz
+  - DOMAIN,console.groq.com
+  - DOMAIN-SUFFIX,cursor.com
+  - DOMAIN-SUFFIX,cursor.sh
   - DOMAIN-SUFFIX,grok.com
   - DOMAIN-KEYWORD,grok
+  - DOMAIN-SUFFIX,grokipedia.com
+  - DOMAIN-SUFFIX,perplexity.ai
+  - DOMAIN-SUFFIX,meta.ai
+  - DOMAIN-SUFFIX,mistral.ai
+  - DOMAIN-SUFFIX,sora.com
+  # === 必要后台接口 / 验证 / 身份认证 ===
+  - DOMAIN-SUFFIX,auth0.com
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com
+  - DOMAIN-SUFFIX,featuregates.org
+  - DOMAIN-SUFFIX,events.statsigapi.net
   - DOMAIN-SUFFIX,identrust.com
   - DOMAIN-SUFFIX,intercom.io
   - DOMAIN-SUFFIX,intercomcdn.com
-  - DOMAIN-SUFFIX,jetbrains.ai
-  - DOMAIN-SUFFIX,makersuite.google.com
-  - DOMAIN-SUFFIX,meta.ai
-  - DOMAIN-SUFFIX,mistral.ai
-  - DOMAIN-SUFFIX,msn.com
-  - DOMAIN-SUFFIX,oaistatic.com
-  - DOMAIN-SUFFIX,oaiusercontent.com
-  - DOMAIN-SUFFIX,openai.com
-  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-  - DOMAIN-SUFFIX,perplexity.ai
-  - DOMAIN-SUFFIX,sora.com
-  - DOMAIN-SUFFIX,skype.com
-  - DOMAIN-SUFFIX,x.ai
-  - DOMAIN-SUFFIX,vortex.data.microsoft.com
