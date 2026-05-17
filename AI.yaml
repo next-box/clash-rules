@@ -17,7 +17,7 @@ payload:
   # XAI / GROK
   # =========================================================
   - DOMAIN-KEYWORD,grok
-  - DOMAIN-KEYWORD,xai
+  #- DOMAIN-KEYWORD,xai
   - DOMAIN-SUFFIX,grok.com
   - DOMAIN-SUFFIX,grokipedia.com
   - DOMAIN-SUFFIX,x.ai
@@ -70,8 +70,6 @@ payload:
   - DOMAIN-SUFFIX,msn.com
   # 微软后台数据
   - DOMAIN-SUFFIX,vortex.data.microsoft.com
-  # Skype / Teams 底层
-  - DOMAIN-SUFFIX,skype.com
   # =========================================================
   # Microsoft Teams
   # =========================================================
@@ -87,6 +85,7 @@ payload:
   - DOMAIN-SUFFIX,keydelivery.mediaservices.windows.net
   # Teams 登录时验证
   # Microsoft 登录核心
+  - DOMAIN-KEYWORD,skype
   - DOMAIN-SUFFIX,login.live.com
   - DOMAIN-SUFFIX,login.microsoftonline.com
   - DOMAIN-SUFFIX,login.microsoft.com
@@ -98,6 +97,18 @@ payload:
   - DOMAIN-SUFFIX,msauthimages.net
   - DOMAIN-SUFFIX,msftauth.net
   - DOMAIN-SUFFIX,msftauthimages.net
+  # Teams 主服务
+  - DOMAIN-SUFFIX,teams.microsoft.com
+  - DOMAIN-SUFFIX,teams.live.com
+  - DOMAIN-SUFFIX,skype.com
+  - DOMAIN-SUFFIX,sfbassets.com
+  # 静态资源（否则界面加载失败）
+  - DOMAIN-SUFFIX,azureedge.net
+  - DOMAIN-SUFFIX,aadcdn.msauth.net
+  # Office / Graph API（Teams 必须）
+  - DOMAIN-SUFFIX,office.com
+  - DOMAIN-SUFFIX,office365.com
+  - DOMAIN-SUFFIX,graph.microsoft.com
   # =========================================================
   # GitHub Copilot / JetBrains AI
   # =========================================================
