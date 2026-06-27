@@ -1,73 +1,66 @@
 payload:
   # =========================================================
-  # Meta 全家桶 2026 最终版 - 完整整合版
-  # 适用：
-  # 特点：支持电脑网页 + iPhone APP 图片/视频全覆盖
+  # Meta 全家桶 2026 最終精煉版
+  # 適用：網頁 + App（含 WhatsApp Business）圖片、影片、語音通話
   # =========================================================
 
-  # --- 1. 核心域名 (主站与跳转) ---
+  # --- 1. 核心域名（主站與重要服務）---
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,facebook.net
   - DOMAIN-SUFFIX,fb.com
   - DOMAIN-SUFFIX,fb.me
-  - DOMAIN-SUFFIX,m.me               # Messenger 短链接
+  - DOMAIN-SUFFIX,m.me
   - DOMAIN-SUFFIX,messenger.com
   - DOMAIN-SUFFIX,instagram.com
-  - DOMAIN-SUFFIX,ig.me              # Instagram 私信短链接
+  - DOMAIN-SUFFIX,ig.me
   - DOMAIN-SUFFIX,threads.net
-  - DOMAIN-SUFFIX,whatsapp.com
-  - DOMAIN-SUFFIX,wa.me              # WhatsApp 一键对话
   - DOMAIN-SUFFIX,meta.com
   - DOMAIN-SUFFIX,aboutfacebook.com
-
-  # --- 2. CDN / 静态资源 / 图片 /视频 ---
-  - DOMAIN-SUFFIX,fbcdn.net          # FB / IG 图片、视频 CDN
-  - DOMAIN-SUFFIX,fbcdn.com
-  - DOMAIN-SUFFIX,fbsbx.com          # 附件 / 沙盒内容
-  - DOMAIN-SUFFIX,cdninstagram.com   # IG 静态资源
-  - DOMAIN-SUFFIX,fbedge.net         # 边缘节点
-  - DOMAIN-SUFFIX,akamaihd.net       # 协力厂商 CDN
-  - DOMAIN-SUFFIX,tfbnw.net          # FB 骨干网
-
-  # --- 3. 多媒体 / 广告 / 登录验证 ---
-  - DOMAIN-SUFFIX,fbaddins.com
-  - DOMAIN-SUFFIX,fbiov.com
-  - DOMAIN-SUFFIX,fbthirdpartymedia.com
-  - DOMAIN-SUFFIX,accountkit.com     # 登录校验服务
-
-  # --- 4. 企业服务 / VR 硬件生态 ---
   - DOMAIN-SUFFIX,workplace.com
   - DOMAIN-SUFFIX,work.facebook.com
   - DOMAIN-SUFFIX,fb.work
+
+  # --- 2. WhatsApp 專屬（含 Business + 通話）---
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,wa.me
+  - DOMAIN-SUFFIX,web.whatsapp.com
+  - DOMAIN-SUFFIX,mmg.whatsapp.net
+  - DOMAIN-SUFFIX,g.whatsapp.net
+  - DOMAIN-SUFFIX,graph.whatsapp.com
+  - DOMAIN-SUFFIX,media.whatsapp.net
+  - DOMAIN-SUFFIX,whatsapp-cdn.com
+
+  # --- 3. CDN / 圖片 / 影片 / 檔案（重點）---
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,fbcdn.com
+  - DOMAIN-SUFFIX,fbsbx.com
+  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,fbedge.net
+  - DOMAIN-SUFFIX,scontent.*.fbcdn.net
+  - DOMAIN-SUFFIX,scontent.*.fna.fbcdn.net
+  - DOMAIN-SUFFIX,video.*.fbcdn.net
+  - DOMAIN-SUFFIX,static.xx.fbcdn.net
+  - DOMAIN-SUFFIX,xx.fbcdn.net
+  - DOMAIN-SUFFIX,lookaside.fbsbx.com
+  - DOMAIN-SUFFIX,tfbnw.net
+
+  # --- 4. 其他輔助 / 登錄 / VR ---
+  - DOMAIN-SUFFIX,accountkit.com
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,oculuscdn.com
+  - DOMAIN-SUFFIX,fbaddins.com
 
-  # --- 5. 核心关键字兜底 ---
+  # --- 5. 關鍵字兜底（放在最後）---
   - DOMAIN-KEYWORD,facebook
   - DOMAIN-KEYWORD,instagram
   - DOMAIN-KEYWORD,whatsapp
 
-  # --- 6. IP-CIDR 物理层分流 (防止 DNS 污染, 增强 APP 稳定) ---
-  - IP-CIDR,31.13.24.0/21,no-resolve
-  - IP-CIDR,31.13.64.0/18,no-resolve
-  - IP-CIDR,45.64.40.0/22,no-resolve
-  - IP-CIDR,57.144.0.0/14,no-resolve
-  - IP-CIDR,66.220.144.0/20,no-resolve
-  - IP-CIDR,69.63.176.0/20,no-resolve
-  - IP-CIDR,69.171.224.0/19,no-resolve
-  - IP-CIDR,74.119.76.0/22,no-resolve
-  - IP-CIDR,103.4.96.0/22,no-resolve
-  - IP-CIDR,129.134.0.0/17,no-resolve
+  # --- 6. IP-CIDR 兜底（精選核心，太多會降低效率）---
   - IP-CIDR,157.240.0.0/17,no-resolve
-  - IP-CIDR,157.240.1.0/24,no-resolve
-  - IP-CIDR,157.240.2.0/23,no-resolve
-  - IP-CIDR,157.240.8.0/21,no-resolve
-  - IP-CIDR,157.240.16.0/20,no-resolve
-  - IP-CIDR,157.240.32.0/19,no-resolve
-  - IP-CIDR,157.240.64.0/18,no-resolve
-  - IP-CIDR,163.70.128.0/17,no-resolve
+  - IP-CIDR,129.134.0.0/17,no-resolve
+  - IP-CIDR,31.13.64.0/18,no-resolve
   - IP-CIDR,173.252.64.0/18,no-resolve
-  - IP-CIDR,179.60.192.0/22,no-resolve
+  - IP-CIDR,69.171.224.0/19,no-resolve
+  - IP-CIDR,69.63.176.0/20,no-resolve
   - IP-CIDR,185.60.216.0/22,no-resolve
-  - IP-CIDR,185.89.216.0/22,no-resolve
-  - IP-CIDR,204.15.20.0/22,no-resolve

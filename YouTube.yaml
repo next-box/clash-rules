@@ -10,6 +10,7 @@ payload:
   - DOMAIN-SUFFIX,youtube.com
   - DOMAIN-SUFFIX,youtu.be
   - DOMAIN-SUFFIX,youtube-nocookie.com
+  - DOMAIN-SUFFIX,yt.be
   # ---------------------------------------------------------
   # Core API (VERY IMPORTANT)
   # ---------------------------------------------------------
@@ -46,6 +47,12 @@ payload:
   - DOMAIN-SUFFIX,youtubegaming.com
   - DOMAIN-SUFFIX,youtubeeducation.com
   - DOMAIN-SUFFIX,youtubemobilesupport.com
+  # ---------------------------------------------------------
+  # 谷歌搜索
+  # ---------------------------------------------------------
+  - DOMAIN-SUFFIX,google.com.com
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,googleusercontent.com
   # IP 段（强烈建议加上，提升稳定性）
   - IP-CIDR,172.110.32.0/21,no-resolve
   - IP-CIDR,216.73.80.0/20,no-resolve

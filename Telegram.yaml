@@ -1,10 +1,9 @@
 # ========================================
-# Telegram - 精确规则
+# Telegram - 精确规则（2026年6月更新）
 # 适用 AC86U Merlin Clash / iOS / Android / Desktop
 # 精简、低误杀、长期稳定
 # ========================================
 payload:
-
   # ------------------------
   # Telegram 官方域名
   # ------------------------
@@ -18,17 +17,29 @@ payload:
   - DOMAIN-SUFFIX,tg.dev
   - DOMAIN-SUFFIX,cdn-telegram.org
   - DOMAIN-SUFFIX,telegram-cdn.org
+  - DOMAIN-SUFFIX,telegram.space
+  - DOMAIN-SUFFIX,telega.one
+  - DOMAIN-SUFFIX,telegram.dog
+  - DOMAIN-SUFFIX,comments.app
+  - DOMAIN-SUFFIX,tx.me
+  - DOMAIN-SUFFIX,contest.com
+  - DOMAIN-SUFFIX,fragment.com
+  - DOMAIN-SUFFIX,ton.org
+  - DOMAIN-SUFFIX,toncenter.com
+  - DOMAIN-SUFFIX,usercontent.dev
 
   # Web / API
   - DOMAIN-SUFFIX,web.telegram.org
   - DOMAIN-SUFFIX,my.telegram.org
   - DOMAIN-SUFFIX,oauth.telegram.org
   - DOMAIN-SUFFIX,core.telegram.org
+  - DOMAIN-SUFFIX,api.telegram.org
 
   # ------------------------
   # Telegram IPv4
   # ------------------------
   - IP-CIDR,91.105.192.0/23,no-resolve
+  - IP-CIDR,91.108.0.0/16,no-resolve
   - IP-CIDR,91.108.4.0/22,no-resolve
   - IP-CIDR,91.108.8.0/21,no-resolve
   - IP-CIDR,91.108.16.0/21,no-resolve
