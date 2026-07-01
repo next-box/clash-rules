@@ -1,0 +1,61 @@
+payload:
+  # =========================
+  # Google 核心服务
+  # =========================
+  - DOMAIN-SUFFIX,google.com
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,googleapis.cn
+  - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,gstatic.cn
+  - DOMAIN-SUFFIX,googleusercontent.com
+  - DOMAIN-SUFFIX,g.co
+  - DOMAIN-SUFFIX,ggpht.com
+
+  # =========================
+  # 登录 / 账户体系
+  # =========================
+  - DOMAIN-SUFFIX,accounts.google.com
+  - DOMAIN-SUFFIX,myaccount.google.com
+  - DOMAIN-SUFFIX,apis.google.com
+
+  # =========================
+  # Google Search / Services
+  # =========================
+  - DOMAIN-SUFFIX,googleadservices.com
+  - DOMAIN-SUFFIX,google-analytics.com
+
+  # =========================
+  # Google Maps（核心重点）
+  # =========================
+  - DOMAIN-SUFFIX,maps.google.com
+  - DOMAIN-SUFFIX,maps.googleapis.com
+  - DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
+
+  # 地图瓦片
+  - DOMAIN-SUFFIX,mt0.google.com
+  - DOMAIN-SUFFIX,mt1.google.com
+  - DOMAIN-SUFFIX,mt2.google.com
+  - DOMAIN-SUFFIX,mt3.google.com
+
+  # 街景 / 影像
+  - DOMAIN-SUFFIX,khms0.google.com
+  - DOMAIN-SUFFIX,khms1.google.com
+  - DOMAIN-SUFFIX,khms2.google.com
+  - DOMAIN-SUFFIX,khms3.google.com
+
+  # 客户端服务（POI / 搜索）
+  - DOMAIN-SUFFIX,clients4.google.com
+  - DOMAIN-SUFFIX,clients6.google.com
+
+  # =========================
+  # CDN / 媒体基础
+  # =========================
+  - DOMAIN-SUFFIX,1e100.net
+  - DOMAIN-SUFFIX,2mdn.net
+  - DOMAIN-SUFFIX,gvt1.com
+  - DOMAIN-SUFFIX,gvt2.com
+  # ================================
+  # IP 段（保留原版，略調整合理性）
+  # ================================
+  - IP-CIDR,74.125.0.0/16,no-resolve
+  - IP-CIDR,173.194.0.0/16,no-resolve
