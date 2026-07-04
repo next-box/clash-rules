@@ -1,6 +1,6 @@
 payload:
   # =========================
-  # Google 核心服务
+  # Google 核心服务（基础域名）
   # =========================
   - DOMAIN-SUFFIX,google.com
   - DOMAIN-SUFFIX,googleapis.com
@@ -10,52 +10,99 @@ payload:
   - DOMAIN-SUFFIX,googleusercontent.com
   - DOMAIN-SUFFIX,g.co
   - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,google.cn
+  - DOMAIN-SUFFIX,googleapis.cn
 
   # =========================
-  # 登录 / 账户体系
+  # 登录 / 账户体系（Gmail、Authenticator 核心依赖）
   # =========================
   - DOMAIN-SUFFIX,accounts.google.com
   - DOMAIN-SUFFIX,myaccount.google.com
   - DOMAIN-SUFFIX,apis.google.com
+  - DOMAIN-SUFFIX,login.google.com
+  - DOMAIN-SUFFIX,mail.google.com          # Gmail 核心
+  - DOMAIN-SUFFIX,gmail.com
+  - DOMAIN-SUFFIX,googlemail.com
 
   # =========================
-  # Google Search / Services
+  # Google Search / Analytics / Ads
   # =========================
   - DOMAIN-SUFFIX,googleadservices.com
   - DOMAIN-SUFFIX,google-analytics.com
+  - DOMAIN-SUFFIX,googlesyndication.com
+  - DOMAIN-SUFFIX,googletagmanager.com
+  - DOMAIN-SUFFIX,googletagservices.com
+  - DOMAIN-SUFFIX,doubleclick.net
 
   # =========================
-  # Google Maps（核心重点）
+  # Google Maps（核心 + 瓦片 + 客户端）
   # =========================
   - DOMAIN-SUFFIX,maps.google.com
   - DOMAIN-SUFFIX,maps.googleapis.com
   - DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
-
-  # 地图瓦片
   - DOMAIN-SUFFIX,mt0.google.com
   - DOMAIN-SUFFIX,mt1.google.com
   - DOMAIN-SUFFIX,mt2.google.com
   - DOMAIN-SUFFIX,mt3.google.com
-
-  # 街景 / 影像
   - DOMAIN-SUFFIX,khms0.google.com
   - DOMAIN-SUFFIX,khms1.google.com
   - DOMAIN-SUFFIX,khms2.google.com
   - DOMAIN-SUFFIX,khms3.google.com
-
-  # 客户端服务（POI / 搜索）
   - DOMAIN-SUFFIX,clients4.google.com
   - DOMAIN-SUFFIX,clients6.google.com
 
   # =========================
-  # CDN / 媒体基础
+  # Google Voice（新增重点）
+  # =========================
+  - DOMAIN-SUFFIX,voice.google.com
+  - DOMAIN-SUFFIX,telephony.goog
+  - DOMAIN-SUFFIX,jibe.google.com
+  - DOMAIN-SUFFIX,rcs-copper-us.googleapis.com
+  - DOMAIN-SUFFIX,rcs-copper-eu.googleapis.com
+
+  # =========================
+  # CDN / 媒体 / 更新 / 安全
   # =========================
   - DOMAIN-SUFFIX,1e100.net
   - DOMAIN-SUFFIX,2mdn.net
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt2.com
-  # ================================
-  # IP 段（保留原版，略調整合理性）
-  # ================================
+  - DOMAIN-SUFFIX,dl.google.com
+  - DOMAIN-SUFFIX,fonts.googleapis.com
+  - DOMAIN-SUFFIX,fonts.gstatic.com
+  - DOMAIN-SUFFIX,ssl.gstatic.com
+  - DOMAIN-SUFFIX,www.gstatic.com
+  - DOMAIN-SUFFIX,safebrowsing.googleapis.com
+  - DOMAIN-SUFFIX,update.googleapis.com
+  - DOMAIN-SUFFIX,pki.goog
+
+  # =========================
+  # Firebase / Push / Authenticator 相关（推送、Crash 等）
+  # =========================
+  - DOMAIN-SUFFIX,firebase.googleapis.com
+  - DOMAIN-SUFFIX,crashlytics.googleapis.com
+  - DOMAIN-SUFFIX,app-measurement.com
+  - DOMAIN-SUFFIX,clientservices.googleapis.com
+
+  # =========================
+  # 其他常用 Google 子域（补充全面性）
+  # =========================
+  - DOMAIN-SUFFIX,play.google.com
+  - DOMAIN-SUFFIX,drive.google.com
+  - DOMAIN-SUFFIX,photos.google.com
+  - DOMAIN-SUFFIX,calendar.google.com
+  - DOMAIN-SUFFIX,meet.google.com
+  - DOMAIN-SUFFIX,docs.google.com
+
+  # =========================
+  # IP 段（Google 常用范围，no-resolve 防泄漏）
+  # =========================
   - IP-CIDR,74.125.0.0/16,no-resolve
   - IP-CIDR,173.194.0.0/16,no-resolve
+  - IP-CIDR,216.58.192.0/18,no-resolve
+  - IP-CIDR,172.217.0.0/16,no-resolve
+  - IP-CIDR,64.233.160.0/19,no-resolve
+  # Google Voice 媒体专用
+  - IP-CIDR,74.125.39.0/24,no-resolve

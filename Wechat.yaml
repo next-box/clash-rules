@@ -1,0 +1,120 @@
+payload:
+  # 内容：Wechat 微信
+  # 数量：22条  
+  # =========================
+  # WeChat 微信核心域名
+  # =========================
+  - DOMAIN-SUFFIX,weixin.qq.com
+  - DOMAIN-SUFFIX,wechat.com
+  - DOMAIN-SUFFIX,servicewechat.com
+  - DOMAIN-SUFFIX,wechatapp.com
+  - DOMAIN-SUFFIX,wechatlegal.net
+  - DOMAIN-SUFFIX,weixin.com
+
+  # =========================
+  # 微信 CDN / 静态资源
+  # =========================
+  - DOMAIN-SUFFIX,qpic.cn
+  - DOMAIN-SUFFIX,qlogo.cn
+  - DOMAIN-SUFFIX,wx.qlogo.cn
+  - DOMAIN-SUFFIX,mmgraph.tc.qq.com
+  - DOMAIN-SUFFIX,wxapp.tc.qq.com
+  - DOMAIN-SUFFIX,shp.qlogo.cn
+
+  # =========================
+  # 微信开放平台 / API / 小程序
+  # =========================
+  - DOMAIN-SUFFIX,open.weixin.qq.com
+  - DOMAIN-SUFFIX,api.weixin.qq.com
+  - DOMAIN-SUFFIX,mp.weixin.qq.com
+  - DOMAIN-SUFFIX,mch.weixin.qq.com
+  - DOMAIN-SUFFIX,wx.tenpay.com
+
+  # =========================
+  # 微信支付 / 财付通
+  # =========================
+  - DOMAIN-SUFFIX,tenpay.com
+  - DOMAIN-SUFFIX,wechatpay.com
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,cloud.tencent.com
+
+  # =========================
+  # 微信文件 / 多媒体
+  # =========================
+  - DOMAIN-SUFFIX,wx.gtimg.com
+  - DOMAIN-SUFFIX,res.wx.qq.com
+  - DOMAIN-SUFFIX,wximg.qq.com
+
+  # =========================
+  # 微信核心 IP（补充兜底）
+  # 注意：仅做 fallback，不建议依赖
+  # =========================
+  - IP-CIDR,101.32.104.0/22,no-resolve
+  - IP-CIDR,101.32.118.0/24,no-resolve
+  - IP-CIDR,101.32.133.0/24,no-resolve
+  - IP-CIDR,129.226.0.0/16,no-resolve
+  
+  
+  # 内容：Douyin 抖音（含直播 / 中古电商 / 短视频 / API / CDN）
+  # 说明：覆盖主站 + App API + CDN + 直播 + 字节系核心域名
+  # 数量：较完整企业级版本（避免 DOMAIN-KEYWORD 误杀）
+
+  # =====================
+  # ① 主站 / 基础域名
+  # =====================
+  - DOMAIN-SUFFIX,douyin.com
+  - DOMAIN-SUFFIX,douyinpic.com
+  - DOMAIN-SUFFIX,douyinvod.com
+  - DOMAIN-SUFFIX,iesdouyin.com
+  - DOMAIN-SUFFIX,amemv.com
+
+  # =====================
+  # ② App API / 核心接口（关键）
+  # =====================
+  - DOMAIN-SUFFIX,aweme.snssdk.com
+  - DOMAIN-SUFFIX,api.amemv.com
+  - DOMAIN-SUFFIX,log.snssdk.com
+  - DOMAIN-SUFFIX,mon.snssdk.com
+  - DOMAIN-SUFFIX,ichannel.snssdk.com
+  - DOMAIN-SUFFIX,isnssdk.com
+
+  # =====================
+  # ③ 字节系通用基础设施（强依赖）
+  # =====================
+  - DOMAIN-SUFFIX,snssdk.com
+  - DOMAIN-SUFFIX,byteoversea.com
+  - DOMAIN-SUFFIX,zijieapi.com
+  - DOMAIN-SUFFIX,ibytedtos.com
+  - DOMAIN-SUFFIX,bytedance.com
+
+  # =====================
+  # ④ CDN / 图片 / 视频加速
+  # =====================
+  - DOMAIN-SUFFIX,pstatp.com
+  - DOMAIN-SUFFIX,byteimg.com
+  - DOMAIN-SUFFIX,bdxiguastatic.com
+  - DOMAIN-SUFFIX,bdxiguaimg.com
+  - DOMAIN-SUFFIX,ixigua.com
+  - DOMAIN-SUFFIX,ixiguavideo.com
+
+  # =====================
+  # ⑤ 直播 / 带货 / 中古电商（核心重点）
+  # =====================
+  - DOMAIN-SUFFIX,webcast.amemv.com
+  - DOMAIN-SUFFIX,webcast1-open.douyin.com
+  - DOMAIN-SUFFIX,live.douyin.com
+  - DOMAIN-SUFFIX,live-vo.douyin.com
+  - DOMAIN-SUFFIX,webcast-open.douyin.com
+
+  # =====================
+  # ⑥ 下载 / 资源 / 辅助服务
+  # =====================
+  - DOMAIN-SUFFIX,lf1-cdn-tos.bytescm.com
+  - DOMAIN-SUFFIX,lf3-cdn-tos.bytescm.com
+  - DOMAIN-SUFFIX,tos-signed.byted.org
+
+  # =====================
+  # ⑦ 旧版本 / 兼容 / 边缘节点
+  # =====================
+  - DOMAIN-SUFFIX,douyucdn.com   # ⚠️ 字节早期资源兼容（部分会跳转）
+  - DOMAIN-SUFFIX,edgesrv.com    # CDN 边缘（你斗鱼模板里同类结构保留）
