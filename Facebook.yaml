@@ -1,10 +1,10 @@
 payload:
   # =========================================================
-  # Meta 全家桶 2026 最終精煉版
-  # 適用：網頁 + App（含 WhatsApp Business）圖片、影片、語音通話
+  # Meta / WhatsApp / Instagram 2026 穩定精簡版
+  # 適用：iPhone APP + 電腦 + 電信/聯通雙網
   # =========================================================
 
-  # --- 1. 核心域名（主站與重要服務）---
+  # --- 1. 核心服務域名 ---
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,facebook.net
   - DOMAIN-SUFFIX,fb.com
@@ -16,48 +16,39 @@ payload:
   - DOMAIN-SUFFIX,threads.net
   - DOMAIN-SUFFIX,meta.com
   - DOMAIN-SUFFIX,aboutfacebook.com
-  - DOMAIN-SUFFIX,workplace.com
-  - DOMAIN-SUFFIX,work.facebook.com
-  - DOMAIN-SUFFIX,fb.work
 
-  # --- 2. WhatsApp 專屬（含 Business + 通話）---
+  # --- 2. WhatsApp（完整但不過度擴張）---
   - DOMAIN-SUFFIX,whatsapp.com
   - DOMAIN-SUFFIX,whatsapp.net
   - DOMAIN-SUFFIX,wa.me
   - DOMAIN-SUFFIX,web.whatsapp.com
+  - DOMAIN-SUFFIX,media.whatsapp.net
   - DOMAIN-SUFFIX,mmg.whatsapp.net
   - DOMAIN-SUFFIX,g.whatsapp.net
   - DOMAIN-SUFFIX,graph.whatsapp.com
-  - DOMAIN-SUFFIX,media.whatsapp.net
-  - DOMAIN-SUFFIX,whatsapp-cdn.com
 
-  # --- 3. CDN / 圖片 / 影片 / 檔案（重點）---
+  # --- 3. CDN（圖片 / 影片 / App 核心）---
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
   - DOMAIN-SUFFIX,fbsbx.com
   - DOMAIN-SUFFIX,cdninstagram.com
-  - DOMAIN-SUFFIX,fbedge.net
-  - DOMAIN-SUFFIX,scontent.*.fbcdn.net
-  - DOMAIN-SUFFIX,scontent.*.fna.fbcdn.net
-  - DOMAIN-SUFFIX,video.*.fbcdn.net
   - DOMAIN-SUFFIX,static.xx.fbcdn.net
-  - DOMAIN-SUFFIX,xx.fbcdn.net
+  - DOMAIN-SUFFIX,scontent.xx.fbcdn.net
   - DOMAIN-SUFFIX,lookaside.fbsbx.com
   - DOMAIN-SUFFIX,tfbnw.net
 
-  # --- 4. 其他輔助 / 登錄 / VR ---
-  - DOMAIN-SUFFIX,accountkit.com
+  # --- 4. 輔助服務（保留必要）---
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,oculuscdn.com
-  - DOMAIN-SUFFIX,fbaddins.com
+  - DOMAIN-SUFFIX,accountkit.com
 
-  # --- 5. 關鍵字兜底（放在最後）---
+  # --- 5. 關鍵字兜底（最小化防誤殺）---
   - DOMAIN-KEYWORD,facebook
   - DOMAIN-KEYWORD,instagram
   - DOMAIN-KEYWORD,whatsapp
 
-  # --- 6. IP-CIDR 兜底（精選核心，太多會降低效率）---
-  - IP-CIDR,157.240.0.0/17,no-resolve
+  # --- 6. IP-CIDR（完整 Meta 核心段）---
+  - IP-CIDR,157.240.0.0/16,no-resolve
   - IP-CIDR,129.134.0.0/17,no-resolve
   - IP-CIDR,31.13.64.0/18,no-resolve
   - IP-CIDR,173.252.64.0/18,no-resolve
