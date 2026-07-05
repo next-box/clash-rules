@@ -54,6 +54,60 @@ payload:
   - IP-CIDR,101.32.133.0/24,no-resolve
   - IP-CIDR,129.226.0.0/16,no-resolve
   
+    # =========================
+  # 🟢 微信视频号 / 短视频（Channels）
+  # =========================
+  # ✔ 视频号入口 / 内容页（高确定）
+  - DOMAIN-SUFFIX,channels.weixin.qq.com
+  - DOMAIN-SUFFIX,finder.video.qq.com
+
+  # ⚠️ 视频号内容承载（腾讯视频体系）
+  - DOMAIN-SUFFIX,v.qq.com
+  - DOMAIN-SUFFIX,video.qq.com
+
+  # ⚠️ 视频内容分发 / 缩略图 / 播放辅助
+  - DOMAIN-SUFFIX,i.gtimg.cn
+  - DOMAIN-SUFFIX,vm.gtimg.cn
+
+  # =========================
+  # 🔵 视频号 CDN（图片 / 封面 / 动态加载）
+  # =========================
+  # ✔ 微信内容媒体（非常关键）
+  - DOMAIN-SUFFIX,mmbiz.qpic.cn
+  - DOMAIN-SUFFIX,mmbiz.qlogo.cn
+
+  # ⚠️ 腾讯图床 / 图片加速（视频号封面常用）
+  - DOMAIN-SUFFIX,shp.qpic.cn
+
+  # =========================
+  # 🔴 视频号直播（Live Streaming）
+  # =========================
+  # ✔ 腾讯直播核心入口（稳定）
+  - DOMAIN-SUFFIX,live.qq.com
+
+  # ⚠️ 实时音视频 / 直播推流（RTC）
+  - DOMAIN-SUFFIX,rtc.qq.com
+
+  # ⚠️ 腾讯云直播基础设施（部分直播/推流）
+  - DOMAIN-SUFFIX,cloud.tencent.com
+
+  # =========================
+  # 🧠 注解说明（非常重要）
+  # =========================
+  # 1. 微信视频号 = 微信 + 腾讯视频 + CDN + RTC 四层结构
+  #
+  # 2. channels.weixin.qq.com
+  #    → 视频号入口（类似“抖音首页”）
+  #
+  # 3. v.qq.com / video.qq.com
+  #    → 视频实际播放流（核心）
+  #
+  # 4. mmbiz.qpic.cn
+  #    → 视频号封面 / 图文 / 缩略图（不走它会黑屏或加载慢）
+  #
+  # 5. live.qq.com / rtc.qq.com
+  #    → 直播 & 连麦 & 实时流
+  
   
   # 内容：Douyin 抖音（含直播 / 中古电商 / 短视频 / API / CDN）
   # 说明：覆盖主站 + App API + CDN + 直播 + 字节系核心域名
