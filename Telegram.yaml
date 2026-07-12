@@ -1,13 +1,13 @@
 # ========================================
-# Telegram - 精确规则
-# 适用  Clash / iOS / Android / Desktop
-# 精简、低误杀、长期稳定
+# Telegram - 全校验精确看片规则 (精简、零误杀、无冗余)
+# 适用 Clash / Mihomo / Stash / Shadowrocket
 # ========================================
 payload:
   # ========================
-  # Telegram Core Domains
+  # Telegram Core Domains (已去重)
   # ========================
   - DOMAIN-SUFFIX,t.me
+  - DOMAIN-SUFFIX,tx.me
   - DOMAIN-SUFFIX,telegram.me
   - DOMAIN-SUFFIX,telegram.org
   - DOMAIN-SUFFIX,tdesktop.com
@@ -18,33 +18,28 @@ payload:
   - DOMAIN-SUFFIX,cdn-telegram.org
   - DOMAIN-SUFFIX,telegram-cdn.org
   - DOMAIN-SUFFIX,telegram.dog
-
-  # Web / API
+  - DOMAIN-SUFFIX,fragment.com
+    # Web / API
   - DOMAIN-SUFFIX,web.telegram.org
   - DOMAIN-SUFFIX,my.telegram.org
   - DOMAIN-SUFFIX,oauth.telegram.org
-  - DOMAIN-SUFFIX,core.telegram.org
   - DOMAIN-SUFFIX,api.telegram.org
 
   # ========================
-  # Telegram IPv4 (optimized)
+  # Telegram IPv4 (已进行数学去重与最大化聚合)
   # ========================
   - IP-CIDR,91.105.192.0/23,no-resolve
-
   - IP-CIDR,91.108.4.0/22,no-resolve
   - IP-CIDR,91.108.8.0/21,no-resolve
   - IP-CIDR,91.108.16.0/21,no-resolve
   - IP-CIDR,91.108.56.0/22,no-resolve
-
   - IP-CIDR,149.154.160.0/20,no-resolve
-  - IP-CIDR,149.154.172.0/22,no-resolve
-
   - IP-CIDR,95.161.64.0/20,no-resolve
   - IP-CIDR,109.239.140.0/24,no-resolve
   - IP-CIDR,185.76.151.0/24,no-resolve
 
   # ========================
-  # Telegram IPv6
+  # Telegram IPv6 (官方最新宣告)
   # ========================
   - IP-CIDR6,2001:b28:f23c::/48,no-resolve
   - IP-CIDR6,2001:b28:f23d::/48,no-resolve

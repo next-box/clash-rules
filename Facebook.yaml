@@ -1,57 +1,52 @@
 payload:
   # =========================================================
-  # Meta / WhatsApp / Instagram 2026 穩定精簡版
-  # 適用：iPhone APP + 電腦 + 電信/聯通雙網
+  # Meta 全家桶 (FB / WA / IG / Threads) 2026 终极稳定精简版
+  # 优先序：Facebook 核心第一位
+  # 适用：iPhone / iPad APP + PC/Mac 网页端 + 移动/联通/电信多网
   # =========================================================
 
-  # --- 1. 核心服務域名 ---
+  # --- 1. Facebook & Messenger 核心与关键字（最高优先级）---
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,facebook.net
   - DOMAIN-SUFFIX,fb.com
   - DOMAIN-SUFFIX,fb.me
   - DOMAIN-SUFFIX,m.me
   - DOMAIN-SUFFIX,messenger.com
+  - DOMAIN-KEYWORD,facebook
+
+  # --- 2. WhatsApp 核心与通话（防漏接、防断连）---
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,wa.me
+  - DOMAIN-KEYWORD,whatsapp
+  # WhatsApp 专属视频/语音通话与多媒体服务器 IP 段（AWS 托管部分）
+  - IP-CIDR,18.194.0.0/15,no-resolve
+  - IP-CIDR,34.224.0.0/12,no-resolve
+  - IP-CIDR,54.160.0.0/12,no-resolve
+
+  # --- 3. Instagram & Threads（图片与短视频流）---
   - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-SUFFIX,cdninstagram.com
   - DOMAIN-SUFFIX,ig.me
   - DOMAIN-SUFFIX,threads.net
-  - DOMAIN-SUFFIX,meta.com
-  - DOMAIN-SUFFIX,aboutfacebook.com
 
-  # --- 2. WhatsApp（完整但不過度擴張）---
-  - DOMAIN-SUFFIX,whatsapp.com
-  - DOMAIN-SUFFIX,whatsapp.net
-  - DOMAIN-SUFFIX,wa.me
-  - DOMAIN-SUFFIX,web.whatsapp.com
-  - DOMAIN-SUFFIX,media.whatsapp.net
-  - DOMAIN-SUFFIX,mmg.whatsapp.net
-  - DOMAIN-SUFFIX,g.whatsapp.net
-  - DOMAIN-SUFFIX,graph.whatsapp.com
-
-  # --- 3. CDN（圖片 / 影片 / App 核心）---
+  # --- 4. Meta 统一静态资源与多媒体 CDN（全家桶共用）---
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
   - DOMAIN-SUFFIX,fbsbx.com
-  - DOMAIN-SUFFIX,cdninstagram.com
-  - DOMAIN-SUFFIX,static.xx.fbcdn.net
-  - DOMAIN-SUFFIX,scontent.xx.fbcdn.net
-  - DOMAIN-SUFFIX,lookaside.fbsbx.com
   - DOMAIN-SUFFIX,tfbnw.net
 
-  # --- 4. 輔助服務（保留必要）---
-  - DOMAIN-SUFFIX,oculus.com
-  - DOMAIN-SUFFIX,oculuscdn.com
+  # --- 5. 辅助与生态服务（保留最核心）---
+  - DOMAIN-SUFFIX,meta.com
+  - DOMAIN-SUFFIX,aboutfacebook.com
   - DOMAIN-SUFFIX,accountkit.com
 
-  # --- 5. 關鍵字兜底（最小化防誤殺）---
-  - DOMAIN-KEYWORD,facebook
-  - DOMAIN-KEYWORD,instagram
-  - DOMAIN-KEYWORD,whatsapp
-
-  # --- 6. IP-CIDR（完整 Meta 核心段）---
-  - IP-CIDR,157.240.0.0/16,no-resolve
-  - IP-CIDR,129.134.0.0/17,no-resolve
+  # --- 6. Meta 全局核心自治系统 IP 段（全局底网，防漏网之鱼）---
   - IP-CIDR,31.13.64.0/18,no-resolve
-  - IP-CIDR,173.252.64.0/18,no-resolve
-  - IP-CIDR,69.171.224.0/19,no-resolve
   - IP-CIDR,69.63.176.0/20,no-resolve
+  - IP-CIDR,69.171.224.0/19,no-resolve
+  - IP-CIDR,129.134.0.0/17,no-resolve
+  - IP-CIDR,157.240.0.0/16,no-resolve
+  - IP-CIDR,173.252.64.0/18,no-resolve
   - IP-CIDR,185.60.216.0/22,no-resolve
+  - IP-CIDR,204.15.20.0/22,no-resolve

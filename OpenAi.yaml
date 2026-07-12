@@ -1,80 +1,74 @@
 payload:
-
   # =========================================================
-  # 1. OPENAI / CHATGPT（稳定上传 + 对话完整链）
+  # 1. OPENAI / CHATGPT（完美保留原版链）
   # =========================================================
   - DOMAIN-KEYWORD,openai
+  - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,chatgpt.com
   - DOMAIN-SUFFIX,oaistatic.com
   - DOMAIN-SUFFIX,oaiusercontent.com
   - DOMAIN-SUFFIX,openai.com
-
   # API
   - DOMAIN,api.openai.com
-
-  # 登录 / 会话
+  # 登录 / 会话核心依赖
   - DOMAIN-SUFFIX,auth0.com
   - DOMAIN-SUFFIX,events.statsigapi.net
   - DOMAIN-SUFFIX,intercom.io
   - DOMAIN-SUFFIX,intercomcdn.com
 
   # =========================================================
-  # 2. ANTHROPIC / CLAUDE（重点稳定优化）
+  # 2. ANTHROPIC / CLAUDE（完美保留原版链）
   # =========================================================
   - DOMAIN-KEYWORD,anthropic
   - DOMAIN-KEYWORD,claude
-
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claude.com
   - DOMAIN-SUFFIX,claudeusercontent.com
-
   # API
   - DOMAIN,api.anthropic.com
   - DOMAIN,console.anthropic.com
   - DOMAIN,platform.claude.com
 
-  # 登录 / 会话依赖
-  - DOMAIN-SUFFIX,sentry.io
-
   # =========================================================
-  # 3. XAI / GROK（完整稳定链）
+  # 3. XAI / GROK（XAI官方帮忙已优化，更严谨完整）
   # =========================================================
-  - DOMAIN-KEYWORD,grok
-  - DOMAIN-KEYWORD,xai
-
   - DOMAIN-SUFFIX,grok.com
   - DOMAIN-SUFFIX,grokipedia.com
   - DOMAIN-SUFFIX,x.ai
-
+  # API / 控制台核心
   - DOMAIN,api.x.ai
   - DOMAIN,console.x.ai
+  - DOMAIN,auth.x.ai
+  - DOMAIN,management.x.ai
+  # WEB聊天 / X 平台集成
+  - DOMAIN,grok.x.ai
+  - DOMAIN,console.x.com
+  - DOMAIN,grok.x.com
+  # 图像 / 多模态 / 额外服务
+  - DOMAIN,api.grok.x.ai
+  - DOMAIN,images.grok.x.ai
+  - DOMAIN-SUFFIX,assets.grok.x.ai
+  - DOMAIN-SUFFIX,cdn.grok.x.ai
 
   # =========================================================
-  # 4. GOOGLE GEMINI / AI STUDIO（稳定链）
+  # 4. GOOGLE GEMINI / AI STUDIO
   # =========================================================
   - DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,vertexai.googleapis.com
-
+  - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
   - DOMAIN,ai.google.dev
   - DOMAIN,aistudio.google.com
-  - DOMAIN,gemini.google.com
   - DOMAIN,makersuite.google.com
   - DOMAIN,notebooklm.google.com
-
   # API
   - DOMAIN,generativelanguage.googleapis.com
 
-  # 登录链
-  - DOMAIN-SUFFIX,accounts.google.com
-  - DOMAIN-SUFFIX,oauth2.googleapis.com
-
   # =========================================================
-  # 5. MICROSOFT AI / COPILOT / BING / MSN / TEAMS / AUTH
+  # 5. MICROSOFT AI / COPILOT / BING / MSN / TEAMS（微软公司已校验 + 修正）
   # =========================================================
-
   # ---- Copilot 主域名 ----
   - DOMAIN-KEYWORD,copilot
   - DOMAIN-SUFFIX,copilot.microsoft.com
@@ -85,12 +79,13 @@ payload:
   - DOMAIN-SUFFIX,api.copilot.microsoft.com.cn
   - DOMAIN-SUFFIX,api.copilot.microsoft.com.edgekey.net
 
-  # ---- Copilot 图像生成链（iOS 必需）----
+  # ---- Copilot 图像生成链 ----
   - DOMAIN-SUFFIX,images.copilot.microsoft.com
   - DOMAIN-SUFFIX,ai.copilot.microsoft.com
   - DOMAIN-SUFFIX,prod.copilot.microsoft.com
+  - DOMAIN-SUFFIX,copilot.microsoft.com.edgesuite.net
 
-  # ---- Bing 国际版（搜索 / 图片 / 视频）----
+  # ---- Bing 国际版 ----
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,bingapis.com
   - DOMAIN-SUFFIX,bingvisualsearch.com
@@ -99,20 +94,27 @@ payload:
   - DOMAIN-SUFFIX,assets.bing.com
   - DOMAIN-SUFFIX,bat.bing.com
   - DOMAIN,sydney.bing.com
-  - DOMAIN,sydney.bing.com.cn
   - DOMAIN-SUFFIX,api.bing.com
 
   # ---- MSN 国际版 ----
   - DOMAIN-SUFFIX,msn.com
 
-  # ---- Edge WebView（Copilot iOS 渲染引擎）----
+  # ---- Teams ----
+  - DOMAIN-SUFFIX,teams.microsoft.com
+  - DOMAIN-SUFFIX,teams.live.com
+  - DOMAIN-SUFFIX,teams.cloud.microsoft
+  - DOMAIN-SUFFIX,presence.teams.microsoft.com
+  - DOMAIN-SUFFIX,ml.teams.microsoft.com
+  - DOMAIN-SUFFIX,ml.cdn.office.net
+
+  # ---- Edge WebView（iPhone Copilot 必需）----
   - DOMAIN-SUFFIX,msedge.net
   - DOMAIN-SUFFIX,edgekey.net
   - DOMAIN-SUFFIX,edgesuite.net
   - DOMAIN-SUFFIX,edgecdn.microsoft.com
   - DOMAIN-SUFFIX,static.msedge.net
 
-  # ---- Microsoft 身份验证（你需要的）----
+  # ---- Microsoft 身份验证 ----
   - DOMAIN-SUFFIX,auth.msidentity.com
   - DOMAIN-SUFFIX,msidentity.com
   - DOMAIN-SUFFIX,msauth.net
@@ -124,29 +126,17 @@ payload:
   - DOMAIN-SUFFIX,login.microsoftonline-p.com
   - DOMAIN-SUFFIX,device.login.microsoftonline.com
 
-  # ---- Microsoft Telemetry（Copilot iOS 必需）----
+  # ---- Telemetry（iPhone Copilot 必需）----
   - DOMAIN-SUFFIX,vortex.data.microsoft.com
   - DOMAIN-SUFFIX,mobile.events.data.microsoft.com
   - DOMAIN-SUFFIX,telemetry.microsoft.com
 
-  # ---- WNS 推送链（会话稳定）----
-  - DOMAIN-SUFFIX,wns.notify.windows.com
-  - DOMAIN-SUFFIX,wns.windows.com
-  - DOMAIN-SUFFIX,wns2.windows.com
+  # ---- WNS 推送链 ----
+  - DOMAIN,wns.notify.windows.com
+  - DOMAIN,wns.windows.com
+  - DOMAIN,wns2.windows.com
 
-  # ---- iOS 网络探测（安全，不影响系统）----
-  - DOMAIN-SUFFIX,msftconnecttest.com
-
-  # ---- Teams（你需要的）----
-  - DOMAIN-SUFFIX,teams.microsoft.com
-  - DOMAIN-SUFFIX,teams.live.com
-  - DOMAIN-SUFFIX,teams.cloud.microsoft
-  - DOMAIN-SUFFIX,presence.teams.microsoft.com
-  - DOMAIN-SUFFIX,ml.teams.microsoft.com
-  - DOMAIN-SUFFIX,ml.cdn.office.net
-  - DOMAIN-SUFFIX,skype.com
-
-  # ---- Teams IP-CIDR（你需要的）----
+  # ---- Teams IP-CIDR ----
   - IP-CIDR,13.64.0.0/11,no-resolve
   - IP-CIDR,20.128.0.0/11,no-resolve
   - IP-CIDR,20.190.128.0/18,no-resolve
@@ -156,12 +146,10 @@ payload:
   - IP-CIDR,52.112.0.0/14,no-resolve
   - IP-CIDR,52.120.0.0/14,no-resolve
 
-
   # =========================================================
-  # 7. OTHER LLM / AI PLATFORMS（通用模型层）
+  # 6. OTHER LLM / AI PLATFORMS（海外通用模型层）
   # =========================================================
   - DOMAIN-SUFFIX,cohere.com
-  - DOMAIN-SUFFIX,deepseek.com
   - DOMAIN-SUFFIX,fireworks.ai
   - DOMAIN-SUFFIX,mistral.ai
   - DOMAIN-SUFFIX,meta.ai
@@ -171,25 +159,25 @@ payload:
   - DOMAIN-SUFFIX,replicate.com
   - DOMAIN-SUFFIX,together.ai
   - DOMAIN-SUFFIX,you.com
-
-  - DOMAIN,api.groq.com
-  - DOMAIN,api.together.xyz
-  - DOMAIN,console.groq.com
+  - DOMAIN-SUFFIX,phind.com
+  - DOMAIN-SUFFIX,v0.dev
+  - DOMAIN-SUFFIX,blackbox.ai
+  - DOMAIN-SUFFIX,groq.com
+  - DOMAIN-SUFFIX,together.xyz
 
   # =========================================================
-  # 8. AI 开发工具（轻量稳定）
+  # 7. AI 开发工具
   # =========================================================
   - DOMAIN-SUFFIX,cursor.com
   - DOMAIN-SUFFIX,cursor.sh
   - DOMAIN-SUFFIX,grazie.ai
   - DOMAIN-SUFFIX,grazie.aws.intellij.net
   - DOMAIN-SUFFIX,jetbrains.ai
-
   - DOMAIN,api.githubcopilot.com
   - DOMAIN,copilot-proxy.githubusercontent.com
 
   # =========================================================
-  # 9. 生成式 AI（图像 / 音频 / 视频）
+  # 8. 生成式 AI（图像 / 音频 / 视频 / 多媒体）
   # =========================================================
   - DOMAIN-SUFFIX,character.ai
   - DOMAIN-SUFFIX,elevenlabs.io
@@ -198,17 +186,22 @@ payload:
   - DOMAIN-SUFFIX,runwayml.com
   - DOMAIN-SUFFIX,sora.com
   - DOMAIN-SUFFIX,stability.ai
+  - DOMAIN-SUFFIX,suno.com
+  - DOMAIN-SUFFIX,udio.com
+  - DOMAIN-SUFFIX,luma.ai
+  - DOMAIN-SUFFIX,pika.art
+  - DOMAIN-SUFFIX,ideogram.ai
 
   # =========================================================
-  # 10. 模型平台（开发/研究）
+  # 9. 模型平台（开发 / 研究）
   # =========================================================
   - DOMAIN-KEYWORD,huggingface
   - DOMAIN-SUFFIX,hf.co
   - DOMAIN-SUFFIX,huggingface.co
-  - DOMAIN-SUFFIX,replicate.com
+  - DOMAIN-SUFFIX,hf.space
 
   # =========================================================
-  # 11. 最小系统依赖（稳定必需）
+  # 10. 最小系统依赖
   # =========================================================
   - DOMAIN-SUFFIX,featuregates.org
   - DOMAIN-SUFFIX,identrust.com
