@@ -1,11 +1,10 @@
 payload:
   # =========================================================
-  # Meta 全家桶 (FB / WA / IG / Threads) 2026 终极稳定精简版
-  # 优先序：Facebook 核心第一位
+  # Meta 全家桶 (FB / WA / IG / Threads) 2026 终极补丁稳定版
+  # 修复重点：补齐 Meta 亚太区直连 IP 段 + IPv6 防漏 + 补充域名
   # 适用：iPhone / iPad APP + PC/Mac 网页端 + 移动/联通/电信多网
   # =========================================================
-
-  # --- 1. Facebook & Messenger 核心与关键字（最高优先级）---
+  # --- 1. Facebook & Messenger 核心与关键字 ---
   - DOMAIN-SUFFIX,facebook.com
   - DOMAIN-SUFFIX,facebook.net
   - DOMAIN-SUFFIX,fb.com
@@ -14,39 +13,50 @@ payload:
   - DOMAIN-SUFFIX,messenger.com
   - DOMAIN-KEYWORD,facebook
 
-  # --- 2. WhatsApp 核心与通话（防漏接、防断连）---
-  - DOMAIN-SUFFIX,whatsapp.net
-  - DOMAIN-SUFFIX,whatsapp.com
-  - DOMAIN-SUFFIX,wa.me
-  - DOMAIN-KEYWORD,whatsapp
-  # WhatsApp 专属视频/语音通话与多媒体服务器 IP 段（AWS 托管部分）
-  - IP-CIDR,18.194.0.0/15,no-resolve
-  - IP-CIDR,34.224.0.0/12,no-resolve
-  - IP-CIDR,54.160.0.0/12,no-resolve
+  # --- 2. WhatsApp 核心与通话 ---
+  #- DOMAIN-SUFFIX,whatsapp.net
+  #- DOMAIN-SUFFIX,whatsapp.com
+  #- DOMAIN-SUFFIX,whatsapp.org
+  #- DOMAIN-SUFFIX,wa.me
+  #- DOMAIN-KEYWORD,whatsapp
+  # WhatsApp 专属视频/语音通话与多媒体服务器 IP 段（AWS 托管）
+  #- IP-CIDR,18.194.0.0/15,no-resolve
+  #- IP-CIDR,34.224.0.0/12,no-resolve
+  #- IP-CIDR,54.160.0.0/12,no-resolve
 
-  # --- 3. Instagram & Threads（图片与短视频流）---
+  # --- 3. Instagram & Threads ---
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,cdninstagram.com
   - DOMAIN-SUFFIX,ig.me
   - DOMAIN-SUFFIX,threads.net
 
-  # --- 4. Meta 统一静态资源与多媒体 CDN（全家桶共用）---
+  # --- 4. Meta 统一静态资源与多媒体 CDN ---
   - DOMAIN-SUFFIX,fbcdn.net
   - DOMAIN-SUFFIX,fbcdn.com
   - DOMAIN-SUFFIX,fbsbx.com
   - DOMAIN-SUFFIX,tfbnw.net
 
-  # --- 5. 辅助与生态服务（保留最核心）---
+  # --- 5. 辅助与生态服务 ---
   - DOMAIN-SUFFIX,meta.com
   - DOMAIN-SUFFIX,aboutfacebook.com
   - DOMAIN-SUFFIX,accountkit.com
 
-  # --- 6. Meta 全局核心自治系统 IP 段（全局底网，防漏网之鱼）---
+  # --- 6. Meta 全局 IPv4 核心段（补齐亚太香港/新加坡机房 & 完整 ASN）---
   - IP-CIDR,31.13.64.0/18,no-resolve
+  - IP-CIDR,45.64.40.0/22,no-resolve
+  - IP-CIDR,66.220.144.0/20,no-resolve
   - IP-CIDR,69.63.176.0/20,no-resolve
   - IP-CIDR,69.171.224.0/19,no-resolve
+  - IP-CIDR,74.119.76.0/22,no-resolve
+  - IP-CIDR,103.4.96.0/22,no-resolve
   - IP-CIDR,129.134.0.0/17,no-resolve
   - IP-CIDR,157.240.0.0/16,no-resolve
+  - IP-CIDR,163.70.128.0/17,no-resolve
   - IP-CIDR,173.252.64.0/18,no-resolve
   - IP-CIDR,185.60.216.0/22,no-resolve
   - IP-CIDR,204.15.20.0/22,no-resolve
+
+  # --- 7. Meta 全局 IPv6 核心段（关键！防止手机蜂窝网/Wi-Fi IPv6 直连漏网）---
+  - IP-CIDR6,2a03:2880::/28,no-resolve
+  - IP-CIDR6,2a03:2881::/32,no-resolve
+  - IP-CIDR6,2607:f8b0::/32,no-resolve
