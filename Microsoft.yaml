@@ -1,0 +1,62 @@
+payload:
+  # ============================================
+  # Microsoft International Core (精简稳定版)
+  # Outlook / Office / OneDrive / Azure
+  # ============================================
+
+  # ---- Outlook 国际 ----
+  - DOMAIN-SUFFIX,outlook.com
+  - DOMAIN-SUFFIX,outlook.office365.com
+  - DOMAIN-SUFFIX,outlook.live.com
+  - DOMAIN-SUFFIX,hotmail.com
+  - DOMAIN-SUFFIX,live.com
+  - DOMAIN-SUFFIX,live.net
+
+  # ---- Outlook 登录链 ----
+  - DOMAIN-SUFFIX,login.live.com
+  - DOMAIN-SUFFIX,login.microsoftonline.com
+  - DOMAIN-SUFFIX,account.microsoft.com
+  - DOMAIN-SUFFIX,account.microsoftonline.com
+
+  # ---- Office 国际 ----
+  - DOMAIN-SUFFIX,office.com
+  - DOMAIN-SUFFIX,office.net
+  - DOMAIN-SUFFIX,office365.com
+  - DOMAIN-SUFFIX,officeapps.live.com
+  - DOMAIN-SUFFIX,officecdn.microsoft.com
+
+  # ---- OneDrive 国际 ----
+  - DOMAIN-SUFFIX,onedrive.com
+  - DOMAIN-SUFFIX,onedrive.live.com
+  - DOMAIN-SUFFIX,storage.live.com
+  - DOMAIN-SUFFIX,sharepoint.com
+  - DOMAIN-SUFFIX,sharepointonline.com
+
+  # ---- Azure 国际 ----
+  - DOMAIN-SUFFIX,azure.com
+  - DOMAIN-SUFFIX,azure.net
+  - DOMAIN-SUFFIX,azureedge.net
+  - DOMAIN-SUFFIX,cloudapp.net
+  - DOMAIN-SUFFIX,cloudappsecurity.com
+
+  # ---- Microsoft 国际基础域名 ----
+  - DOMAIN-KEYWORD,microsoft
+  - DOMAIN-SUFFIX,msft.net
+  - DOMAIN-SUFFIX,msftauth.net
+  - DOMAIN-SUFFIX,msftauthimages.net
+  - DOMAIN-SUFFIX,msftidentity.com
+  - DOMAIN-SUFFIX,msidentity.com
+  - DOMAIN-SUFFIX,msocdn.com
+  - DOMAIN-SUFFIX,msocsp.com
+  - DOMAIN-SUFFIX,msecnd.net
+  - DOMAIN-SUFFIX,msedge.net
+  - DOMAIN-SUFFIX,gfx.ms
+  - DOMAIN-SUFFIX,svc.ms
+
+  # ---- Windows / Update ----
+  - DOMAIN-SUFFIX,windows.com
+  - DOMAIN-SUFFIX,windows.net
+  - DOMAIN-SUFFIX,windowsupdate.com
+
+  # ---- Visual Studio / Dev ----
+  - DOMAIN-SUFFIX,visualstudio.com
