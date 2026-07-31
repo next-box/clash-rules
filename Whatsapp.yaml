@@ -1,0 +1,48 @@
+payload:
+  # =========================================================
+  # WhatsApp 2026 独立精简高精版 (港/新/日/亚洲+欧美 优化版)
+  # 特性：纯净无冗余 + 语音/视频通话补全 + 双栈 IPv6 防漏
+  # 适用：iPhone / Android (Pixel) App + 网页端 
+  # 参考：Meta 官方服务器清单 (更新至 2025-12-18)
+  # =========================================================
+
+  # --- 1. 核心域名（后缀通配，涵盖 Web / App / 短链）---
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-SUFFIX,whatsapp.org
+  - DOMAIN-SUFFIX,wa.me
+  - DOMAIN-KEYWORD,whatsapp
+
+  # --- 2. 语音/视频通话核心（AWS 动态分配大段）---
+  - IP-CIDR,18.194.0.0/15,no-resolve
+  - IP-CIDR,34.192.0.0/11,no-resolve      # 补充：us-east-1，原 34.224.0.0/12 未覆盖此段
+  - IP-CIDR,34.224.0.0/12,no-resolve
+  - IP-CIDR,54.160.0.0/12,no-resolve
+
+  # --- 2b. AWS Global Accelerator（注册/邀请链接等新流程入口，全球通用）---
+  - IP-CIDR,3.33.128.0/17,no-resolve
+  - IP-CIDR,15.197.0.0/16,no-resolve
+
+  # --- 3. Meta 官方底层直属自治网段 (IPv4 核心骨干网，AS32934 共用)---
+  - IP-CIDR,31.13.24.0/21,no-resolve
+  - IP-CIDR,31.13.64.0/18,no-resolve
+  - IP-CIDR,45.64.40.0/22,no-resolve
+  - IP-CIDR,57.144.0.0/14,no-resolve
+  - IP-CIDR,66.220.144.0/20,no-resolve
+  - IP-CIDR,69.63.176.0/20,no-resolve
+  - IP-CIDR,69.171.224.0/19,no-resolve
+  - IP-CIDR,74.119.76.0/22,no-resolve
+  - IP-CIDR,103.4.96.0/22,no-resolve      # 亚太(含港/新/日/韩)相关网段
+  - IP-CIDR,129.134.0.0/17,no-resolve
+  - IP-CIDR,157.240.0.0/16,no-resolve
+  - IP-CIDR,163.70.128.0/17,no-resolve
+  - IP-CIDR,163.77.132.0/23,no-resolve
+  - IP-CIDR,163.77.136.0/23,no-resolve
+  - IP-CIDR,173.252.64.0/18,no-resolve
+  - IP-CIDR,185.60.216.0/22,no-resolve
+  - IP-CIDR,185.89.216.0/22,no-resolve
+  - IP-CIDR,204.15.20.0/22,no-resolve
+
+  # --- 4. IPv6 核心段（彻底杜绝蜂窝网络/Wi-Fi 漏网）---
+  - IP-CIDR6,2a03:2880::/28,no-resolve
+  # 注：原 2607:f8b0::/32 已删除——该段属于 Google，非 Meta/WhatsApp 所有

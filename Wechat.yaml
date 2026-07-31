@@ -1,97 +1,151 @@
 payload:
-  # 内容：Wechat 微信 + Douyin 抖音（完善优化版）
-  # 说明：特别补全了美区/境外版 WeChat 核心域名与国际节点 IP，防止卡顿
-  
-  # =========================
-  # 🇨🇳 微信 核心域名（含国际版补全）
-  # =========================
+  # ============================================================
+  # 🇨🇳 微信 / WeChat 核心与 API（美区/境外版直连强化）
+  # ============================================================
   - DOMAIN-SUFFIX,weixin.qq.com
   - DOMAIN-SUFFIX,wechat.com
   - DOMAIN-SUFFIX,servicewechat.com
+  - DOMAIN-SUFFIX,servicewechat.cn
   - DOMAIN-SUFFIX,wechatapp.com
   - DOMAIN-SUFFIX,wechatlegal.net
   - DOMAIN-SUFFIX,weixin.com
-  - DOMAIN-SUFFIX,wechatos.net        # 🌟 境外版 WeChat 核心系统/API 域名（美区关键）
-  - DOMAIN-SUFFIX,weixinbridge.com    # 微信内置浏览器桥接
+  - DOMAIN-SUFFIX,wechatos.net          # 美区/境外核心系统与 API
+  - DOMAIN-SUFFIX,weixinbridge.com
   - DOMAIN-SUFFIX,weixinsxy.com
   - DOMAIN-SUFFIX,wx.qq.com
   - DOMAIN-SUFFIX,wxs.qq.com
+  - DOMAIN-SUFFIX,wx.gtimg.com
+  - DOMAIN-SUFFIX,long.weixin.qq.com
+  - DOMAIN-SUFFIX,routerlong.weixin.qq.com
+  - DOMAIN-SUFFIX,notifylong.weixin.qq.com
+  - DOMAIN-SUFFIX,sglong.weixin.qq.com
+  - DOMAIN-SUFFIX,frlong.weixin.qq.com
+  - DOMAIN-SUFFIX,dns.weixin.qq.com.cn
+  - DOMAIN-SUFFIX,dns.weixin.qq.com
 
-  # =========================
-  # 微信 CDN / 静态资源
-  # =========================
+  # ============================================================
+  # 🟢 视频号 / 短视频 / 调度接口（核心，解决卡顿关键）
+  # ============================================================
+  - DOMAIN-SUFFIX,channels.weixin.qq.com
+  - DOMAIN-SUFFIX,finder.video.qq.com     # 视频号真实视频流主域名
+  - DOMAIN-SUFFIX,short.weixin.qq.com
+  - DOMAIN-SUFFIX,extshort.weixin.qq.com
+  - DOMAIN-SUFFIX,szextshort.weixin.qq.com
+  - DOMAIN-SUFFIX,szminorshort.weixin.qq.com
+  - DOMAIN-SUFFIX,live.weixin.qq.com
+  - DOMAIN-SUFFIX,find.weixin.qq.com
+  - DOMAIN-SUFFIX,v.qq.com
+  - DOMAIN-SUFFIX,video.qq.com
+  - DOMAIN-SUFFIX,vd.qq.com
+  - DOMAIN-SUFFIX,soup.v.qq.com
+  - DOMAIN,vweixinf.tc.qq.com
+  - DOMAIN-SUFFIX,vweixinthumb.tc.qq.com
+  - DOMAIN-SUFFIX,wxapp.tc.qq.com
+  - DOMAIN-SUFFIX,socwxsns.video.qq.com   # 视频号/朋友圈视频常用 CNAME 目标
+  - DOMAIN,snsvideo.c2c.wechat.com
+
+  # ============================================================
+  # 🎥 媒体 / 朋友圈 / 视频号 CDN（强力父域名 + 关键子域）
+  # ============================================================
+  - DOMAIN-SUFFIX,tc.qq.com               # 覆盖 vweixinf* 等动态节点
+  - DOMAIN-SUFFIX,gtimg.com
+  - DOMAIN-SUFFIX,gtimg.cn
+  - DOMAIN-SUFFIX,myqcloud.com
   - DOMAIN-SUFFIX,qpic.cn
   - DOMAIN-SUFFIX,qlogo.cn
   - DOMAIN-SUFFIX,wx.qlogo.cn
-  - DOMAIN-SUFFIX,mmgraph.tc.qq.com
-  - DOMAIN-SUFFIX,wxapp.tc.qq.com
   - DOMAIN-SUFFIX,shp.qlogo.cn
+  - DOMAIN-SUFFIX,shp.qpic.cn
+  - DOMAIN-SUFFIX,mmbiz.qpic.cn
+  - DOMAIN-SUFFIX,mmbiz.qlogo.cn
+  - DOMAIN-SUFFIX,mmsns.qpic.cn
+  - DOMAIN-SUFFIX,sns.qpic.cn
+  - DOMAIN-SUFFIX,mmcdn.qpic.cn
+  - DOMAIN-SUFFIX,mmchatpic.qpic.cn
+  - DOMAIN-SUFFIX,cmmsns.qpic.cn
+  - DOMAIN-SUFFIX,ugc.qpic.cn
+  - DOMAIN-SUFFIX,store.qpic.cn
+  - DOMAIN-SUFFIX,wxlivecdn.com
+  - DOMAIN-SUFFIX,qlivecdn.com
 
-  # =========================
-  # 微信开放平台 / API / 小程序
-  # =========================
+  # ============================================================
+  # 微信开放平台 / 小程序 / 支付
+  # ============================================================
   - DOMAIN-SUFFIX,open.weixin.qq.com
   - DOMAIN-SUFFIX,api.weixin.qq.com
   - DOMAIN-SUFFIX,mp.weixin.qq.com
   - DOMAIN-SUFFIX,mch.weixin.qq.com
+  - DOMAIN-SUFFIX,api.mch.weixin.qq.com
+  - DOMAIN-SUFFIX,api2.mch.weixin.qq.com
   - DOMAIN-SUFFIX,wx.tenpay.com
-
-  # =========================
-  # 微信支付 / 财付通
-  # =========================
   - DOMAIN-SUFFIX,tenpay.com
   - DOMAIN-SUFFIX,wechatpay.com
-  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,wechatpay.cn
+  - DOMAIN-SUFFIX,pay.weixin.qq.com
+  - DOMAIN-SUFFIX,payapp.weixin.qq.com
+  - DOMAIN-SUFFIX,tenpay.wechatpay.cn
+  - DOMAIN-SUFFIX,qq.com                  # 较宽，但视频号/腾讯系强依赖
   - DOMAIN-SUFFIX,cloud.tencent.com
+  - DOMAIN-SUFFIX,tencent-cloud.net
+  - DOMAIN-SUFFIX,iot-tencent.com
 
-  # =========================
-  # 微信文件 / 多媒体
-  # =========================
-  - DOMAIN-SUFFIX,wx.gtimg.com
-  - DOMAIN-SUFFIX,res.wx.qq.com
-  - DOMAIN-SUFFIX,wximg.qq.com
-
-  # =========================
-  # 🟢 微信视频号 / 短视频（Channels）
-  # =========================
-  - DOMAIN-SUFFIX,channels.weixin.qq.com
-  - DOMAIN-SUFFIX,finder.video.qq.com
-  - DOMAIN-SUFFIX,v.qq.com
-  - DOMAIN-SUFFIX,video.qq.com
-  - DOMAIN-SUFFIX,i.gtimg.cn
-  - DOMAIN-SUFFIX,vm.gtimg.cn
-  - DOMAIN-SUFFIX,vweixinthumb.tc.qq.com # 视频号缩略图补全
-  - DOMAIN-SUFFIX,vweixinf.tc.qq.com     # 视频号视频流补全
-
-  # =========================
-  # 🔵 视频号 CDN（图片 / 封面 / 动态加载）
-  # =========================
-  - DOMAIN-SUFFIX,mmbiz.qpic.cn
-  - DOMAIN-SUFFIX,mmbiz.qlogo.cn
-  - DOMAIN-SUFFIX,shp.qpic.cn
-
-  # =========================
-  # 🔴 视频号直播（Live Streaming）
-  # =========================
+  # ============================================================
+  # 🔴 直播与实时流
+  # ============================================================
   - DOMAIN-SUFFIX,live.qq.com
   - DOMAIN-SUFFIX,rtc.qq.com
+  - DOMAIN-SUFFIX,txlivecdn.com
+  - DOMAIN-SUFFIX,tlivecdn.com
+  - DOMAIN-SUFFIX,tlivepush.com
 
-  # =========================
-  # 🌐 微信国际版核心 IP 段（极其关键）
-  # 说明：美区 App 会直连这些境外业务节点，被代理拦截必卡顿 spinning
-  # =========================
-  - IP-CIDR,43.156.222.0/24,no-resolve  # 🌟 新加坡/香港核心节点（美区极高频触发）
-  - IP-CIDR,43.156.86.0/24,no-resolve   # 境外数据中心
+  # ============================================================
+  # 🌐 美区/境外业务 IP 兜底（直连强制）
+  # ============================================================
+  - IP-CIDR,43.156.222.0/24,no-resolve
+  - IP-CIDR,43.156.86.0/24,no-resolve
   - IP-CIDR,101.32.104.0/22,no-resolve
   - IP-CIDR,101.32.118.0/24,no-resolve
   - IP-CIDR,101.32.133.0/24,no-resolve
-  - IP-CIDR,101.33.110.0/24,no-resolve  # 境外业务兜底
+  - IP-CIDR,101.33.110.0/24,no-resolve
   - IP-CIDR,129.226.0.0/16,no-resolve
-  - IP-CIDR,162.62.163.63/32,no-resolve # 微信海外特种服务节点
+  - IP-CIDR,162.62.163.63/32,no-resolve
+  - IP-ASN,132203,no-resolve              # 腾讯海外节点常用 ASN
 
-  # =====================
-  # 🎵 抖音（完整保持原样）
-  # =====================
+  # ============================================================
+  # 🚀 视频号/直播 第三方 CDN 兜底
+  # ============================================================
+  - DOMAIN-SUFFIX,cdntip.com
+  - DOMAIN-SUFFIX,wsdvs.com
+  - DOMAIN-SUFFIX,qingcdn.com
+  - DOMAIN-SUFFIX,baishan-cloud.com
+  - DOMAIN-SUFFIX,bsclink.cn
+  - DOMAIN-SUFFIX,footprint.net
+  - DOMAIN-SUFFIX,tencdns.net
+  - DOMAIN-SUFFIX,dnsv1.com
+  - DOMAIN-SUFFIX,tdnsv5.com
+
+  # ============================================================
+  # 其他高频补充（登录/下载/地图/推送等）
+  # ============================================================
+  - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
+  - DOMAIN,btrace.qq.com
+  - DOMAIN,dldir1.qq.com
+  - DOMAIN,dldir1v6.qq.com
+  - DOMAIN,weixin110.qq.com
+  - DOMAIN,wup.imtt.qq.com
+  - DOMAIN-SUFFIX,map.qq.com
+  - DOMAIN-SUFFIX,lbs.gtimg.com
+  - DOMAIN-SUFFIX,up-hl.3g.qq.com
+  - DOMAIN-SUFFIX,yun-hl.3g.qq.com
+  - DOMAIN-SUFFIX,dl.wechat.com
+  - DOMAIN-SUFFIX,update.wechat.com
+  - DOMAIN-SUFFIX,res.wx.qq.com
+  - DOMAIN-SUFFIX,res2.wx.qq.com
+  - DOMAIN-SUFFIX,wxqcloud.qq.com.cn
+
+  # ============================================================
+  # 🎵 抖音
+  # ============================================================
   - DOMAIN-SUFFIX,douyin.com
   - DOMAIN-SUFFIX,douyinpic.com
   - DOMAIN-SUFFIX,douyinvod.com
