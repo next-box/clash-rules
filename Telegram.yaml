@@ -1,6 +1,8 @@
 # ========================================
 # Telegram - 全校验精确看片规则 (精简、零误杀、无冗余)
 # 适用 Clash / Mihomo / Stash / Shadowrocket
+# 更新：2026-07-31
+# 数据源：core.telegram.org/resources/cidr.txt + 多源交叉校验
 # ========================================
 payload:
   # ========================
@@ -10,23 +12,36 @@ payload:
   - DOMAIN-SUFFIX,tx.me
   - DOMAIN-SUFFIX,telegram.me
   - DOMAIN-SUFFIX,telegram.org
+  - DOMAIN-SUFFIX,telegram.dog
+  - DOMAIN-SUFFIX,telegram.space
   - DOMAIN-SUFFIX,tdesktop.com
   - DOMAIN-SUFFIX,telegra.ph
+  - DOMAIN-SUFFIX,legra.ph
   - DOMAIN-SUFFIX,graph.org
   - DOMAIN-SUFFIX,telesco.pe
   - DOMAIN-SUFFIX,tg.dev
   - DOMAIN-SUFFIX,cdn-telegram.org
   - DOMAIN-SUFFIX,telegram-cdn.org
-  - DOMAIN-SUFFIX,telegram.dog
   - DOMAIN-SUFFIX,fragment.com
-    # Web / API
+  - DOMAIN-SUFFIX,comments.app
+  - DOMAIN-SUFFIX,contest.com
+  - DOMAIN-SUFFIX,quiz.directory
+  - DOMAIN-SUFFIX,telega.one
+  - DOMAIN-SUFFIX,stel.com
+  - DOMAIN-SUFFIX,usercontent.dev
+  - DOMAIN-SUFFIX,telegramdownload.com
+
+  # Web / API
   - DOMAIN-SUFFIX,web.telegram.org
+  - DOMAIN-SUFFIX,webk.telegram.org
+  - DOMAIN-SUFFIX,webz.telegram.org
   - DOMAIN-SUFFIX,my.telegram.org
   - DOMAIN-SUFFIX,oauth.telegram.org
   - DOMAIN-SUFFIX,api.telegram.org
+  - DOMAIN-SUFFIX,core.telegram.org
 
   # ========================
-  # Telegram IPv4 (已进行数学去重与最大化聚合)
+  # Telegram IPv4 (官方 + 最大化聚合)
   # ========================
   - IP-CIDR,91.105.192.0/23,no-resolve
   - IP-CIDR,91.108.4.0/22,no-resolve
