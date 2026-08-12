@@ -1,0 +1,113 @@
+payload:
+  # ============================================================
+  # 内容：Bilibili 哔哩哔哩
+  # ============================================================
+  - DOMAIN,apiintl.biliapi.net
+  - DOMAIN,upos-hz-mirrorakam.akamaized.net
+  - DOMAIN-SUFFIX,acg.tv
+  - DOMAIN-SUFFIX,acgvideo.com
+  - DOMAIN-SUFFIX,b23.tv
+  - DOMAIN-SUFFIX,bigfun.cn
+  - DOMAIN-SUFFIX,bigfunapp.cn
+  - DOMAIN-SUFFIX,biliapi.com
+  - DOMAIN-SUFFIX,biliapi.net
+  - DOMAIN-SUFFIX,bilibili.co
+  - DOMAIN-SUFFIX,bilibili.com
+  - DOMAIN-SUFFIX,bilibili.tv
+  - DOMAIN-SUFFIX,biligame.com
+  - DOMAIN-SUFFIX,biligame.net
+  - DOMAIN-SUFFIX,biliintl.co
+  - DOMAIN-SUFFIX,bilivideo.cn
+  - DOMAIN-SUFFIX,bilivideo.com
+  - DOMAIN-SUFFIX,hdslb.com
+  - DOMAIN-SUFFIX,im9.com
+  - DOMAIN-SUFFIX,smtcdns.net
+
+  # ============================================================
+  # 内容：Tuya 涂鸦智能 / 智能生活
+  # ============================================================
+  - DOMAIN-SUFFIX,ismartlife.me
+  - DOMAIN-SUFFIX,smart321.com
+  - DOMAIN-SUFFIX,tuya.com
+  - DOMAIN-SUFFIX,tuyacdn.com
+  - DOMAIN-SUFFIX,tuyaus.com
+
+  # ============================================================
+  # 内容：小红书（主站 + 直播 + 高清图床 / 视频 CDN）
+  # 重点：直播拉流、笔记高清图、短视频
+  # ============================================================
+  - DOMAIN-SUFFIX,xiaohongshu.com          # 主站 / API / 直播间页面
+  - DOMAIN-SUFFIX,xhslink.com              # 分享短链
+  - DOMAIN-SUFFIX,xhscdn.com               # 核心 CDN（直播流、图片、视频）
+  - DOMAIN-SUFFIX,xhscdn.net               # 边缘节点
+  - DOMAIN-SUFFIX,xhspush.com              # 推送与直播互动长连接
+  - DOMAIN-SUFFIX,xhsstatic.com            # 静态资源
+  - DOMAIN-SUFFIX,xhspic.com               # 图片专用
+  - DOMAIN-SUFFIX,xhsvideo.com             # 视频专用
+  - DOMAIN-SUFFIX,redcdn.net               # 内容分发 CDN
+  # 直播 / 视频相关子域（补充，提升直播流畅度）
+  - DOMAIN,live.xhscdn.com
+  - DOMAIN,live-room.xiaohongshu.com
+  - DOMAIN-SUFFIX,sns-video-qc.xhscdn.com
+  - DOMAIN-SUFFIX,sns-video-al.xhscdn.com
+  - DOMAIN-SUFFIX,sns-video-ak.xhscdn.com
+  - DOMAIN-SUFFIX,sns-video-hw.xhscdn.com
+  - DOMAIN-SUFFIX,fe-video-qc.xhscdn.com
+  - DOMAIN-SUFFIX,xhslive-vod.xhscdn.com
+  - DOMAIN-SUFFIX,hey-video.xhscdn.com
+
+  # ============================================================
+  # 内容：抖音 & 字节跳动系（重点直播 / 高清拉流 / 商品卡片）
+  # 合并原规则 + 额外提供规则 + 社区常用直播 CDN 补充
+  # ============================================================
+  # 核心主站 & API
+  - DOMAIN-SUFFIX,douyin.com
+  - DOMAIN-SUFFIX,iesdouyin.com
+  - DOMAIN-SUFFIX,amemv.com
+  - DOMAIN-SUFFIX,snssdk.com
+  - DOMAIN-SUFFIX,zijieapi.com
+  - DOMAIN-SUFFIX,bytedance.com
+  - DOMAIN-SUFFIX,pstatp.com
+  - DOMAIN-SUFFIX,byteimg.com
+  - DOMAIN-SUFFIX,bytegoofy.com
+  - DOMAIN-SUFFIX,bytemast.com
+  - DOMAIN-SUFFIX,ctobsnssdk.com
+  - DOMAIN-SUFFIX,isnssdk.com
+  - DOMAIN-SUFFIX,byteoversea.com
+  - DOMAIN-SUFFIX,ibytedtos.com
+  # 直播专用（重点）
+  - DOMAIN-SUFFIX,live.douyin.com
+  - DOMAIN-SUFFIX,live-vo.douyin.com
+  - DOMAIN-SUFFIX,webcast.amemv.com
+  - DOMAIN-SUFFIX,webcast1-open.douyin.com
+  - DOMAIN-SUFFIX,webcast-open.douyin.com
+  - DOMAIN-SUFFIX,douyinliving.com
+  # 视频 / 点播 / CDN（直播拉流关键）
+  - DOMAIN-SUFFIX,douyincdn.com
+  - DOMAIN-SUFFIX,douyinpic.com
+  - DOMAIN-SUFFIX,douyinvod.com
+  - DOMAIN-SUFFIX,douyinstatic.com
+  - DOMAIN-SUFFIX,idouyinvod.com
+  - DOMAIN-SUFFIX,volcvideo.com
+  - DOMAIN-SUFFIX,volcengine.com
+  - DOMAIN-SUFFIX,volces.com
+  - DOMAIN-SUFFIX,bytescm.com
+  - DOMAIN-SUFFIX,bytegecko.com
+  - DOMAIN-SUFFIX,bytetos.com
+  - DOMAIN-SUFFIX,tos-signed.byted.org
+  - DOMAIN-SUFFIX,lf1-cdn-tos.bytescm.com
+  - DOMAIN-SUFFIX,lf3-cdn-tos.bytescm.com
+  - DOMAIN-SUFFIX,edgesrv.com
+  - DOMAIN-SUFFIX,douyucdn.com
+  # 西瓜 / 其他字节内容互通（直播有时会用到）
+  - DOMAIN-SUFFIX,ixigua.com
+  - DOMAIN-SUFFIX,ixiguavideo.com
+  - DOMAIN-SUFFIX,bdxiguastatic.com
+  - DOMAIN-SUFFIX,bdxiguaimg.com
+  # 补充常用视频流域名（iOS/Android 直播高频）
+  - DOMAIN-SUFFIX,bytev.com
+  - DOMAIN-SUFFIX,bytev04.com
+  - DOMAIN-SUFFIX,bytev4.com
+  - DOMAIN-SUFFIX,zjcdn.com
+  - DOMAIN-SUFFIX,ecombdimg.com
+  - DOMAIN-SUFFIX,bdurl.net

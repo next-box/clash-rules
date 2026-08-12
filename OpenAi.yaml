@@ -54,33 +54,71 @@ payload:
   - DOMAIN-SUFFIX,cdn.grok.x.ai
 
   # =========================================================
-  # 4. GOOGLE GEMINI / AI STUDIO / LABS（全生态补充完善版）
+  # 4. GOOGLE GEMINI / AI STUDIO / LABS / NOTEBOOKLM（優化完整版）
   # =========================================================
-  # ---- 核心 Web 端与新版顶级域名（解决分享链接与新域名打不开） ----
+
+  # ---- 核心 Web 端與頂級域名 ----
   - DOMAIN-SUFFIX,gemini.google
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,notebooklm.google
   - DOMAIN-SUFFIX,notebooklm.google.com
   - DOMAIN-SUFFIX,labs.google
+  - DOMAIN-SUFFIX,labs.google.com
   - DOMAIN-SUFFIX,deepmind.google
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN-SUFFIX,gemma.google
-  # ---- 开发者平台 / AI Studio / MakerSuite ----
-  - DOMAIN,ai.google.dev
-  - DOMAIN,aistudio.google.com
-  - DOMAIN,makersuite.google.com
-  - DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
-  # ---- Vertex AI / API / Code Assist 通讯接口 ----
-  - DOMAIN,generativelanguage.googleapis.com
+  - DOMAIN-SUFFIX,generativeai.google
+  - DOMAIN-SUFFIX,ai.studio
+  - DOMAIN-SUFFIX,flow.google
+  - DOMAIN-SUFFIX,opal.google
+  - DOMAIN-SUFFIX,opal.google.com
+  - DOMAIN-SUFFIX,jules.google
+  - DOMAIN-SUFFIX,jules.google.com
+  - DOMAIN-SUFFIX,antigravity.google
+  - DOMAIN-SUFFIX,antigravity.google.com
+  - DOMAIN-SUFFIX,antigravity-unleash.goog
+
+  # ---- 開發者平台 / AI Studio / MakerSuite ----
+  - DOMAIN-SUFFIX,ai.google.dev
+  - DOMAIN-SUFFIX,aistudio.google.com
+  - DOMAIN-SUFFIX,makersuite.google.com
+  - DOMAIN-SUFFIX,notebook.google.com
+
+  # ---- 關鍵後端 / WebChannel / clients6 接口 ----
+  - DOMAIN-SUFFIX,clients6.google.com
+  - DOMAIN,alkalicore-pa.clients6.google.com
+  - DOMAIN,alkalimakersuite-pa.clients6.google.com
+  - DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+  - DOMAIN,waa-pa.clients6.google.com
+  - DOMAIN,ogads-pa.clients6.google.com
+
+  # ---- Vertex AI / Generative Language / 專屬 API ----
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,vertexai.googleapis.com
   - DOMAIN-SUFFIX,aiplatform.googleapis.com
   - DOMAIN-SUFFIX,cloudaicompanion.googleapis.com
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-  # ---- 移动端 App (iOS/Android) 及 Assistant/Gemini 联动 Backend ----
   - DOMAIN-SUFFIX,assistant-pa.googleapis.com
-  # ---- 谷歌 .google 顶级域名兜底（保证所有 *.google 域名全量出境） ----
-  - DOMAIN-SUFFIX,google
+  - DOMAIN-SUFFIX,aida.googleapis.com
+  - DOMAIN-SUFFIX,aicode.googleapis.com
+  - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
+  - DOMAIN-SUFFIX,geller-pa.googleapis.com
+  - DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
+  - DOMAIN,notebooklm-pa.googleapis.com
+  - DOMAIN,notebooklm.googleapis.com
+  - DOMAIN,cloudcode-pa.googleapis.com
+  - DOMAIN,daily-cloudcode-pa.googleapis.com
+  - DOMAIN,antigravity-pa.googleapis.com
+  - DOMAIN,antigravity.googleapis.com
+
+  # ---- 靜態資源 / CDN（AI 相關）----
+  - DOMAIN-SUFFIX,gemini.gstatic.com
+  - DOMAIN-SUFFIX,aistudiocdn.com          # AI Studio 預覽/生成代碼常用 CDN
+  - DOMAIN-SUFFIX,stitch.withgoogle.com
+
+  # ---- 兜底（可選，視您的 GOOGLE.YAML 覆蓋程度決定是否保留）----
+  # - DOMAIN-SUFFIX,google
 
   # =========================================================
   # 5. MICROSOFT AI / COPILOT / BING / MSN / TEAMS（最终稳定版）
