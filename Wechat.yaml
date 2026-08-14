@@ -77,6 +77,10 @@ payload:
   - DOMAIN-SUFFIX,tencdns.net
   - DOMAIN-SUFFIX,dnsv1.com
   - DOMAIN-SUFFIX,tdnsv5.com
+  # 补全腾讯真实切片 CDN（注意带 s 和 .net）
+  - DOMAIN-SUFFIX,cdntips.net
+  - DOMAIN-SUFFIX,cdntip.com
+  - DOMAIN-SUFFIX,qq.com
 
   # ---------- 微信硬编码裸 IP 直连网段（核心 BGP + 境外中转） ----------
   - IP-CIDR,157.148.0.0/16,no-resolve
