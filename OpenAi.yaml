@@ -54,32 +54,39 @@ payload:
   - DOMAIN-SUFFIX,cdn.grok.x.ai
 
   # =========================================================
-  # ④ Google AI / Gemini 全家桶
-  # Gemini 網頁 + AI Studio + API + NotebookLM + Google 登入
-  # 原則：只代理 AI 相關 Google 域名，不代理整個 Google
+  # ④ Google AI / Gemini（加強版）
   # =========================================================
-  # Gemini / AI Studio / NotebookLM / 舊入口
+
+  # Gemini 主入口
   - DOMAIN,gemini.google.com
+  - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN,aistudio.google.com
   - DOMAIN,ai.google.dev
   - DOMAIN,notebooklm.google.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,makersuite.google.com
-  # Google 帳號登入 / OAuth（重要，防地區判定）
-  - DOMAIN,accounts.google.com
+
+  # 帳號 / 登入 / 安全驗證（最重要）
+  - DOMAIN-SUFFIX,accounts.google.com
   - DOMAIN,oauth2.googleapis.com
-  # Gemini API / Google API 基礎設施
+  - DOMAIN,myaccount.google.com
+  - DOMAIN-SUFFIX,google.com
+
+  # API 與後端
   - DOMAIN,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,googleapis.com
-  # 關鍵後端（白屏 / 卡頓高發，補這幾個）
   - DOMAIN-SUFFIX,clients6.google.com
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
   - DOMAIN,alkalicore-pa.clients6.google.com
   - DOMAIN,proactivebackend-pa.googleapis.com
-  # Gemini 頁面靜態資源 / 使用者內容 / AI 檔案
+  - DOMAIN,waa-pa.clients6.google.com
+
+  # 靜態資源
   - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,googleusercontent.com
-  # Google AI / DeepMind
+  - DOMAIN-SUFFIX,gemini.gstatic.com
+
+  # DeepMind
   - DOMAIN-SUFFIX,deepmind.google
   - DOMAIN-SUFFIX,deepmind.com
 
