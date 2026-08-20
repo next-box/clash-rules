@@ -1,61 +1,107 @@
 payload:
   # ============================================================
-  # 微信 / WeChat 核心直连强化完全体（已去重、去冗余、补全新调度流）
-  # 适用：美区/境外 ID 微信在中国大陆使用，强制走本地/直连，彻底杜绝视频号卡顿
-  # 覆盖：通信长连接、视频号/直播新调度域、朋友圈 CDN、小程序、微信支付、原生 BGP 网段
+  # 微信 / WeChat 核心 + 美区/境外直连强化
+  # 适用：美区/境外 ID 在中国大陆使用，强制走本地/直连，减少卡顿与支付异地问题
+  # 覆盖：核心通信、长连接、视频号、直播、朋友圈、小程序、支付、CDN
   # ============================================================
 
-  # ---------- 核心域名 & 通信长连接 ----------
+  # ---------- 核心域名 & 长连接 ----------
   - DOMAIN-SUFFIX,weixin.qq.com
   - DOMAIN-SUFFIX,wechat.com
   - DOMAIN-SUFFIX,weixin.com
-  - DOMAIN-SUFFIX,wx.qq.com
-  - DOMAIN-SUFFIX,wxs.qq.com
-  - DOMAIN-SUFFIX,wx.gtimg.com
   - DOMAIN-SUFFIX,wechatos.net
   - DOMAIN-SUFFIX,wechatlegal.net
   - DOMAIN-SUFFIX,weixinbridge.com
   - DOMAIN-SUFFIX,weixinsxy.com
   - DOMAIN-SUFFIX,wechatapp.com
+  - DOMAIN-SUFFIX,wx.qq.com
+  - DOMAIN-SUFFIX,wxs.qq.com
+  - DOMAIN-SUFFIX,wx.gtimg.com
+  - DOMAIN,dns.weixin.qq.com
   - DOMAIN-SUFFIX,dns.weixin.qq.com.cn
+  - DOMAIN-SUFFIX,long.weixin.qq.com
+  - DOMAIN-SUFFIX,routerlong.weixin.qq.com
+  - DOMAIN-SUFFIX,notifylong.weixin.qq.com
+  - DOMAIN-SUFFIX,sglong.weixin.qq.com
+  - DOMAIN-SUFFIX,frlong.weixin.qq.com
   - DOMAIN,weixin110.qq.com
   - DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
 
-  # ---------- 视频号 / 直播 / 短视频核心（补全新调度域） ----------
-  - DOMAIN-SUFFIX,tlivesource.com
-  - DOMAIN-SUFFIX,vwechat.com
-  - DOMAIN-SUFFIX,video.qq.com
-  - DOMAIN-SUFFIX,live.qq.com
+  # ---------- 视频号 / 直播 / 短视频（重点解决卡顿） ----------
+  - DOMAIN-SUFFIX,channels.weixin.qq.com
+  - DOMAIN-SUFFIX,finder.weixin.qq.com
+  - DOMAIN-SUFFIX,finder.video.qq.com
+  - DOMAIN-SUFFIX,short.weixin.qq.com
+  - DOMAIN-SUFFIX,extshort.weixin.qq.com
+  - DOMAIN-SUFFIX,szextshort.weixin.qq.com
+  - DOMAIN-SUFFIX,szminorshort.weixin.qq.com
+  - DOMAIN-SUFFIX,live.weixin.qq.com
+  - DOMAIN-SUFFIX,find.weixin.qq.com
+  - DOMAIN,video.weixin.qq.com
+  - DOMAIN,vweixinf.tc.qq.com
+  - DOMAIN-SUFFIX,vweixinthumb.tc.qq.com
+  - DOMAIN-SUFFIX,socwxsns.video.qq.com
+  - DOMAIN,snsvideo.c2c.wechat.com
   - DOMAIN-SUFFIX,v.qq.com
+  - DOMAIN-SUFFIX,video.qq.com
   - DOMAIN-SUFFIX,vd.qq.com
-  - DOMAIN-SUFFIX,rtc.qq.com
+  - DOMAIN,soup.v.qq.com
   - DOMAIN-SUFFIX,wxlivecdn.com
   - DOMAIN-SUFFIX,qlivecdn.com
   - DOMAIN-SUFFIX,txlivecdn.com
   - DOMAIN-SUFFIX,tlivecdn.com
   - DOMAIN-SUFFIX,tlivepush.com
+  - DOMAIN-SUFFIX,live.qq.com
+  - DOMAIN-SUFFIX,rtc.qq.com
 
-  # ---------- 图片 / 朋友圈 / 基础静态 CDN ----------
+  # ---------- 媒体 / 朋友圈 / 图片 CDN ----------
   - DOMAIN-SUFFIX,qpic.cn
   - DOMAIN-SUFFIX,qlogo.cn
+  - DOMAIN-SUFFIX,wx.qlogo.cn
+  - DOMAIN-SUFFIX,shp.qlogo.cn
+  - DOMAIN-SUFFIX,shp.qpic.cn
+  - DOMAIN-SUFFIX,mmbiz.qpic.cn
+  - DOMAIN-SUFFIX,mmbiz.qlogo.cn
+  - DOMAIN-SUFFIX,mmsns.qpic.cn
+  - DOMAIN-SUFFIX,sns.qpic.cn
+  - DOMAIN-SUFFIX,mmcdn.qpic.cn
+  - DOMAIN-SUFFIX,mmchatpic.qpic.cn
+  - DOMAIN-SUFFIX,cmmsns.qpic.cn
+  - DOMAIN-SUFFIX,ugc.qpic.cn
+  - DOMAIN-SUFFIX,store.qpic.cn
   - DOMAIN-SUFFIX,tc.qq.com
   - DOMAIN-SUFFIX,gtimg.com
   - DOMAIN-SUFFIX,gtimg.cn
   - DOMAIN-SUFFIX,myqcloud.com
+  - DOMAIN-SUFFIX,res.wx.qq.com
+  - DOMAIN-SUFFIX,res2.wx.qq.com
 
   # ---------- 小程序 / Webview ----------
   - DOMAIN-SUFFIX,servicewechat.com
   - DOMAIN-SUFFIX,servicewechat.cn
+  - DOMAIN-SUFFIX,wxapp.tc.qq.com
+  - DOMAIN-SUFFIX,wxs.qq.com
+  - DOMAIN-SUFFIX,open.weixin.qq.com
+  - DOMAIN-SUFFIX,api.weixin.qq.com
+  - DOMAIN-SUFFIX,mp.weixin.qq.com
 
   # ---------- 微信支付 ----------
   - DOMAIN-SUFFIX,tenpay.com
   - DOMAIN-SUFFIX,wechatpay.com
   - DOMAIN-SUFFIX,wechatpay.cn
   - DOMAIN-SUFFIX,wxpay.cn
+  - DOMAIN-SUFFIX,pay.weixin.qq.com
+  - DOMAIN-SUFFIX,payapp.weixin.qq.com
+  - DOMAIN-SUFFIX,mch.weixin.qq.com
+  - DOMAIN-SUFFIX,api.mch.weixin.qq.com
+  - DOMAIN-SUFFIX,api2.mch.weixin.qq.com
+  - DOMAIN-SUFFIX,wx.tenpay.com
 
-  # ---------- 下载 / 地图 / 腾讯云基础服务 ----------
+  # ---------- 下载 / 更新 / 地图 / 推送等 ----------
   - DOMAIN,dldir1.qq.com
   - DOMAIN,dldir1v6.qq.com
+  - DOMAIN-SUFFIX,dl.wechat.com
+  - DOMAIN-SUFFIX,update.wechat.com
   - DOMAIN-SUFFIX,map.qq.com
   - DOMAIN-SUFFIX,lbs.gtimg.com
   - DOMAIN-SUFFIX,up-hl.3g.qq.com
@@ -67,7 +113,7 @@ payload:
   - DOMAIN-SUFFIX,cloud.tencent.com
   - DOMAIN-SUFFIX,tencent-cloud.net
 
-  # ---------- 第三方 CDN 兜底（视频号常用切片节点） ----------
+  # ---------- 第三方 CDN 兜底（视频号常用） ----------
   - DOMAIN-SUFFIX,cdntip.com
   - DOMAIN-SUFFIX,wsdvs.com
   - DOMAIN-SUFFIX,qingcdn.com
@@ -77,14 +123,8 @@ payload:
   - DOMAIN-SUFFIX,tencdns.net
   - DOMAIN-SUFFIX,dnsv1.com
   - DOMAIN-SUFFIX,tdnsv5.com
-  # 补全腾讯真实切片 CDN（注意带 s 和 .net）
-  - DOMAIN-SUFFIX,cdntips.net
-  - DOMAIN-SUFFIX,cdntip.com
-  - DOMAIN-SUFFIX,qq.com
 
-  # ---------- 微信硬编码裸 IP 直连网段（核心 BGP + 境外中转） ----------
-  - IP-CIDR,157.148.0.0/16,no-resolve
-  - IP-CIDR,183.6.0.0/16,no-resolve
+  # ---------- 美区/境外节点 IP 兜底（强制直连） ----------
   - IP-CIDR,43.156.86.0/24,no-resolve
   - IP-CIDR,43.156.222.0/24,no-resolve
   - IP-CIDR,101.32.104.0/22,no-resolve
@@ -93,4 +133,14 @@ payload:
   - IP-CIDR,101.33.110.0/24,no-resolve
   - IP-CIDR,129.226.0.0/16,no-resolve
   - IP-CIDR,162.62.163.63/32,no-resolve
+  # 常见单点（来自原 GS 规则，保留兼容）
+  - IP-CIDR,101.32.104.4/32,no-resolve
+  - IP-CIDR,101.32.104.41/32,no-resolve
+  - IP-CIDR,101.32.104.56/32,no-resolve
+  - IP-CIDR,101.32.118.25/32,no-resolve
+  - IP-CIDR,101.32.133.16/32,no-resolve
+  - IP-CIDR,101.32.133.53/32,no-resolve
+  - IP-CIDR,101.32.133.209/32,no-resolve
+  - IP-CIDR,129.226.3.47/32,no-resolve
+  - IP-CIDR,129.226.107.244/32,no-resolve
   - IP-ASN,132203,no-resolve   # 腾讯海外常用 ASN（HK/SG 等）
