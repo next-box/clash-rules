@@ -1,31 +1,67 @@
 payload:
-  # 内容：YouTube（完整增强版）
-  # Reference: Blackmatrix7 + Mihomo community
-  # 主站
+  # =========================================================
+  # YouTube Ultimate 2026 (Full Edition)
+  # =========================================================
+  
+  # ---------------------------------------------------------
+  # 1. Core Website & Short Links (主站与短链)
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,youtube.com
   - DOMAIN-SUFFIX,youtu.be
   - DOMAIN-SUFFIX,youtube-nocookie.com
-  # API（非常重要）
+  - DOMAIN-SUFFIX,yt.be
+  - DOMAIN-SUFFIX,video.google.com
+
+  # ---------------------------------------------------------
+  # 2. Core API & Dynamic CDN (核心 API 与调度调度)
+  # ---------------------------------------------------------
   - DOMAIN,youtubei.googleapis.com
+  - DOMAIN,jnn-pa.googleapis.com
   - DOMAIN-SUFFIX,youtube.googleapis.com
   - DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com
-  # 视频流（核心）
+  - DOMAIN-SUFFIX,wide-youtube.l.google.com
+  - DOMAIN-SUFFIX,youtube-ui.l.google.com
+
+  # ---------------------------------------------------------
+  # 3. Video Streaming CDN (视频流媒体核心 - 最关键)
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,googlevideo.com
-  # 图片 / 缩略图 / 头像
-  - DOMAIN-SUFFIX,ytimg.com
-  - DOMAIN-SUFFIX,ggpht.com
-  # Google 视频 CDN
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt2.com
-  # APP 兼容
-  - DOMAIN-SUFFIX,withyoutube.com
-  # 子服务
+  - DOMAIN-SUFFIX,gvt3.com
+
+  # ---------------------------------------------------------
+  # 4. Images / Thumbnails / Avatars (封面、缩略图与头像)
+  # ---------------------------------------------------------
+  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,yt3.ggpht.com
+  - DOMAIN-SUFFIX,ytimg.l.google.com
+
+  # ---------------------------------------------------------
+  # 5. Static Assets & Framework (前端静态资源)
+  # ---------------------------------------------------------
+  - DOMAIN-SUFFIX,gstatic.com
+
+  # ---------------------------------------------------------
+  # 6. Sub Services & Apps (子服务与独立 App)
+  # ---------------------------------------------------------
   - DOMAIN-SUFFIX,youtubekids.com
   - DOMAIN-SUFFIX,youtubegaming.com
   - DOMAIN-SUFFIX,youtubeeducation.com
   - DOMAIN-SUFFIX,youtubemobilesupport.com
-  # ...（更多国家域名可直接用下面 RULE-SET）
-  # IP 段（强烈建议加上，提升稳定性）
+  - DOMAIN-SUFFIX,withyoutube.com
+
+  # ---------------------------------------------------------
+  # 7. Google 核心关联支持 (修正错别字)
+  # ---------------------------------------------------------
+  - DOMAIN-SUFFIX,google.com
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,googleusercontent.com
+
+  # ---------------------------------------------------------
+  # 8. IP-CIDR 广播路由加速段
+  # ---------------------------------------------------------
   - IP-CIDR,172.110.32.0/21,no-resolve
   - IP-CIDR,216.73.80.0/20,no-resolve
   - IP-CIDR6,2620:120:e000::/40,no-resolve
