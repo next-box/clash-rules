@@ -54,7 +54,7 @@ payload:
   - DOMAIN-SUFFIX,cdn.grok.x.ai
 
   # =========================================================
-  # 4. GOOGLE GEMINI / AI STUDIO / LABS / NOTEBOOKLM（優化完整版 - 防地區限制）
+  # 4. GOOGLE GEMINI / AI STUDIO / LABS / NOTEBOOKLM（優化完整版 - 防地區限制 & iPhone App 適配）
   # =========================================================
 
   # ---- 核心 Web 端與頂級域名 ----
@@ -90,6 +90,8 @@ payload:
   - DOMAIN,alkalicore-pa.clients6.google.com
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
   - DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+  - DOMAIN,webchannel-pa.clients6.google.com      # iPhone App 雙向長鏈接通訊
+  - DOMAIN,autopush-pa.clients6.google.com        # iPhone App 推送與狀態同步
   - DOMAIN,waa-pa.clients6.google.com
   - DOMAIN,ogads-pa.clients6.google.com
 
@@ -99,7 +101,9 @@ payload:
   - DOMAIN-SUFFIX,aiplatform.googleapis.com
   - DOMAIN-SUFFIX,cloudaicompanion.googleapis.com
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+  - DOMAIN-SUFFIX,proactivesharing-pa.googleapis.com # iPhone App 主動卡片與後端鏈接
   - DOMAIN-SUFFIX,assistant-pa.googleapis.com
+  - DOMAIN-SUFFIX,speechs3.googleapis.com           # iPhone Gemini 語音輸入與實時通話
   - DOMAIN-SUFFIX,aida.googleapis.com
   - DOMAIN-SUFFIX,aicode.googleapis.com
   - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
@@ -111,13 +115,22 @@ payload:
   - DOMAIN,daily-cloudcode-pa.googleapis.com
   - DOMAIN,antigravity-pa.googleapis.com
   - DOMAIN,antigravity.googleapis.com
-  - DOMAIN,optimizationguide-pa.googleapis.com   # Android / 優化相關（新增）
-  - DOMAIN,jnn-pa.googleapis.com                 # 新增
+  - DOMAIN,optimizationguide-pa.googleapis.com   # Android / 優化相關
+  - DOMAIN,jnn-pa.googleapis.com
+  - DOMAIN,peoplestack-pa.googleapis.com          # iPhone 用戶資料與頭像聯動
 
-  # ---- 帳號 / 登入 / OAuth（防地區判定最重要）----
+  # ---- iPhone App 核心啟動與 Firebase 依賴（解決無法鏈接、重試的關鍵）----
+  - DOMAIN-SUFFIX,firebaseinstallations.googleapis.com # 設備註冊與安全握手
+  - DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com  # 遠程開關下發
+  - DOMAIN-SUFFIX,firebaselogging.googleapis.com
+  - DOMAIN-SUFFIX,identitytoolkit.googleapis.com
+
+  # ---- 帳號 / 登入 / OAuth / 通用 API（防地區判定與 App 授權）----
   - DOMAIN-SUFFIX,accounts.google.com
+  - DOMAIN-SUFFIX,apis.google.com               # iPhone App 授權與配置拉取必需
   - DOMAIN,oauth2.googleapis.com
   - DOMAIN,www.googleapis.com
+  - DOMAIN,content.googleapis.com
 
   # ---- 靜態資源 / CDN（AI 相關，漏了會半載入觸發限制）----
   - DOMAIN-SUFFIX,gemini.gstatic.com
