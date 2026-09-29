@@ -1,19 +1,29 @@
 payload:
   # =========================
-  # Google 核心服务（基础域名）
+  # Google 核心服务（基础域名与顶级域）
   # =========================
   - DOMAIN-SUFFIX,google.com
+  - DOMAIN-SUFFIX,google
+  - DOMAIN-SUFFIX,goog
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,googleapis.cn
   - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,gstatic.cn
   - DOMAIN-SUFFIX,googleusercontent.com
   - DOMAIN-SUFFIX,g.co
+  - DOMAIN-SUFFIX,goo.gl
+  - DOMAIN-SUFFIX,g.page
   - DOMAIN-SUFFIX,ggpht.com
   - DOMAIN-SUFFIX,googlevideo.com
   - DOMAIN-SUFFIX,ytimg.com
   - DOMAIN-SUFFIX,google.cn
-  - DOMAIN-SUFFIX,googleapis.cn
+
+  # =========================
+  # 地区分流域名（根据需要保留/增减）
+  # =========================
+  - DOMAIN-SUFFIX,google.com.hk
+  - DOMAIN-SUFFIX,google.co.jp
+  - DOMAIN-SUFFIX,google.com.tw
 
   # =========================
   # 登录 / 账户体系（Gmail、Authenticator 核心依赖）
@@ -22,13 +32,14 @@ payload:
   - DOMAIN-SUFFIX,myaccount.google.com
   - DOMAIN-SUFFIX,apis.google.com
   - DOMAIN-SUFFIX,login.google.com
-  - DOMAIN-SUFFIX,mail.google.com          # Gmail 核心
+  - DOMAIN-SUFFIX,mail.google.com
   - DOMAIN-SUFFIX,gmail.com
   - DOMAIN-SUFFIX,googlemail.com
 
   # =========================
-  # Google Search / Analytics / Ads
+  # Google Search / Analytics / Ads / 验证码
   # =========================
+  - DOMAIN-SUFFIX,recaptcha.net
   - DOMAIN-SUFFIX,googleadservices.com
   - DOMAIN-SUFFIX,google-analytics.com
   - DOMAIN-SUFFIX,googlesyndication.com
@@ -54,7 +65,7 @@ payload:
   - DOMAIN-SUFFIX,clients6.google.com
 
   # =========================
-  # Google Voice（新增重点）
+  # Google Voice / 通信核心
   # =========================
   - DOMAIN-SUFFIX,voice.google.com
   - DOMAIN-SUFFIX,telephony.goog
@@ -67,8 +78,11 @@ payload:
   # =========================
   - DOMAIN-SUFFIX,1e100.net
   - DOMAIN-SUFFIX,2mdn.net
+  - DOMAIN-SUFFIX,gvt0.com
   - DOMAIN-SUFFIX,gvt1.com
   - DOMAIN-SUFFIX,gvt2.com
+  - DOMAIN-SUFFIX,gvt3.com
+  - DOMAIN-SUFFIX,googlezip.net
   - DOMAIN-SUFFIX,dl.google.com
   - DOMAIN-SUFFIX,fonts.googleapis.com
   - DOMAIN-SUFFIX,fonts.gstatic.com
@@ -79,16 +93,19 @@ payload:
   - DOMAIN-SUFFIX,pki.goog
 
   # =========================
-  # Firebase / Push / Authenticator 相关（推送、Crash 等）
+  # Firebase / Push / Authenticator（推送、Crash、数据库）
   # =========================
   - DOMAIN-SUFFIX,firebase.googleapis.com
+  - DOMAIN-SUFFIX,firebaseio.com
+  - DOMAIN-SUFFIX,firebaseapp.com
   - DOMAIN-SUFFIX,crashlytics.googleapis.com
   - DOMAIN-SUFFIX,app-measurement.com
   - DOMAIN-SUFFIX,clientservices.googleapis.com
 
   # =========================
-  # 其他常用 Google 子域（补充全面性）
+  # 其他常用 Google 子域及产品
   # =========================
+  - DOMAIN-SUFFIX,android.com
   - DOMAIN-SUFFIX,play.google.com
   - DOMAIN-SUFFIX,drive.google.com
   - DOMAIN-SUFFIX,photos.google.com
@@ -99,10 +116,13 @@ payload:
   # =========================
   # IP 段（Google 常用范围，no-resolve 防泄漏）
   # =========================
+  - IP-CIDR,142.250.0.0/15,no-resolve
   - IP-CIDR,74.125.0.0/16,no-resolve
   - IP-CIDR,173.194.0.0/16,no-resolve
   - IP-CIDR,216.58.192.0/18,no-resolve
   - IP-CIDR,172.217.0.0/16,no-resolve
   - IP-CIDR,64.233.160.0/19,no-resolve
+  - IP-CIDR,108.177.0.0/17,no-resolve
+  - IP-CIDR,209.85.128.0/17,no-resolve
   # Google Voice 媒体专用
   - IP-CIDR,74.125.39.0/24,no-resolve
