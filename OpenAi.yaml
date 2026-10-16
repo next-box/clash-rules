@@ -54,12 +54,13 @@ payload:
   - DOMAIN-SUFFIX,cdn.grok.x.ai
 
   # =========================================================
-  # 4. GOOGLE GEMINI / AI STUDIO / LABS / NOTEBOOKLM（iPhone 秒连 + Win10 防报错终极定稿版）
+  # 4. GOOGLE GEMINI / AI STUDIO / LABS / NOTEBOOKLM（100% 复原 Win10 成功版域名 + 排除 DNS 干扰）
   # =========================================================
 
   # ---- 核心 Web 端與頂級域名 ----
   - DOMAIN-SUFFIX,gemini.google
   - DOMAIN-SUFFIX,share.gemini.google
+  - DOMAIN-SUFFIX,ai.google
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,notebooklm.google
@@ -86,8 +87,9 @@ payload:
   - DOMAIN-SUFFIX,makersuite.google.com
   - DOMAIN-SUFFIX,notebook.google.com
 
-  # ---- 關鍵後端 / WebChannel / clients6 接口 ----
+  # ---- 關鍵後端 / WebChannel / clients 接口（完整保留 Win10 成功版）----
   - DOMAIN-SUFFIX,clients6.google.com
+  - DOMAIN-SUFFIX,clients4.google.com               # 【关键复原】Win10 浏览器会话与账号校验必需
   - DOMAIN,alkalicore-pa.clients6.google.com
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
   - DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
@@ -98,7 +100,7 @@ payload:
   - DOMAIN,waa-pa.clients6.google.com
   - DOMAIN,ogads-pa.clients6.google.com
 
-  # ---- Vertex AI / Generative Language / 專屬 API ----
+  # ---- Vertex AI / Generative Language / 專屬 API（完整保留 Win10 成功版）----
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,vertexai.googleapis.com
   - DOMAIN-SUFFIX,aiplatform.googleapis.com
@@ -112,7 +114,9 @@ payload:
   - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
   - DOMAIN-SUFFIX,geller-pa.googleapis.com
   - DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
-  - DOMAIN-SUFFIX,people-pa.googleapis.com          # Win10 網頁端帳號上下文同步（關鍵補回）
+  - DOMAIN-SUFFIX,people-pa.googleapis.com          # Win10 網頁端帳號上下文同步
+  - DOMAIN-SUFFIX,content-push.googleapis.com       # 【关键复原】Win10 網頁端數據推送流
+  - DOMAIN-SUFFIX,storage.googleapis.com            # 【关键复原】Win10 網頁端資源與組件接口
   - DOMAIN,notebooklm-pa.googleapis.com
   - DOMAIN,notebooklm.googleapis.com
   - DOMAIN,cloudcode-pa.googleapis.com
@@ -123,23 +127,24 @@ payload:
   - DOMAIN,jnn-pa.googleapis.com
   - DOMAIN,peoplestack-pa.googleapis.com          # iPhone 用戶資料與頭像聯動
 
-  # ---- iPhone App 核心啟動與 Firebase 依賴（解決無法鏈接、重試的關鍵）----
+  # ---- iPhone App 核心啟動與 Firebase 依賴 ----
   - DOMAIN-SUFFIX,firebaseinstallations.googleapis.com # 設備註冊與安全握手
   - DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com  # 遠程開關下發
   - DOMAIN-SUFFIX,firebaselogging.googleapis.com
   - DOMAIN-SUFFIX,identitytoolkit.googleapis.com
 
-  # ---- 帳號 / 登入 / OAuth / Win10 網頁防報錯核心鏈 ----
+  # ---- 帳號 / 登入 / 桌面端防報錯核心鏈（完整保留 Win10 成功版）----
   - DOMAIN-SUFFIX,accounts.google.com
   - DOMAIN-SUFFIX,myaccount.google.com          # Win10 帳號狀態校驗
   - DOMAIN-SUFFIX,ogs.google.com                # Win10 網頁右上角帳號組件心跳
   - DOMAIN-SUFFIX,apis.google.com               # iPhone App 與網頁端授權拉取必需
-  - DOMAIN-SUFFIX,recaptcha.net                 # Win10 網頁靜默風控驗證
-  - DOMAIN,play.google.com                      # Win10 Boq 網頁框架 /log 鑑權同步（關鍵補回）
-  - DOMAIN,csp.withgoogle.com                   # Win10 網頁安全策略握手（關鍵補回）
+  - DOMAIN-SUFFIX,recaptcha.net                 # Win10 網頁發送對話時的靜默風控驗證
+  - DOMAIN,play.google.com                      # Win10 Boq 網頁框架 /log 會話狀態同步
+  - DOMAIN,csp.withgoogle.com                   # Win10 網頁安全策略校驗
   - DOMAIN,oauth2.googleapis.com
   - DOMAIN,www.googleapis.com
   - DOMAIN,content.googleapis.com
+  - DOMAIN,fonts.googleapis.com                 # 【关键复原】Win10 網頁字體與跨域預檢
 
   # ---- 靜態資源 / CDN（AI 相關，漏了會半載入觸發限制）----
   - DOMAIN-SUFFIX,gemini.gstatic.com
@@ -148,7 +153,7 @@ payload:
   - DOMAIN-SUFFIX,aistudiocdn.com
   - DOMAIN-SUFFIX,stitch.withgoogle.com
 
-  # ---- 兜底（務必保持註釋關閉，防止劫持 dns.google 導致 iPhone 卡頓）----
+  # ---- 兜底（保持註釋關閉，防止劫持 dns.google 拖慢 iPhone）----
   # - DOMAIN-SUFFIX,google
 
   # =========================================================
