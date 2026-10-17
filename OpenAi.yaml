@@ -152,6 +152,12 @@ payload:
   - DOMAIN-SUFFIX,googleusercontent.com
   - DOMAIN-SUFFIX,aistudiocdn.com
   - DOMAIN-SUFFIX,stitch.withgoogle.com
+  
+  # ---- Win10 桌面端网页版高频防报错补全域 ----
+  - DOMAIN-SUFFIX,clients2.google.com
+  - DOMAIN-SUFFIX,play.googleapis.com
+  - DOMAIN-SUFFIX,play.google.com
+  - DOMAIN-SUFFIX,apis.google.com
 
   # ---- 兜底（保持註釋關閉，防止劫持 dns.google 拖慢 iPhone）----
   # - DOMAIN-SUFFIX,google
