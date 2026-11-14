@@ -1,36 +1,101 @@
 payload:
-  # 内容：ARLO
-  # ARLO
-  # --- 域名部分 (控制流与登录) ---
+  # ============================================================
+  # 规则集：Arlo.yaml (Netgear / Arlo 智能安防监控全链路专属分流)
+  # 覆盖：控制流 / 实时视频(MCS&WebRTC) / 固件更新 / 认证 / 老设备首次激活
+  # 校验：已剔除 edgekey.net / KEYWORD,arlo / 泛okta / 广告遥测 / Cloudflare与CloudFront公共IP
+  # ============================================================
+
+  # ============================================================
+  # 01. 核心业务主域名后缀 (全面覆盖新版与跨代云底座)
+  # ============================================================
   - DOMAIN-SUFFIX,arlo.com
-  - DOMAIN-SUFFIX,netgear.com
-  - DOMAIN-SUFFIX,okta.com
   - DOMAIN-SUFFIX,arloxcld.com
   - DOMAIN-SUFFIX,ngxcld.com
-  # --- 核心子域名 ---
-  - DOMAIN-SUFFIX,auth.arlo.com
+  - DOMAIN-SUFFIX,ngvcloud.com             # 初代 Netgear Video Cloud (老基站/旧固件激活关键域)
+  - DOMAIN-SUFFIX,arlocloud.com
+  - DOMAIN-SUFFIX,arlosmart.com
+
+  # ============================================================
+  # 02. 历史兼容与老设备激活 / 旧固件升级 / 硬件时钟校准 (重中之重)
+  # ============================================================
+  - DOMAIN-SUFFIX,arlo.netgear.com
+  - DOMAIN-SUFFIX,netgear.com              # 覆盖网件时期遗留激活、定位与固件分发服务
+  # 老基站通电首次 SSL 握手必过的 NTP 时钟同步服务器 (防出厂时间错误导致证书失效无法激活)
+  - DOMAIN,ntp.arlo.com
+  - DOMAIN,time.arlo.com
+  - DOMAIN,time1.netgear.com
+  - DOMAIN,time2.netgear.com
+  - DOMAIN,time3.netgear.com
+  - DOMAIN,time4.netgear.com
+  # 老设备区域定位与跨代过渡固件 OTA 升级服务器
+  - DOMAIN,devicelocation.netgear.com
+  - DOMAIN,updates1.netgear.com
+  - DOMAIN,http.fw.updates1.netgear.com
+  - DOMAIN-SUFFIX,updates.arlo.com
+  - DOMAIN,fw.updates1.arlo.com
+  - DOMAIN-SUFFIX,updates.arloxcld.com
+  - DOMAIN-SUFFIX,updates.ngxcld.com
+
+  # ============================================================
+  # 03. 设备注册上线、MQTT 控制流与状态同步关键子域
+  # ============================================================
+  - DOMAIN-SUFFIX,registration.arloxcld.com
+  - DOMAIN-SUFFIX,registration.ngxcld.com
+  - DOMAIN-SUFFIX,advisor.arloxcld.com
+  - DOMAIN-SUFFIX,advisor.ngxcld.com
+  - DOMAIN-SUFFIX,presence.arloxcld.com
+  - DOMAIN-SUFFIX,presence.ngxcld.com
+  - DOMAIN-SUFFIX,broker.arloxcld.com      # 基站 MQTT 实时唤醒与控制流代理
+  - DOMAIN-SUFFIX,broker.ngxcld.com
+  - DOMAIN-SUFFIX,mqtt.arlo.com
   - DOMAIN-SUFFIX,api.arlo.com
   - DOMAIN-SUFFIX,my.arlo.com
-  - DOMAIN-SUFFIX,mcs.arlo.com
-  - DOMAIN-SUFFIX,updates.arlo.com
-  - DOMAIN-SUFFIX,messaging.arlo.com
-  - DOMAIN-SUFFIX,presence.arloxcld.com
-  - DOMAIN-SUFFIX,registration.arloxcld.com
   - DOMAIN-SUFFIX,ocapi-app.arlo.com
+  - DOMAIN-SUFFIX,messaging.arlo.com
   - DOMAIN-SUFFIX,deviceapi.messaging.arlo.com
-  - DOMAIN-SUFFIX,edgekey.net
-  - DOMAIN-KEYWORD,arlo
-  # --- 手机APP部分 (控制流与登录) ---
-  - DOMAIN-SUFFIX,launchdarkly.com
-  - DOMAIN-SUFFIX,app-measurement.com
-  #- DOMAIN,api.swrve.com
-  #- DOMAIN-SUFFIX,swrve.com
-  #- DOMAIN-SUFFIX,amplitude.com
+
+  # ============================================================
+  # 04. 实时视频流 (Live Stream)、云录像回放与双向语音对讲 (MCS / WebRTC / SIP)
+  # ============================================================
+  - DOMAIN-SUFFIX,mcs.arlo.com             # Media Cloud Services 实时视频流核心
+  - DOMAIN-SUFFIX,mcs.arloxcld.com
+  - DOMAIN-SUFFIX,sip.arlo.com             # 摄像头双向语音对讲与视频呼叫信令
+  - DOMAIN-SUFFIX,sip.arloxcld.com
+  - DOMAIN-SUFFIX,webrtc.arlo.com
+  - DOMAIN-SUFFIX,turn.arlo.com
+  - DOMAIN-SUFFIX,stun.arlo.com
+  - DOMAIN-SUFFIX,arse.arlo.com
+  - DOMAIN-SUFFIX,d2.arlo.com
+
+  # ============================================================
+  # 05. 账号登录、两步验证 (MFA) 与 App 激活向导专属端点 (精准收窄零误伤)
+  # ============================================================
+  # Okta 登录认证 (仅限 Arlo 专属子域，不劫持其他企业 Okta)
+  - DOMAIN-SUFFIX,arlo.okta.com
+  # PingOne 两步验证与设备令牌核验
+  - DOMAIN,api.pingone.com
   - DOMAIN,api.pingone.eu
-  - DOMAIN,cdn.cookielaw.org
-  #- DOMAIN-SUFFIX,doubleclick.net
-  - DOMAIN-SUFFIX,onetrust.io
-  # --- IP段部分: 亚太/新加坡接入 (视频流核心) ---
+  - DOMAIN,auth.pingone.com
+  - DOMAIN,auth.pingone.eu
+  - DOMAIN-SUFFIX,auth.arlo.com
+  # Arlo 专属 Swrve 激活向导与消息端点 (4421 为 Arlo 唯一租户号，零误伤)
+  - DOMAIN,4421.api.swrve.com
+  - DOMAIN,4421.content.swrve.com
+  - DOMAIN,4421.events.swrve.com
+  # Arlo App 启动与添加设备型号特性开关 (仅限移动客户端 API，防 App 卡启动页或搜不到老型号)
+  - DOMAIN,mobile.launchdarkly.com
+  - DOMAIN,clientstream.launchdarkly.com
+  - DOMAIN,app.launchdarkly.com
+
+  # ============================================================
+  # 06. Arlo 纯 IP 实时视频流与设备验证服务器网段 (AWS 美西俄勒冈 & 亚太新加坡)
+  # 注：已剔除 Cloudflare/CloudFront 公共段；带 no-resolve 配合 Fake-IP 仅对基站纯 IP 视频流生效
+  # ============================================================
+  # AWS 美国西岸 (us-west-2 俄勒冈：Arlo 核心验证与美区视频流中继服务器)
+  - IP-CIDR,44.224.0.0/11,no-resolve
+  - IP-CIDR,52.34.0.0/15,no-resolve
+  - IP-CIDR,54.148.0.0/15,no-resolve
+  # AWS 亚太/新加坡 (ap-southeast-1：Arlo 亚太区实时视频流 WOWZA/WebRTC 核心接入点)
   - IP-CIDR,3.0.0.0/15,no-resolve
   - IP-CIDR,13.212.0.0/14,no-resolve
   - IP-CIDR,13.250.0.0/16,no-resolve
@@ -38,15 +103,3 @@ payload:
   - IP-CIDR,18.141.0.0/16,no-resolve
   - IP-CIDR,47.128.0.0/14,no-resolve
   - IP-CIDR,54.169.0.0/16,no-resolve
-  # --- IP段部分: 美国西岸 (针对 44.253.x.x 等验证流量) ---
-  # 建议把你刚才抓到的 44.224.0.0/11 也补在这里
-  - IP-CIDR,44.224.0.0/11,no-resolve
-  - IP-CIDR,52.34.0.0/15,no-resolve
-  - IP-CIDR,54.148.0.0/15,no-resolve
-  # --- IP段部分: 全球加速与云存储 ---
-  - IP-CIDR,104.16.0.0/12,no-resolve
-  - IP-CIDR,172.64.0.0/13,no-resolve
-  - IP-CIDR,52.216.0.0/15,no-resolve
-  - IP-CIDR,52.84.0.0/14,no-resolve
-  - IP-CIDR,54.231.0.0/16,no-resolve
-  - IP-CIDR,13.224.0.0/12,no-resolve
