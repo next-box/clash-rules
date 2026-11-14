@@ -1,0 +1,272 @@
+payload:
+  # ============================================================
+  # 内容：ChinaMedia.yaml 中国流媒体、短视频直播、抖店扣货抢拍、音乐与全屋智能直连库
+  # 路径：./rule_configs/Providers/ChinaMedia.yaml
+  # 校验：★100% 纯域名规则（0 IP 规则），徹底杜绝不带 no-resolve 时的隐形 DNS 解析卡顿★
+  # ============================================================
+
+  # ============================================================
+  # 01. 微信视频号 / 微信直播 / 小程序直播 (WeChat Channels & Live)
+  # ============================================================
+  - DOMAIN-SUFFIX,finder.video.qq.com
+  - DOMAIN-SUFFIX,video.qq.com
+  - DOMAIN-SUFFIX,wx.qq.com
+  - DOMAIN-SUFFIX,wxs.qq.com
+  - DOMAIN-SUFFIX,servicewechat.com
+  - DOMAIN-SUFFIX,weixin.qq.com
+  - DOMAIN-SUFFIX,weixin.com
+  - DOMAIN-SUFFIX,wechat.com
+  - DOMAIN-SUFFIX,wechatapp.com
+  - DOMAIN-SUFFIX,tc.qq.com
+  - DOMAIN-SUFFIX,tcdn.qq.com
+  - DOMAIN-SUFFIX,myqcloud.com
+  - DOMAIN-SUFFIX,qcloud.com
+  - DOMAIN-SUFFIX,qcloudcdn.com
+  - DOMAIN-SUFFIX,qcloudimg.com
+  - DOMAIN-SUFFIX,smtcdns.com
+  - DOMAIN-SUFFIX,smtcdns.net
+  - DOMAIN-SUFFIX,gtimg.cn
+  - DOMAIN-SUFFIX,gtimg.com
+  - DOMAIN-SUFFIX,qpic.cn
+  - DOMAIN-SUFFIX,qlogo.cn
+
+  # ============================================================
+  # 02. 抖音 / 西瓜视频 & 字节跳动系（含高清直播拉流 + 抖店扣货抢拍/极速支付全链路）
+  # ============================================================
+  # 核心主站、直播间与互动扣货 API
+  - DOMAIN-SUFFIX,douyin.com
+  - DOMAIN-SUFFIX,iesdouyin.com
+  - DOMAIN-SUFFIX,douyinliving.com
+  - DOMAIN-SUFFIX,amemv.com
+  - DOMAIN-SUFFIX,snssdk.com
+  - DOMAIN-SUFFIX,ctobsnssdk.com
+  - DOMAIN-SUFFIX,zijieapi.com
+  - DOMAIN-SUFFIX,bytedance.com
+  - DOMAIN-SUFFIX,bytedance.net
+  - DOMAIN-SUFFIX,bytedns.net
+  - DOMAIN-SUFFIX,bytednsdoc.com
+  # 视频流、点播、火山引擎直播 CDN 与静态资源
+  - DOMAIN-SUFFIX,douyincdn.com
+  - DOMAIN-SUFFIX,douyinpic.com
+  - DOMAIN-SUFFIX,douyinvod.com
+  - DOMAIN-SUFFIX,idouyinvod.com
+  - DOMAIN-SUFFIX,douyinstatic.com
+  - DOMAIN-SUFFIX,volcvideo.com
+  - DOMAIN-SUFFIX,volcengine.com
+  - DOMAIN-SUFFIX,volces.com
+  - DOMAIN-SUFFIX,pstatp.com
+  - DOMAIN-SUFFIX,byteimg.com
+  - DOMAIN-SUFFIX,bytecdn.com
+  - DOMAIN-SUFFIX,bytefcdnrd.com
+  - DOMAIN-SUFFIX,bytegoofy.com
+  - DOMAIN-SUFFIX,bytemast.com
+  - DOMAIN-SUFFIX,bytescm.com
+  - DOMAIN-SUFFIX,bytegecko.com
+  - DOMAIN-SUFFIX,bytetos.com
+  - DOMAIN-SUFFIX,bytexservice.com
+  - DOMAIN-SUFFIX,byted-static.com
+  - DOMAIN-SUFFIX,tos-signed.byted.org
+  - DOMAIN-SUFFIX,bytev.com
+  - DOMAIN-SUFFIX,bytev04.com
+  - DOMAIN-SUFFIX,bytev4.com
+  - DOMAIN-SUFFIX,zjcdn.com
+  - DOMAIN-SUFFIX,zjbyte.com
+  - DOMAIN-SUFFIX,zijieimg.com
+  # ★ 抖音直播间「扣货抢拍 / 小黄车锁单 / 抖店结算 / 抖音支付」核心专线 ★
+  - DOMAIN-SUFFIX,jinritemai.com
+  - DOMAIN-SUFFIX,douyinec.com
+  - DOMAIN-SUFFIX,ecombdapi.com
+  - DOMAIN-SUFFIX,ecombdimg.com
+  - DOMAIN-SUFFIX,douyinpay.com
+  - DOMAIN-SUFFIX,ulianpay.com
+  - DOMAIN-SUFFIX,ucpay.com
+  - DOMAIN-SUFFIX,byteacctimg.com
+  - DOMAIN-SUFFIX,pglstatp-toutiao.com
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+  # 西瓜视频与今日头条视频互通
+  - DOMAIN-SUFFIX,ixigua.com
+  - DOMAIN-SUFFIX,ixiguavideo.com
+  - DOMAIN-SUFFIX,bdxiguastatic.com
+  - DOMAIN-SUFFIX,bdxiguaimg.com
+  - DOMAIN-SUFFIX,toutiao.com
+  - DOMAIN-SUFFIX,toutiaocdn.com
+  - DOMAIN-SUFFIX,toutiaovod.com
+
+  # ============================================================
+  # 03. 小红书（主站 + 直播间互动 + 高清图床 / 短视频全栈 CDN）
+  # ============================================================
+  - DOMAIN-SUFFIX,xiaohongshu.com
+  - DOMAIN-SUFFIX,xhslink.com
+  - DOMAIN-SUFFIX,xhscdn.com
+  - DOMAIN-SUFFIX,xhscdn.cn
+  - DOMAIN-SUFFIX,xhscdn.net
+  - DOMAIN-SUFFIX,xhspush.com
+  - DOMAIN-SUFFIX,xhsstatic.com
+  - DOMAIN-SUFFIX,xhspic.com
+  - DOMAIN-SUFFIX,xhsvideo.com
+  - DOMAIN-SUFFIX,redcdn.net
+
+  # ============================================================
+  # 04. 快手 / 快手直播 (Kuaishou Live & Short Video)
+  # ============================================================
+  - DOMAIN-SUFFIX,kuaishou.com
+  - DOMAIN-SUFFIX,gifshow.com
+  - DOMAIN-SUFFIX,yximgs.com
+  - DOMAIN-SUFFIX,kspkg.com
+  - DOMAIN-SUFFIX,kwaicdn.com
+  - DOMAIN-SUFFIX,kwai.net
+
+  # ============================================================
+  # 05. Bilibili 哔哩哔哩（主站 + B站直播 + 番剧点播，纯大陆主站）
+  # ============================================================
+  - DOMAIN,upos-hz-mirrorakam.akamaized.net
+  - DOMAIN-SUFFIX,acg.tv
+  - DOMAIN-SUFFIX,acgvideo.com
+  - DOMAIN-SUFFIX,b23.tv
+  - DOMAIN-SUFFIX,bigfun.cn
+  - DOMAIN-SUFFIX,bigfunapp.cn
+  - DOMAIN-SUFFIX,biliapi.com
+  - DOMAIN-SUFFIX,biliapi.net
+  - DOMAIN-SUFFIX,bilibili.com
+  - DOMAIN-SUFFIX,bilibili.co
+  - DOMAIN-SUFFIX,biligame.com
+  - DOMAIN-SUFFIX,biligame.net
+  - DOMAIN-SUFFIX,bilivideo.cn
+  - DOMAIN-SUFFIX,bilivideo.com
+  - DOMAIN-SUFFIX,hdslb.com
+  - DOMAIN-SUFFIX,im9.com
+
+  # ============================================================
+  # 06. 淘宝直播 / 天猫 / 京东直播 / 拼多多直播 / 得物鉴定直播
+  # ============================================================
+  - DOMAIN-SUFFIX,taobao.com
+  - DOMAIN-SUFFIX,tmall.com
+  - DOMAIN-SUFFIX,alicdn.com
+  - DOMAIN-SUFFIX,alikunlun.com
+  - DOMAIN-SUFFIX,aliyuncdn.com
+  - DOMAIN-SUFFIX,tbcdn.cn
+  - DOMAIN-SUFFIX,tbcdn.com
+  - DOMAIN-SUFFIX,taobaocdn.com
+  - DOMAIN-SUFFIX,tbcache.com
+  - DOMAIN-SUFFIX,jd.com
+  - DOMAIN-SUFFIX,360buyimg.com
+  - DOMAIN-SUFFIX,jcloudcs.com
+  - DOMAIN-SUFFIX,pinduoduo.com
+  - DOMAIN-SUFFIX,yangkeduo.com
+  - DOMAIN-SUFFIX,pddpic.com
+  - DOMAIN-SUFFIX,dewu.com
+  - DOMAIN-SUFFIX,poizon.com
+  - DOMAIN-SUFFIX,shizhuang-inc.com
+
+  # ============================================================
+  # 07. 虎牙直播 / 斗鱼直播 / YY 直播 (游戏与秀场直播平台)
+  # ============================================================
+  - DOMAIN-SUFFIX,douyu.com
+  - DOMAIN-SUFFIX,douyu.tv
+  - DOMAIN-SUFFIX,douyucdn.cn
+  - DOMAIN-SUFFIX,douyucdn.com
+  - DOMAIN-SUFFIX,douyuscdn.com
+  - DOMAIN-SUFFIX,douyutv.com
+  - DOMAIN-SUFFIX,edgesrv.com
+  - DOMAIN-SUFFIX,huya.com
+  - DOMAIN-SUFFIX,msstatic.com
+  - DOMAIN-SUFFIX,duowan.com
+  - DOMAIN-SUFFIX,yy.com
+  - DOMAIN-SUFFIX,yystatic.com
+
+  # ============================================================
+  # 08. 爱优腾芒 & 央视频/咪咕长视频与体育直播 (国内正版影视平台)
+  # ============================================================
+  - DOMAIN-SUFFIX,v.qq.com
+  - DOMAIN-SUFFIX,iqiyi.com
+  - DOMAIN-SUFFIX,iqiyipic.com
+  - DOMAIN-SUFFIX,qiyi.com
+  - DOMAIN-SUFFIX,qiyipic.com
+  - DOMAIN-SUFFIX,qy.net
+  - DOMAIN-SUFFIX,71.am
+  - DOMAIN-SUFFIX,71edge.com
+  - DOMAIN-SUFFIX,ppsimg.com
+  - DOMAIN-SUFFIX,gitv.tv
+  - DOMAIN-SUFFIX,youku.com
+  - DOMAIN-SUFFIX,ykimg.com
+  - DOMAIN-SUFFIX,soku.com
+  - DOMAIN-SUFFIX,cibntv.net
+  - DOMAIN-SUFFIX,mgtv.com
+  - DOMAIN-SUFFIX,hunantv.com
+  - DOMAIN-SUFFIX,hitv.com
+  - DOMAIN-SUFFIX,imgo.tv
+  - DOMAIN-SUFFIX,cctv.com
+  - DOMAIN-SUFFIX,cctvpic.com
+  - DOMAIN-SUFFIX,cntv.cn
+  - DOMAIN-SUFFIX,livechina.com
+  - DOMAIN-SUFFIX,miguvideo.com
+  - DOMAIN-SUFFIX,migucloud.com
+  - DOMAIN-SUFFIX,migu.cn
+  - DOMAIN-SUFFIX,le.com
+  - DOMAIN-SUFFIX,letv.com
+  - DOMAIN-SUFFIX,letvimg.com
+
+  # ============================================================
+  # 09. 国内主流音乐、无损音频流与播客听书平台 (网易云 / QQ音乐 / 酷狗 / 喜马拉雅)
+  # ============================================================
+  - DOMAIN-SUFFIX,music.163.com
+  - DOMAIN-SUFFIX,music.126.net
+  - DOMAIN-SUFFIX,y.qq.com
+  - DOMAIN-SUFFIX,qqmusic.qq.com
+  - DOMAIN-SUFFIX,music.qq.com
+  - DOMAIN-SUFFIX,kugou.com
+  - DOMAIN-SUFFIX,kuwo.cn
+  - DOMAIN-SUFFIX,koowo.com
+  - DOMAIN-SUFFIX,qianqian.com
+  - DOMAIN-SUFFIX,taihe.com
+  - DOMAIN-SUFFIX,ximalaya.com
+  - DOMAIN-SUFFIX,xmcdn.com
+  - DOMAIN-SUFFIX,lizhi.fm
+  - DOMAIN-SUFFIX,lizhifm.com
+  - DOMAIN-SUFFIX,qingting.fm
+
+  # ============================================================
+  # 10. 全屋智能家居、扫地机器人与安防摄像头直连专区 (Smart Home & IoT)
+  # ============================================================
+  - DOMAIN-SUFFIX,ismartlife.me
+  - DOMAIN-SUFFIX,smart321.com
+  - DOMAIN-SUFFIX,tuya.com
+  - DOMAIN-SUFFIX,tuyacn.com
+  - DOMAIN-SUFFIX,tuyacdn.com
+  - DOMAIN-SUFFIX,tuyaus.com
+  - DOMAIN-SUFFIX,tuyaeu.com
+  - DOMAIN-SUFFIX,mi.com
+  - DOMAIN-SUFFIX,xiaomi.com
+  - DOMAIN-SUFFIX,xiaomi.net
+  - DOMAIN-SUFFIX,xiaomicp.com
+  - DOMAIN-SUFFIX,mi-img.com
+  - DOMAIN-SUFFIX,miui.com
+  - DOMAIN-SUFFIX,aqara.com
+  - DOMAIN-SUFFIX,lumiunited.com
+  - DOMAIN-SUFFIX,roborock.com
+  - DOMAIN-SUFFIX,dreame.tech
+  - DOMAIN-SUFFIX,ecovacs.com
+  - DOMAIN-SUFFIX,ecovacs.cn
+  - DOMAIN-SUFFIX,narwal.com
+  - DOMAIN-SUFFIX,ys7.com
+  - DOMAIN-SUFFIX,ezvizlife.com
+  - DOMAIN-SUFFIX,hikvision.com
+  - DOMAIN-SUFFIX,imoulife.com
+  - DOMAIN-SUFFIX,lechange.cn
+  - DOMAIN-SUFFIX,tplinkcloud.com.cn
+  - DOMAIN-SUFFIX,tp-link.com.cn
+  - DOMAIN-SUFFIX,midea.com
+  - DOMAIN-SUFFIX,msmartlife.com
+  - DOMAIN-SUFFIX,haier.com
+  - DOMAIN-SUFFIX,haier.net
+  - DOMAIN-SUFFIX,gree.com
+  - DOMAIN-SUFFIX,hicloud.com
+  - DOMAIN-SUFFIX,dbankcdn.com
+
+  # ============================================================
+  # 11. 国内三大运营商原生 IPv6 直播流骨干网超网段（专治不带域名的纯 IPv6 直播流直连）
+  # ============================================================
+  - IP-CIDR6,2408:8000::/20,no-resolve     # 中国联通原生 IPv6 骨干网 (含 2408:871a / 2408:8722 抖音直播流)
+  - IP-CIDR6,240e::/18,no-resolve          # 中国电信原生 IPv6 骨干网
+  - IP-CIDR6,2409:8000::/20,no-resolve     # 中国移动原生 IPv6 骨干网 (含 2409:8002 移动直播流)
+  - IP-CIDR6,240c::/18,no-resolve          # 中国教育网/广电原生 IPv6 骨干段
