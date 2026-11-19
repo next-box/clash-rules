@@ -1,0 +1,92 @@
+payload:
+  # ============================================================================
+  # 内容：ChinaCamera.yaml (中国国内主流安防监控摄像头全生态专属直连库)
+  # 覆盖：海康/萤石、大华/乐橙、宇视、天地伟业、中维、小米/创米、TP-LINK/水星/迅捷、
+  #       华为海雀、360、乔安、雄迈、技威有看头、久安易视云、宏视V380、涂鸦国内云
+  # 架构：100% 纯域名规则（绝不混入公有云 IP 段，杜绝第 3 节触发 DNS 泄漏；纯 IP P2P 流量由第 9 节 ChinaCompanyIp + GEOIP,CN 兜底）
+  # ============================================================================
+
+  # ============================================================
+  # 01. 海康威视 (Hikvision) & 萤石 (EZVIZ)
+  # ============================================================
+  - DOMAIN-SUFFIX,ys7.com                  # 萤石云核心通信、P2P 注册与推流主域
+  - DOMAIN-SUFFIX,ezviz.com
+  - DOMAIN-SUFFIX,ezvizlife.com            # 萤石云跨设备媒体与 API 域
+  - DOMAIN-SUFFIX,ezviz7.com
+  - DOMAIN-SUFFIX,hikvision.com.cn
+  - DOMAIN-SUFFIX,hikvision.com
+  - DOMAIN-SUFFIX,hik-connect.com          # 海康互联 / 萤石外联注册域（若使用海外版纯美区海康设备，请注释此行）
+
+  # ============================================================
+  # 02. 大华股份 (Dahua) & 乐橙 (Imou)
+  # ============================================================
+  - DOMAIN-SUFFIX,lechange.cn              # 乐橙中国大陆核心控制与 OpenAPI 域
+  - DOMAIN-SUFFIX,lechange.com
+  - DOMAIN-SUFFIX,dahuap2pcloud.com        # 大华/华橙 P2P 云打洞核心域
+  - DOMAIN-SUFFIX,dahuatech.com
+  - DOMAIN-SUFFIX,dahuasecurity.com
+  - DOMAIN-SUFFIX,imou.com
+  - DOMAIN-SUFFIX,imoulife.com             # 乐橙 App 与云端管理域（若使用海外版 Imou 设备，请注释此行）
+  - DOMAIN-SUFFIX,easy4ip.com
+  - DOMAIN-SUFFIX,easy4ipcloud.com         # 大华早期/经典款设备 Easy4IP P2P 穿透域
+
+  # ============================================================
+  # 03. 宇视科技 (Uniview) / 天地伟业 (Tiandy) / 中维世纪 (Jovision)
+  # ============================================================
+  - DOMAIN-SUFFIX,uniview.com              # 含 ezcloud.uniview.com 宇视云
+  - DOMAIN-SUFFIX,star4live.com            # 宇视中性/通用设备云平台域
+  - DOMAIN-SUFFIX,tiandy.com               # 天地伟业 Easy7 云服务
+  - DOMAIN-SUFFIX,jovision.com             # 中维世纪官网与服务
+  - DOMAIN-SUFFIX,cloudsee.net             # 中维世纪云视通核心 P2P 平台
+
+  # ============================================================
+  # 04. 小米 / 米家 / 创米小白 (Xiaomi / Mi Home / Imilab)
+  # ============================================================
+  - DOMAIN-SUFFIX,iot.mi.com               # 米家 IoT 核心接入与视频中继控制域
+  - DOMAIN-SUFFIX,io.mi.com                # 小米智能家居设备长连接与 P2P 调度域
+  - DOMAIN-SUFFIX,mijia.tech               # 米家生态专用域
+  - DOMAIN-SUFFIX,chuangmi.com             # 创米小白摄像头核心域
+  - DOMAIN-SUFFIX,imilab.com               # 创米小白 / Imilab 客户端与固件域
+
+  # ============================================================
+  # 05. TP-LINK 普联 / 水星 (MERCURY) / 迅捷 (FAST)
+  # ============================================================
+  - DOMAIN-SUFFIX,tp-link.com.cn           # 含 vmscloud.tp-link.com.cn / cloud.tp-link.com.cn 安防商云
+  - DOMAIN-SUFFIX,tplinkcloud.com.cn       # TP-LINK 中国大陆安防 IPC/NVR 核心云与 P2P 域
+  - DOMAIN-SUFFIX,mercurycom.com.cn        # 水星安防监控云
+  - DOMAIN-SUFFIX,fastcom.com.cn           # 迅捷安防监控云
+  # 注：若家中无海外版 Tapo/Kasa 摄像头，仅用国行 TP-LINK 亦可取消下方注释
+  # - DOMAIN-SUFFIX,tplinkcloud.com
+
+  # ============================================================
+  # 06. 华为智选海雀 (Haique) & 360 智能摄像机
+  # ============================================================
+  - DOMAIN-SUFFIX,ihaique.com              # 深圳海雀科技国内核心业务域
+  - DOMAIN-SUFFIX,alcidae.com              # 海雀 App (com.alcidae.smarthome) 底层云服务域
+  - DOMAIN-SUFFIX,jia.360.cn               # 360 智能摄像机核心接入域
+  - DOMAIN-SUFFIX,home.360.cn              # 360 智慧生活与家庭监控域
+
+  # ============================================================
+  # 07. 国内主流电商爆款与公版云底座 (乔安 / 雄迈 / 技威有看头 / 易视云 / V380 / 涂鸦国内)
+  # ============================================================
+  # 1. 乔安 (Jooan / 喵眼精灵)
+  - DOMAIN-SUFFIX,qacctv.com
+  - DOMAIN-SUFFIX,qacloud.com.cn
+  # 2. 雄迈 / 杰峰物联 (Xiongmai / XMeye / ICSee)
+  - DOMAIN-SUFFIX,xmeye.net                # 雄迈核心 P2P 云登录与远程预览域
+  - DOMAIN-SUFFIX,secu100.net              # 雄迈固件升级与 HLS/媒体接口域
+  - DOMAIN-SUFFIX,jftech.com               # 浙江杰峰物联 (雄迈看看新主体域)
+  # 3. 技威时代 (Yoosee 有看头)
+  - DOMAIN-SUFFIX,yoosee.co                # 有看头核心业务与 SDK 域
+  - DOMAIN-SUFFIX,cloudlinks.cn            # 技威 Cloudlink P2P 穿透核心域
+  - DOMAIN-SUFFIX,cloud-links.net
+  - DOMAIN-SUFFIX,gwell.cc
+  # 4. 久安 / 易视云 (EseeCloud)
+  - DOMAIN-SUFFIX,dvr163.com               # 易视云核心云平台与 ID 解析域
+  - DOMAIN-SUFFIX,juancloud.com            # 久安云服务域
+  # 5. 广州宏视 (V380 / V380 Pro)
+  - DOMAIN-SUFFIX,v380.org
+  - DOMAIN-SUFFIX,av380.net
+  # 6. 涂鸦智能 (仅限中国大陆云底座，严防误伤海外 tuyaus.com / tuyaeu.com 设备)
+  - DOMAIN-SUFFIX,tuyacn.com
+  - DOMAIN-SUFFIX,tuya.com
