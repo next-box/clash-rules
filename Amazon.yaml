@@ -1,0 +1,90 @@
+payload:
+  # ==============================================================================
+  # 规则集：Amazon.yaml (亚马逊跨境电商全球站点、图床、短链与卖家/广告生态纯享版)
+  # 策略组：📦 Amazon (已剥离 Prime Video 流媒体域名，彻底解耦互不干扰)
+  # 校验：已剔除 amazonaws.com 云底座与宽泛 EC2 段；底部 IP 段均带 no-resolve
+  # ==============================================================================
+
+  # 01. 亚马逊北美与拉美站点 (美 / 加 / 墨 / 巴)
+  - DOMAIN-SUFFIX,amazon.com
+  - DOMAIN-SUFFIX,amazon.ca
+  - DOMAIN-SUFFIX,amazon.com.mx
+  - DOMAIN-SUFFIX,amazon.com.br
+
+  # 02. 亚马逊亚太站点 (日 / 新 / 澳 / 印)
+  - DOMAIN-SUFFIX,amazon.co.jp
+  - DOMAIN-SUFFIX,amazon.sg
+  - DOMAIN-SUFFIX,amazon.com.au
+  - DOMAIN-SUFFIX,amazon.in
+
+  # 03. 亚马逊欧洲全站点 (英 / 德 / 法 / 意 / 西 / 荷 / 瑞 / 波 / 比 / 土 / 爱)
+  - DOMAIN-SUFFIX,amazon.co.uk
+  - DOMAIN-SUFFIX,amazon.de
+  - DOMAIN-SUFFIX,amazon.fr
+  - DOMAIN-SUFFIX,amazon.it
+  - DOMAIN-SUFFIX,amazon.es
+  - DOMAIN-SUFFIX,amazon.nl
+  - DOMAIN-SUFFIX,amazon.se
+  - DOMAIN-SUFFIX,amazon.pl
+  - DOMAIN-SUFFIX,amazon.com.be
+  - DOMAIN-SUFFIX,amazon.com.tr
+  - DOMAIN-SUFFIX,amazon.ie
+  - DOMAIN-SUFFIX,amazon.eu
+
+  # 04. 亚马逊中东与非洲站点 (阿联酋 / 沙特 / 埃及 / 南非)
+  - DOMAIN-SUFFIX,amazon.ae
+  - DOMAIN-SUFFIX,amazon.sa
+  - DOMAIN-SUFFIX,amazon.eg
+  - DOMAIN-SUFFIX,amazon.co.za
+  - DOMAIN-SUFFIX,souq.com
+
+  # 05. 商品高清主图、A+ 页面详情图、商品展示视频与官方短链
+  - DOMAIN-SUFFIX,media-amazon.com
+  - DOMAIN-SUFFIX,ssl-images-amazon.com
+  - DOMAIN-SUFFIX,images-amazon.com
+  - DOMAIN-SUFFIX,a.co
+  - DOMAIN-SUFFIX,amzn.to
+  - DOMAIN-SUFFIX,amzn.com
+  - DOMAIN-SUFFIX,amzn.asia
+  - DOMAIN-SUFFIX,amzn.eu
+
+  # 06. 跨境电商核心业务 (B2B 企业购 / 卖家中心 / 品牌备案 / SP 站内广告 / 亚马逊支付)
+  - DOMAIN-SUFFIX,amazonbusiness.com
+  - DOMAIN-SUFFIX,amazonbusiness.eu
+  - DOMAIN-SUFFIX,amazonpay.com
+  - DOMAIN-SUFFIX,amazonpay.in
+  - DOMAIN-SUFFIX,amazon-adsystem.com
+  - DOMAIN-SUFFIX,assoc-amazon.com
+  - DOMAIN-SUFFIX,amazontools.com
+  - DOMAIN-SUFFIX,aboutamazon.com
+  - DOMAIN-SUFFIX,amazon.dev
+  - DOMAIN-SUFFIX,sellercentral.amazon.com
+  - DOMAIN-SUFFIX,sellercentral-europe.amazon.com
+  - DOMAIN-SUFFIX,sellercentral-japan.amazon.com
+  - DOMAIN-SUFFIX,sellercentral.amazon.co.jp
+  - DOMAIN-SUFFIX,sellercentral.amazon.co.uk
+  - DOMAIN-SUFFIX,sellercentral.amazon.de
+  - DOMAIN-SUFFIX,sellercentral.amazon.ca
+  - DOMAIN-SUFFIX,advertising.amazon.com
+  - DOMAIN-SUFFIX,advertising.amazon.co.jp
+  - DOMAIN-SUFFIX,advertising.amazon.co.uk
+  - DOMAIN-SUFFIX,advertising.amazon.de
+  - DOMAIN-SUFFIX,brandregistry.amazon.com
+  - DOMAIN-SUFFIX,brandservices.amazon.com
+
+  # 07. 亚马逊旗下零售与阅读生态 (Audible / Goodreads / Kindle / Zappos / Whole Foods)
+  - DOMAIN-SUFFIX,audible.com
+  - DOMAIN-SUFFIX,audible.co.jp
+  - DOMAIN-SUFFIX,audible.co.uk
+  - DOMAIN-SUFFIX,goodreads.com
+  - DOMAIN-SUFFIX,kindle.com
+  - DOMAIN-SUFFIX,zappos.com
+  - DOMAIN-SUFFIX,wholefoodsmarket.com
+  - DOMAIN-SUFFIX,woot.com
+
+  # 08. 亚马逊商城门户核心 IP 段 (主脚本引用需带 ,no-resolve 严防 DNS 泄漏)
+  - IP-CIDR,54.230.156.0/22,no-resolve
+  - IP-CIDR,54.226.0.0/15,no-resolve
+  - IP-CIDR,52.74.0.0/16,no-resolve
+  - IP-CIDR,52.77.0.0/16,no-resolve
+  - IP-CIDR,54.93.0.0/16,no-resolve
