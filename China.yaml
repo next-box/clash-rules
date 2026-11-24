@@ -1,0 +1,123 @@
+payload:
+  # ==================================================
+  # 内容：China.yaml 综合国内补充规则（政企外贸通关 / 财税发票 / 航运物流 / 远控 / NAS / 技术社区）
+  # 路径：./rule_configs/Providers/Other/China.yaml
+  # 类型：behavior: classical（主脚本调用时带 ,no-resolve）
+  # ==================================================
+
+  # 01. 政务、税务、海关单一窗口、退税申报与外贸公共服务
+  - DOMAIN-SUFFIX,gov.cn
+  - DOMAIN-SUFFIX,edu.cn
+  - DOMAIN-SUFFIX,ac.cn
+  - DOMAIN-SUFFIX,mil.cn
+  - DOMAIN-SUFFIX,org.cn
+  - DOMAIN-SUFFIX,chinatax.gov.cn          # 国家税务总局 / 电子税务局出口退税
+  - DOMAIN-SUFFIX,singlewindow.cn          # 中国国际贸易单一窗口
+  - DOMAIN-SUFFIX,singlewindow.gd.cn       # 广东国际贸易单一窗口
+  - DOMAIN-SUFFIX,eport.gov.cn             # 中国电子口岸
+  - DOMAIN-SUFFIX,chinaport.gov.cn         # 中国电子口岸数据中心
+  - DOMAIN-SUFFIX,customs.gov.cn           # 海关总署
+  - DOMAIN-SUFFIX,haiguan.info             # 海关信息网
+  - DOMAIN-SUFFIX,hsbianma.com             # HS编码查询网
+  - DOMAIN-SUFFIX,safe.gov.cn              # 国家外汇管理局 (贸易外汇收支企业名录)
+  - DOMAIN-SUFFIX,pbccrc.org.cn            # 央行征信中心
+  - DOMAIN-SUFFIX,gsxt.gov.cn              # 国家企业信用信息公示系统
+  - DOMAIN-SUFFIX,creditchina.gov.cn       # 信用中国
+  - DOMAIN-SUFFIX,cantonfair.org.cn        # 广交会官网
+  - DOMAIN-SUFFIX,ccpit.org                # 中国贸促会 (原产地证申报)
+  - DOMAIN-SUFFIX,co.ccpit.org
+  - DOMAIN-SUFFIX,95598.cn                 # 国家电网
+  - DOMAIN-SUFFIX,95598.csg.cn             # 南方电网
+  - DOMAIN-SUFFIX,12306.cn
+  - DOMAIN-SUFFIX,12306.com
+
+  # 02. 企业协同办公、外贸客户沟通与电子发票财税系统
+  - DOMAIN-SUFFIX,work.weixin.qq.com       # 企业微信
+  - DOMAIN-SUFFIX,wecom.work
+  - DOMAIN-SUFFIX,qidian.qq.com            # 腾讯企点 / 企业QQ
+  - DOMAIN-SUFFIX,b.qq.com
+  - DOMAIN-SUFFIX,wp.qq.com
+  - DOMAIN-SUFFIX,meeting.tencent.com      # 腾讯会议
+  - DOMAIN-SUFFIX,wemeet.tencent.com
+  - DOMAIN-SUFFIX,feishu.cn                # 飞书国内版
+  - DOMAIN-SUFFIX,feishucdn.com
+  - DOMAIN-SUFFIX,feishuimg.com
+  - DOMAIN-SUFFIX,dingtalk.com             # 钉钉
+  - DOMAIN-SUFFIX,dingtalkapps.com
+  - DOMAIN-SUFFIX,wps.cn                   # 金山 WPS / 金山文档
+  - DOMAIN-SUFFIX,wps.com
+  - DOMAIN-SUFFIX,kdocs.cn
+  - DOMAIN-SUFFIX,yuque.com                # 语雀文档
+  - DOMAIN-SUFFIX,nuonuo.com               # 诺诺电子发票
+  - DOMAIN-SUFFIX,jss.com.cn
+  - DOMAIN-SUFFIX,baiwang.com              # 百旺云发票
+  - DOMAIN-SUFFIX,51fapiao.cn              # 航信发票
+  - DOMAIN-SUFFIX,qichacha.com             # 企查查
+  - DOMAIN-SUFFIX,tianyancha.com           # 天眼查
+
+  # 03. 国内快递物流、外贸海运追踪与航司直连
+  - DOMAIN-SUFFIX,sf-express.com           # 顺丰速运
+  - DOMAIN-SUFFIX,sf-tech.com.cn
+  - DOMAIN-SUFFIX,jdl.com                  # 京东物流
+  - DOMAIN-SUFFIX,cainiao.com              # 菜鸟网络
+  - DOMAIN-SUFFIX,zto.com                  # 中通快递
+  - DOMAIN-SUFFIX,yto.net.cn               # 圆通速递
+  - DOMAIN-SUFFIX,yundaex.com              # 韵达快递
+  - DOMAIN-SUFFIX,sto.cn                   # 申通快递
+  - DOMAIN-SUFFIX,jtexpress.com.cn         # 极兔速递
+  - DOMAIN-SUFFIX,deppon.com               # 德邦快递
+  - DOMAIN-SUFFIX,ems.com.cn               # 中国邮政 EMS
+  - DOMAIN-SUFFIX,huolala.cn               # 货拉拉
+  - DOMAIN-SUFFIX,coscoshipping.com        # 中远海运集运
+  - DOMAIN-SUFFIX,oocl.com                 # 东方海外货柜航运
+  - DOMAIN-SUFFIX,sitcline.com             # 海丰国际航运
+  - DOMAIN-SUFFIX,shippingchina.com        # 中国海运网
+  - DOMAIN-SUFFIX,csair.com                # 中国南方航空
+  - DOMAIN-SUFFIX,airchina.com.cn          # 中国国际航空
+  - DOMAIN-SUFFIX,ceair.com                # 中国东方航空
+
+  # 04. 远程桌面控制、内网穿透与国产私有云 NAS
+  - DOMAIN-SUFFIX,oray.com                 # 向日葵远控 / 贝锐花生壳 / 蒲公英
+  - DOMAIN-SUFFIX,oray.net
+  - DOMAIN-SUFFIX,orayimg.com
+  - DOMAIN-SUFFIX,sunlogin.net
+  - DOMAIN-SUFFIX,pgyvpn.com
+  - DOMAIN-SUFFIX,todesk.com               # ToDesk 远程控制
+  - DOMAIN-SUFFIX,asklink.com              # 连连控
+  - DOMAIN-SUFFIX,ddnsto.com               # DDNSTO 内网穿透
+  - DOMAIN-SUFFIX,kooldns.cn
+  - DOMAIN-SUFFIX,fnos.net                 # 飞牛私有云 fnOS
+  - DOMAIN-SUFFIX,fnnas.com
+  - DOMAIN-SUFFIX,zspace.cn                # 极空间私有云
+  - DOMAIN-SUFFIX,ugnas.com                # 绿联私有云
+  - DOMAIN-SUFFIX,ugreen.com
+
+  # 05. 国内网盘、开发者代码托管与硬件技术社区
+  - DOMAIN-SUFFIX,123pan.com               # 123云盘
+  - DOMAIN-SUFFIX,123pan.cn
+  - DOMAIN-SUFFIX,quark.cn                 # 夸克网盘
+  - DOMAIN-SUFFIX,uc.cn
+  - DOMAIN-SUFFIX,coding.net
+  - DOMAIN-SUFFIX,gitee.com                # 码云 Gitee
+  - DOMAIN-SUFFIX,gitee.io
+  - DOMAIN-SUFFIX,gitcode.com
+  - DOMAIN-SUFFIX,pcbeta.com               # 远景论坛
+  - DOMAIN-SUFFIX,right.com.cn             # 恩山无线论坛
+  - DOMAIN-SUFFIX,koolcenter.com           # KoolCenter 梅林固件社区
+  - DOMAIN-SUFFIX,koolshare.cn
+  - DOMAIN-SUFFIX,52pojie.cn               # 吾爱破解
+  - DOMAIN-SUFFIX,chiphell.com             # Chiphell
+  - DOMAIN-SUFFIX,mydigit.cn               # 数码之家
+  - DOMAIN-SUFFIX,nga.cn                   # NGA 玩家社区
+  - DOMAIN-SUFFIX,ngabbs.com
+  - DOMAIN-SUFFIX,saraba1st.com
+  - DOMAIN-SUFFIX,gaoqing.fm               # 高清FM
+
+  # 06. 腾讯微信与阿里移动端国内 HTTPDNS 核心调度 IP 及本地下载唤醒词
+  - IP-CIDR,119.29.29.29/32,no-resolve
+  - IP-CIDR,119.29.29.98/32,no-resolve
+  - IP-CIDR,119.29.29.99/32,no-resolve
+  - IP-CIDR,182.254.116.116/32,no-resolve
+  - IP-CIDR,182.254.118.118/32,no-resolve
+  - IP-CIDR,203.107.1.0/24,no-resolve
+  - DOMAIN-KEYWORD,aria2

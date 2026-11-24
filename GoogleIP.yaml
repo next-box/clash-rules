@@ -1,0 +1,17 @@
+payload:
+  # =========================================================
+  # GoogleIP.yaml 纯 IP 归属兜底库
+  # 路径：./rule_configs/Providers/Other/GoogleIP.yaml
+  # 策略：🔍 谷歌服务 (主脚本引用时务必带 ,no-resolve)
+  # =========================================================
+  - IP-CIDR,64.233.160.0/19,no-resolve
+  - IP-CIDR,66.102.0.0/20,no-resolve
+  - IP-CIDR,66.249.64.0/19,no-resolve
+  - IP-CIDR,72.14.192.0/18,no-resolve
+  - IP-CIDR,74.125.0.0/16,no-resolve
+  - IP-CIDR,108.177.0.0/17,no-resolve
+  - IP-CIDR,172.217.0.0/16,no-resolve
+  - IP-CIDR,173.194.0.0/16,no-resolve
+  - IP-CIDR,209.85.128.0/17,no-resolve
+  - IP-CIDR,216.58.192.0/18,no-resolve
+  - IP-CIDR,216.239.32.0/19,no-resolve

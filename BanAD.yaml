@@ -1,7 +1,13 @@
 payload:
-  # 本碎片只包含常见广告关键字、广告联盟。无副作用，放心使用
+  # ============================================================
+  # 内容：BanAD.yaml 全球网页广告联盟、恶意弹窗、追踪器与运营商劫持净化库
+  # 路径：./rule_configs/Providers/BanAD.yaml
+  # 策略：🛑 广告拦截 (100% 纯域名与精准关键词，已剔除 lufax/jimdo/branch/pubnub 等误杀项)
+  # ============================================================
 
-  # 广告关键词
+  # ============================================================
+  # 01. 核心广告联盟特征关键词 (安全无副作用)
+  # ============================================================
   - DOMAIN-KEYWORD,admarvel
   - DOMAIN-KEYWORD,admaster
   - DOMAIN-KEYWORD,adsage
@@ -11,7 +17,6 @@ payload:
   - DOMAIN-KEYWORD,adsserving
   - DOMAIN-KEYWORD,adsystem
   - DOMAIN-KEYWORD,adwords
-#  - DOMAIN-SUFFIX,adwords.google.com
   - DOMAIN-KEYWORD,applovin
   - DOMAIN-KEYWORD,appsflyer
   - DOMAIN-KEYWORD,domob
@@ -28,10 +33,56 @@ payload:
   - DOMAIN-KEYWORD,wlmonitor
   - DOMAIN-KEYWORD,zjtoolbar
 
-  # 广告联盟-国内****************
+  # ============================================================
+  # 02. 现代主流移动与网页广告联盟底座 (穿山甲 / 优量汇 / 快手 / 百青藤 / 汇量)
+  # 注：已剔除与抖音直播间冲突的域名，确保看直播与小黄车抢单 100% 正常
+  # ============================================================
+  # 1. 字节跳动穿山甲海外与第三方分发联盟 (Pangolin / Pangle)
+  - DOMAIN-SUFFIX,pangle.io
+  - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
+  - DOMAIN-SUFFIX,pangolin.snssdk.com
+  - DOMAIN-SUFFIX,ad.toutiao.com
+  - DOMAIN-SUFFIX,dsp.toutiao.com
+  - DOMAIN-SUFFIX,dm.toutiao.com
+  - DOMAIN-SUFFIX,dm.pstatp.com
+  - DOMAIN-SUFFIX,toblog.ctobsnssdk.com
+  # 2. 腾讯优量汇 / 广点通广告联盟 (GDT / AMS)
+  - DOMAIN-SUFFIX,e.qq.com
+  - DOMAIN-SUFFIX,gdt.qq.com
+  - DOMAIN-SUFFIX,pgdt.gtimg.cn
+  - DOMAIN-SUFFIX,pgdt.ugdtimg.com
+  - DOMAIN-SUFFIX,adsmind.gdtimg.com
+  - DOMAIN-SUFFIX,adsmind.gdt.qq.com
+  - DOMAIN-SUFFIX,mi.gdt.qq.com
+  - DOMAIN-SUFFIX,win.gdt.qq.com
+  - DOMAIN-SUFFIX,v2.gdt.qq.com
+  - DOMAIN-SUFFIX,c2.gdt.qq.com
+  # 3. 快手商业化广告联盟
+  - DOMAIN-SUFFIX,e.kuaishou.com
+  - DOMAIN-SUFFIX,ad.kuaishou.com
+  - DOMAIN-SUFFIX,open.e.kuaishou.com
+  - DOMAIN-SUFFIX,adukwai.com
+  # 4. 百度百青藤 / 网盟广告
+  - DOMAIN-SUFFIX,cpro.baidu.com
+  - DOMAIN-SUFFIX,cpro.baidustatic.com
+  - DOMAIN-SUFFIX,dup.baidustatic.com
+  - DOMAIN-SUFFIX,pos.baidu.com
+  - DOMAIN-SUFFIX,mobads.baidu.com
+  - DOMAIN-SUFFIX,mobads-logs.baidu.com
+  # 5. Mintegral (汇量科技) / Unity Ads / IronSource / AppLovin
+  - DOMAIN-SUFFIX,mintegral.com
+  - DOMAIN-SUFFIX,rayjump.com
+  - DOMAIN-SUFFIX,mindworks-creative.com
+  - DOMAIN-SUFFIX,unityads.unity3d.com
+  - DOMAIN-SUFFIX,ironsrc.com
+  - DOMAIN-SUFFIX,SupersonicAds.com
+  - DOMAIN-SUFFIX,bidmachine.io
+
+  # ============================================================
+  # 03. 国内网页广告联盟、统计追踪与营销弹窗网络
+  # ============================================================
   - DOMAIN-SUFFIX,09mk.cn
   - DOMAIN-SUFFIX,100peng.com
-  - DOMAIN-SUFFIX,114la.com
   - DOMAIN-SUFFIX,123juzi.net
   - DOMAIN-SUFFIX,138lm.com
   - DOMAIN-SUFFIX,17un.com
@@ -44,7 +95,6 @@ payload:
   - DOMAIN-SUFFIX,600ad.com
   - DOMAIN-SUFFIX,6dad.com
   - DOMAIN-SUFFIX,70e.com
-  - DOMAIN-SUFFIX,86.cc
   - DOMAIN-SUFFIX,8le8le.com
   - DOMAIN-SUFFIX,8ox.cn
   - DOMAIN-SUFFIX,95558000.com
@@ -70,12 +120,14 @@ payload:
   - DOMAIN-SUFFIX,adhouyi.com
   - DOMAIN-SUFFIX,adinfuse.com
   - DOMAIN-SUFFIX,adirects.com
+  - DOMAIN-SUFFIX,adjust.com
   - DOMAIN-SUFFIX,adjust.io
   - DOMAIN-SUFFIX,adkmob.com
   - DOMAIN-SUFFIX,adlive.cn
   - DOMAIN-SUFFIX,adlocus.com
   - DOMAIN-SUFFIX,admaji.com
   - DOMAIN-SUFFIX,admin6.com
+  - DOMAIN-SUFFIX,admaster.com.cn
   - DOMAIN-SUFFIX,admon.cn
   - DOMAIN-SUFFIX,adnyg.com
   - DOMAIN-SUFFIX,adpolestar.net
@@ -110,7 +162,6 @@ payload:
   - DOMAIN-SUFFIX,amazon-adsystem.com
   - DOMAIN-SUFFIX,analysys.cn
   - DOMAIN-SUFFIX,angsrvr.com
-  - DOMAIN-SUFFIX,anquan.org
   - DOMAIN-SUFFIX,anysdk.com
   - DOMAIN-SUFFIX,appadhoc.com
   - DOMAIN-SUFFIX,appads.com
@@ -132,7 +183,6 @@ payload:
   - DOMAIN-SUFFIX,bjvvqu.cn
   - DOMAIN-SUFFIX,bjxiaohua.com
   - DOMAIN-SUFFIX,bloggerads.net
-  - DOMAIN-SUFFIX,branch.io
   - DOMAIN-SUFFIX,bsdev.cn
   - DOMAIN-SUFFIX,bshare.cn
   - DOMAIN-SUFFIX,btyou.com
@@ -199,7 +249,6 @@ payload:
   - DOMAIN-SUFFIX,gepush.com
   - DOMAIN-SUFFIX,getui.com
   - DOMAIN-SUFFIX,glispa.com
-  - DOMAIN-SUFFIX,go-mpulse
   - DOMAIN-SUFFIX,go-mpulse.net
   - DOMAIN-SUFFIX,godloveme.cn
   - DOMAIN-SUFFIX,gridsum.com
@@ -233,7 +282,6 @@ payload:
   - DOMAIN-SUFFIX,jesgoo.com
   - DOMAIN-SUFFIX,jiaeasy.net
   - DOMAIN-SUFFIX,jiguang.cn
-  - DOMAIN-SUFFIX,jimdo.com
   - DOMAIN-SUFFIX,jisucn.com
   - DOMAIN-SUFFIX,jmgehn.cn
   - DOMAIN-SUFFIX,jpush.cn
@@ -252,7 +300,6 @@ payload:
   - DOMAIN-SUFFIX,lomark.cn
   - DOMAIN-SUFFIX,lotuseed.com
   - DOMAIN-SUFFIX,lrswl.com
-  - DOMAIN-SUFFIX,lufax.com
   - DOMAIN-SUFFIX,madhouse.cn
   - DOMAIN-SUFFIX,madmini.com
   - DOMAIN-SUFFIX,madserving.com
@@ -301,11 +348,9 @@ payload:
   - DOMAIN-SUFFIX,pingdom.net
   - DOMAIN-SUFFIX,plugrush.com
   - DOMAIN-SUFFIX,popin.cc
-  - DOMAIN-SUFFIX,pro.cn
   - DOMAIN-SUFFIX,publicidad.net
   - DOMAIN-SUFFIX,publicidad.tv
   - DOMAIN-SUFFIX,pubmatic.com
-  - DOMAIN-SUFFIX,pubnub.com
   - DOMAIN-SUFFIX,qcl777.com
   - DOMAIN-SUFFIX,qiyou.com
   - DOMAIN-SUFFIX,qtmojo.com
@@ -388,11 +433,9 @@ payload:
   - DOMAIN-SUFFIX,wumii.cn
   - DOMAIN-SUFFIX,wwads.cn
   - DOMAIN-SUFFIX,xcy8.com
-  - DOMAIN-SUFFIX,xdrig.com
   - DOMAIN-SUFFIX,xiaozhen.com
   - DOMAIN-SUFFIX,xibao100.com
   - DOMAIN-SUFFIX,xtgreat.com
-  - DOMAIN-SUFFIX,xy.com
   - DOMAIN-SUFFIX,yandui.com
   - DOMAIN-SUFFIX,yigao.com
   - DOMAIN-SUFFIX,yijifen.com
@@ -421,7 +464,10 @@ payload:
   - DOMAIN-SUFFIX,zqzxz.com
   - DOMAIN-SUFFIX,zzsx8.com
 
-  # 广告联盟-国外****************
+  # ============================================================
+  # 04. 海外网页广告联盟、程序化竞价 (RTB) 与恶意弹窗网络 (已补充 2026 主流弹窗源)
+  # ============================================================
+  - DOMAIN-SUFFIX,33across.com
   - DOMAIN-SUFFIX,acuityplatform.com
   - DOMAIN-SUFFIX,ad-stir.com
   - DOMAIN-SUFFIX,ad-survey.com
@@ -446,6 +492,8 @@ payload:
   - DOMAIN-SUFFIX,adsco.re
   - DOMAIN-SUFFIX,adservice.com
   - DOMAIN-SUFFIX,adsrvr.org
+  - DOMAIN-SUFFIX,adsterra.com
+  - DOMAIN-SUFFIX,adsterratools.com
   - DOMAIN-SUFFIX,adsymptotic.com
   - DOMAIN-SUFFIX,adtaily.com
   - DOMAIN-SUFFIX,adtech.de
@@ -454,6 +502,7 @@ payload:
   - DOMAIN-SUFFIX,airpush.com
   - DOMAIN-SUFFIX,am15.net
   - DOMAIN-SUFFIX,amobee.com
+  - DOMAIN-SUFFIX,aniview.com
   - DOMAIN-SUFFIX,appier.net
   - DOMAIN-SUFFIX,applift.com
   - DOMAIN-SUFFIX,apsalar.com
@@ -462,6 +511,7 @@ payload:
   - DOMAIN-SUFFIX,axonix.com
   - DOMAIN-SUFFIX,beintoo.com
   - DOMAIN-SUFFIX,bepolite.eu
+  - DOMAIN-SUFFIX,bidswitch.net
   - DOMAIN-SUFFIX,bidtheatre.com
   - DOMAIN-SUFFIX,bidvertiser.com
   - DOMAIN-SUFFIX,blismedia.com
@@ -470,10 +520,14 @@ payload:
   - DOMAIN-SUFFIX,casalemedia.com
   - DOMAIN-SUFFIX,celtra.com
   - DOMAIN-SUFFIX,channeladvisor.com
+  - DOMAIN-SUFFIX,clickadilla.com
+  - DOMAIN-SUFFIX,connatix.com
   - DOMAIN-SUFFIX,connexity.net
+  - DOMAIN-SUFFIX,contextweb.com
   - DOMAIN-SUFFIX,criteo.com
   - DOMAIN-SUFFIX,criteo.net
   - DOMAIN-SUFFIX,csbew.com
+  - DOMAIN-SUFFIX,dianomi.com
   - DOMAIN-SUFFIX,directrev.com
   - DOMAIN-SUFFIX,dumedia.ru
   - DOMAIN-SUFFIX,effectivemeasure.com
@@ -487,21 +541,25 @@ payload:
   - DOMAIN-SUFFIX,fastclick.com
   - DOMAIN-SUFFIX,fastclick.net
   - DOMAIN-SUFFIX,flurry.com
+  - DOMAIN-SUFFIX,fyber.com
   - DOMAIN-SUFFIX,gosquared.com
   - DOMAIN-SUFFIX,gtags.net
+  - DOMAIN-SUFFIX,gumgum.com
   - DOMAIN-SUFFIX,heyzap.com
+  - DOMAIN-SUFFIX,hilltopads.net
   - DOMAIN-SUFFIX,histats.com
   - DOMAIN-SUFFIX,hitslink.com
   - DOMAIN-SUFFIX,hot-mob.com
   - DOMAIN-SUFFIX,hyperpromote.com
   - DOMAIN-SUFFIX,i-mobile.co.jp
   - DOMAIN-SUFFIX,imrworldwide.com
+  - DOMAIN-SUFFIX,indexexchange.com
   - DOMAIN-SUFFIX,inmobi.com
+  - DOMAIN-SUFFIX,inner-active.com
   - DOMAIN-SUFFIX,inner-active.mobi
   - DOMAIN-SUFFIX,intentiq.com
   - DOMAIN-SUFFIX,inter1ads.com
   - DOMAIN-SUFFIX,ipredictive.com
-  - DOMAIN-SUFFIX,ironsrc.com
   - DOMAIN-SUFFIX,iskyworker.com
   - DOMAIN-SUFFIX,jizzads.com
   - DOMAIN-SUFFIX,juicyads.com
@@ -513,6 +571,8 @@ payload:
   - DOMAIN-SUFFIX,leadboltmobile.net
   - DOMAIN-SUFFIX,lenzmx.com
   - DOMAIN-SUFFIX,liveadvert.com
+  - DOMAIN-SUFFIX,lkqd.net
+  - DOMAIN-SUFFIX,magsrv.com
   - DOMAIN-SUFFIX,marketgid.com
   - DOMAIN-SUFFIX,marketo.com
   - DOMAIN-SUFFIX,mdotm.com
@@ -530,17 +590,23 @@ payload:
   - DOMAIN-SUFFIX,mookie1.com
   - DOMAIN-SUFFIX,msads.net
   - DOMAIN-SUFFIX,mydas.mobi
+  - DOMAIN-SUFFIX,nativery.com
   - DOMAIN-SUFFIX,nend.net
   - DOMAIN-SUFFIX,netshelter.net
   - DOMAIN-SUFFIX,nexage.com
+  - DOMAIN-SUFFIX,openx.net
+  - DOMAIN-SUFFIX,outbrain.com
+  - DOMAIN-SUFFIX,outbrainimg.com
   - DOMAIN-SUFFIX,owneriq.net
   - DOMAIN-SUFFIX,pixels.asia
   - DOMAIN-SUFFIX,plista.com
   - DOMAIN-SUFFIX,popads.net
+  - DOMAIN-SUFFIX,popcash.net
   - DOMAIN-SUFFIX,powerlinks.com
   - DOMAIN-SUFFIX,propellerads.com
   - DOMAIN-SUFFIX,quantserve.com
-  - DOMAIN-SUFFIX,rayjump.com
+  - DOMAIN-SUFFIX,realsrv.com
+  - DOMAIN-SUFFIX,revcontent.com
   - DOMAIN-SUFFIX,revdepo.com
   - DOMAIN-SUFFIX,rubiconproject.com
   - DOMAIN-SUFFIX,sape.ru
@@ -548,10 +614,15 @@ payload:
   - DOMAIN-SUFFIX,segment.com
   - DOMAIN-SUFFIX,serving-sys.com
   - DOMAIN-SUFFIX,sharethis.com
+  - DOMAIN-SUFFIX,sharethrough.com
   - DOMAIN-SUFFIX,smaato.com
   - DOMAIN-SUFFIX,smaato.net
   - DOMAIN-SUFFIX,smartadserver.com
   - DOMAIN-SUFFIX,smartnews-ads.com
+  - DOMAIN-SUFFIX,solomath.com
+  - DOMAIN-SUFFIX,spotx.tv
+  - DOMAIN-SUFFIX,spotxchange.com
+  - DOMAIN-SUFFIX,springserve.com
   - DOMAIN-SUFFIX,startapp.com
   - DOMAIN-SUFFIX,startappexchange.com
   - DOMAIN-SUFFIX,statcounter.com
@@ -559,13 +630,19 @@ payload:
   - DOMAIN-SUFFIX,stickyadstv.com
   - DOMAIN-SUFFIX,supersonic.com
   - DOMAIN-SUFFIX,taboola.com
+  - DOMAIN-SUFFIX,taboolasyndication.com
   - DOMAIN-SUFFIX,tapjoy.com
   - DOMAIN-SUFFIX,tapjoyads.com
+  - DOMAIN-SUFFIX,teads.tv
   - DOMAIN-SUFFIX,trafficjunky.com
   - DOMAIN-SUFFIX,trafficjunky.net
+  - DOMAIN-SUFFIX,trafficstars.com
   - DOMAIN-SUFFIX,tribalfusion.com
+  - DOMAIN-SUFFIX,triplelift.com
+  - DOMAIN-SUFFIX,tsyndicate.com
   - DOMAIN-SUFFIX,turn.com
   - DOMAIN-SUFFIX,uberads.com
+  - DOMAIN-SUFFIX,vidazoo.com
   - DOMAIN-SUFFIX,vidoomy.com
   - DOMAIN-SUFFIX,viglink.com
   - DOMAIN-SUFFIX,voicefive.com
@@ -575,7 +652,21 @@ payload:
   - DOMAIN-SUFFIX,zedo.com
   - DOMAIN-SUFFIX,zemanta.com
 
-  # 垃圾站点****************
+  # ============================================================
+  # 05. 手机厂商系统级广告推送底座 (一加/OPPO / 小米 / 华为 / vivo)
+  # ============================================================
+  - DOMAIN-SUFFIX,ad.xiaomi.com
+  - DOMAIN-SUFFIX,ad1.xiaomi.com
+  - DOMAIN-SUFFIX,data.mistat.xiaomi.com
+  - DOMAIN-SUFFIX,ad.intl.xiaomi.com
+  - DOMAIN-SUFFIX,metrics.data.hicloud.com
+  - DOMAIN-SUFFIX,ads.heytapmobile.com
+  - DOMAIN-SUFFIX,ads.oppomobile.com
+  - DOMAIN-SUFFIX,adx.vivo.com.cn
+
+  # ============================================================
+  # 06. 恶意挖矿脚本、垃圾弹窗站点与运营商流量劫持
+  # ============================================================
   - DOMAIN-SUFFIX,11h5.com
   - DOMAIN-SUFFIX,1kxun.mobi
   - DOMAIN-SUFFIX,26zsd.cn
@@ -585,57 +676,39 @@ payload:
   - DOMAIN-SUFFIX,appget.cn
   - DOMAIN-SUFFIX,appuu.cn
   - DOMAIN-SUFFIX,coinhive.com
+  - DOMAIN-SUFFIX,cryptoloot.pro
+  - DOMAIN-SUFFIX,dh54wf.xyz
+  - DOMAIN-SUFFIX,g2q3e.cn
   - DOMAIN-SUFFIX,huodonghezi.cn
   - DOMAIN-SUFFIX,vcbn65.xyz
   - DOMAIN-SUFFIX,wanfeng1.com
   - DOMAIN-SUFFIX,wep016.top
   - DOMAIN-SUFFIX,win-stock.com.cn
   - DOMAIN-SUFFIX,zantainet.com
-
-  - DOMAIN-SUFFIX,dh54wf.xyz
-  - DOMAIN-SUFFIX,g2q3e.cn
-
-  # 运营商广告****************
+  # 运营商 DNS/HTTP 广告劫持
   - DOMAIN-SUFFIX,114so.cn
   - DOMAIN-SUFFIX,go.10086.cn
   - DOMAIN-SUFFIX,hivedata.cc
   - DOMAIN-SUFFIX,navi.gd.chinamobile.com
+  - DOMAIN-SUFFIX,push.189.cn
+  - DOMAIN,ad.10010.com
   
-  # =========================================================
-  # 现代主流移动广告联盟（穿山甲 / 优量汇 / 快手 / 百度 / 厂商）
-  # =========================================================
-  # 1. 字节跳动 / 穿山甲 (Pangolin / CSJ)
-  - DOMAIN-SUFFIX,pangle.io
-  - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
-  - DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
-  - DOMAIN-SUFFIX,ad.toutiao.com
-  - DOMAIN-SUFFIX,dm.pstatp.com
-  - DOMAIN-SUFFIX,toblog.ctobsnssdk.com
-
-  # 2. 腾讯优量汇 (GDT / AMS)
-  - DOMAIN-SUFFIX,e.qq.com
-  - DOMAIN-SUFFIX,gdt.qq.com
-  - DOMAIN-SUFFIX,pgdt.gtimg.cn
-  - DOMAIN-SUFFIX,adsmind.gdt.qq.com
-  - DOMAIN-SUFFIX,mi.gdt.qq.com
-  - DOMAIN-SUFFIX,win.gdt.qq.com
-
-  # 3. 快手广告联盟
-  - DOMAIN-SUFFIX,e.kuaishou.com
-  - DOMAIN-SUFFIX,ad.kuaishou.com
-  - DOMAIN-SUFFIX,open.e.kuaishou.com
-
-  # 4. 百度百青藤 / 移动联盟
-  - DOMAIN-SUFFIX,cpro.baidu.com
-  - DOMAIN-SUFFIX,pos.baidu.com
-  - DOMAIN-SUFFIX,mobads.baidu.com
-  - DOMAIN-SUFFIX,mobads-logs.baidu.com
-
-  # 5. 手机厂商系统级推送广告（小米 / 华为 / OPPO / vivo）
-  - DOMAIN-SUFFIX,ad.xiaomi.com
-  - DOMAIN-SUFFIX,ad1.xiaomi.com
-  - DOMAIN-SUFFIX,data.mistat.xiaomi.com
-  - DOMAIN-SUFFIX,ad.intl.xiaomi.com
-  - DOMAIN-SUFFIX,metrics.data.hicloud.com
-  - DOMAIN-SUFFIX,ads.heytapmobile.com
-  - DOMAIN-SUFFIX,adx.vivo.com.cn
+  # ============================================================
+  # 07. FLG
+  # ============================================================
+  - DOMAIN-SUFFIX,falundafa.org
+  - DOMAIN-SUFFIX,minghui.org
+  - DOMAIN-SUFFIX,faluninfo.net
+  - DOMAIN-SUFFIX,learnfalundafa.org
+  - DOMAIN-SUFFIX,falundafa.org.tw
+  - DOMAIN-SUFFIX,hkfalundafa.org
+  - DOMAIN-SUFFIX,epochtimes.com
+  - DOMAIN-SUFFIX,ntdtv.com
+  - DOMAIN-SUFFIX,soundofhope.org
+  - DOMAIN-SUFFIX,zhuichaguoji.org
+  - DOMAIN-SUFFIX,zhengjian.org
+  - DOMAIN-SUFFIX,fofg.org
+  - DOMAIN-SUFFIX,shenyun.com
+  - DOMAIN-KEYWORD,falun
+  - DOMAIN-KEYWORD,minghui
+  - DOMAIN-KEYWORD,falundafa

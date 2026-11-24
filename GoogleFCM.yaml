@@ -1,0 +1,17 @@
+payload:
+  # =========================================================
+  # Google FCM (Firebase Cloud Messaging) 推送通知专用规则集
+  # 路径：./rule_configs/Providers/Ruleset/GoogleFCM.yaml
+  # 策略：🔍 谷歌服务 (确保安卓系统与海外 App 推送长连接永不断线)
+  # =========================================================
+  - DOMAIN-SUFFIX,firebase.googleapis.com
+  - DOMAIN-SUFFIX,firebaseio.com
+  - DOMAIN-SUFFIX,firebaseapp.com
+  - DOMAIN-SUFFIX,crashlytics.googleapis.com
+  - DOMAIN-SUFFIX,app-measurement.com
+  - DOMAIN-SUFFIX,clientservices.googleapis.com
+  - DOMAIN-SUFFIX,mtalk.google.com           # FCM 核心长连接心跳端口 (5228/443)
+  - DOMAIN-SUFFIX,android.clients.google.com
+  # FCM 专用 IP 广播段
+  - IP-CIDR,142.250.0.0/15,no-resolve
+  - IP-CIDR,74.125.0.0/16,no-resolve
