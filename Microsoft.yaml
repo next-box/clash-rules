@@ -1,62 +1,67 @@
-payload:
-  # ============================================
-  # Microsoft International Core (精简稳定版)
-  # Outlook / Office / OneDrive / Azure
-  # ============================================
+# ============================================
+# Microsoft International Core
+# Outlook / Office / OneDrive / Authenticator
+# ============================================
 
-  # ---- Outlook 国际 ----
+  # ---- Microsoft Account / Authenticator ----
+  - DOMAIN-SUFFIX,account.microsoft.com
+  - DOMAIN-SUFFIX,myaccount.microsoft.com
+  - DOMAIN-SUFFIX,mysignins.microsoft.com
+  - DOMAIN-SUFFIX,entra.microsoft.com
+
+  - DOMAIN-SUFFIX,login.microsoft.com
+  - DOMAIN-SUFFIX,login.microsoftonline-p.com
+  - DOMAIN-SUFFIX,device.login.microsoftonline.com
+
+  - DOMAIN-SUFFIX,msidentity.com
+  - DOMAIN-SUFFIX,msauth.net
+  - DOMAIN-SUFFIX,msauthimages.net
+  - DOMAIN-SUFFIX,msftauth.net
+  - DOMAIN-SUFFIX,msftauthimages.net
+  - DOMAIN-SUFFIX,msftidentity.com
+
+  # ---- Outlook ----
   - DOMAIN-SUFFIX,outlook.com
-  - DOMAIN-SUFFIX,outlook.office365.com
   - DOMAIN-SUFFIX,outlook.live.com
+  - DOMAIN-SUFFIX,outlook.office365.com
   - DOMAIN-SUFFIX,hotmail.com
   - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,live.net
 
-  # ---- Outlook 登录链 ----
-  - DOMAIN-SUFFIX,login.live.com
-  - DOMAIN-SUFFIX,login.microsoftonline.com
-  - DOMAIN-SUFFIX,account.microsoft.com
-  - DOMAIN-SUFFIX,account.microsoftonline.com
-
-  # ---- Office 国际 ----
+  # ---- Office ----
   - DOMAIN-SUFFIX,office.com
   - DOMAIN-SUFFIX,office.net
   - DOMAIN-SUFFIX,office365.com
   - DOMAIN-SUFFIX,officeapps.live.com
   - DOMAIN-SUFFIX,officecdn.microsoft.com
 
-  # ---- OneDrive 国际 ----
+  # ---- OneDrive / SharePoint ----
   - DOMAIN-SUFFIX,onedrive.com
   - DOMAIN-SUFFIX,onedrive.live.com
   - DOMAIN-SUFFIX,storage.live.com
   - DOMAIN-SUFFIX,sharepoint.com
   - DOMAIN-SUFFIX,sharepointonline.com
 
-  # ---- Azure 国际 ----
-  - DOMAIN-SUFFIX,azure.com
-  - DOMAIN-SUFFIX,azure.net
-  - DOMAIN-SUFFIX,azureedge.net
-  - DOMAIN-SUFFIX,cloudapp.net
-  - DOMAIN-SUFFIX,cloudappsecurity.com
-
-  # ---- Microsoft 国际基础域名 ----
+  # ---- Microsoft Core ----
   - DOMAIN-KEYWORD,microsoft
+
+  - DOMAIN-SUFFIX,cloud.microsoft
+  - DOMAIN-SUFFIX,static.microsoft
+  - DOMAIN-SUFFIX,usercontent.microsoft
+
   - DOMAIN-SUFFIX,msft.net
-  - DOMAIN-SUFFIX,msftauth.net
-  - DOMAIN-SUFFIX,msftauthimages.net
-  - DOMAIN-SUFFIX,msftidentity.com
-  - DOMAIN-SUFFIX,msidentity.com
   - DOMAIN-SUFFIX,msocdn.com
   - DOMAIN-SUFFIX,msocsp.com
   - DOMAIN-SUFFIX,msecnd.net
-  - DOMAIN-SUFFIX,msedge.net
   - DOMAIN-SUFFIX,gfx.ms
   - DOMAIN-SUFFIX,svc.ms
 
-  # ---- Windows / Update ----
-  - DOMAIN-SUFFIX,windows.com
-  - DOMAIN-SUFFIX,windows.net
-  - DOMAIN-SUFFIX,windowsupdate.com
+  # ---- Office Apps ----
+  - DOMAIN,odc.officeapps.live.com
+  - DOMAIN,location.microsoft.com
 
-  # ---- Visual Studio / Dev ----
-  - DOMAIN-SUFFIX,visualstudio.com
+  # ---- Windows Push ----
+  - DOMAIN,self.events.data.microsoft.com
+  - DOMAIN,wns.notify.windows.com
+  - DOMAIN,wns.windows.com
+  - DOMAIN,wns2.windows.com

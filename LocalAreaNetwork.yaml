@@ -1,0 +1,50 @@
+payload:
+  # ============================================================
+  # 内容：LocalAreaNetwork.yaml 局域网、私有保留地址与路由器管理后台直连
+  # 路径：./rule_configs/Providers/LocalAreaNetwork.yaml
+  # 校验：★已剔除 198.18.0.0/16（防止误伤 Fake-IP 虚拟地址池造成断流）★
+  # ============================================================
+
+  # 01. ACL4SSR 兼容标志与本地局域网保留域名后缀
+  - DOMAIN-SUFFIX,acl4.ssr
+  - DOMAIN-SUFFIX,lan
+  - DOMAIN-SUFFIX,local
+  - DOMAIN-SUFFIX,localhost
+  - DOMAIN-SUFFIX,internal
+  - DOMAIN-SUFFIX,home.arpa
+  - DOMAIN-SUFFIX,arpa
+  - DOMAIN-SUFFIX,ip6-localhost
+  - DOMAIN-SUFFIX,ip6-loopback
+
+  # 02. IANA 标准 IPv4 私有内网、环回、链路本地与组播保留网段 (带 no-resolve)
+  - IP-CIDR,0.0.0.0/8,no-resolve
+  - IP-CIDR,10.0.0.0/8,no-resolve
+  - IP-CIDR,100.64.0.0/10,no-resolve        # 运营商 CGNAT 与 Tailscale 异地组网内网段
+  - IP-CIDR,127.0.0.0/8,no-resolve
+  - IP-CIDR,169.254.0.0/16,no-resolve
+  - IP-CIDR,172.16.0.0/12,no-resolve
+  - IP-CIDR,192.168.0.0/16,no-resolve
+  - IP-CIDR,224.0.0.0/4,no-resolve
+  - IP-CIDR,240.0.0.0/4,no-resolve
+  - IP-CIDR,255.255.255.255/32,no-resolve
+
+  # 03. 华硕与主流路由器本地 Web 管理后台域名
+  - DOMAIN-SUFFIX,asusrouter.com
+  - DOMAIN,router.asus.com
+  - DOMAIN,findasus.local
+  - DOMAIN,instant.arubanetworks.com
+  - DOMAIN,setmeup.arubanetworks.com
+  - DOMAIN-SUFFIX,hiwifi.com
+  - DOMAIN-SUFFIX,leike.cc
+  - DOMAIN-SUFFIX,miwifi.com
+  - DOMAIN-SUFFIX,my.router
+  - DOMAIN-SUFFIX,p.to
+  - DOMAIN-SUFFIX,peiluyou.com
+  - DOMAIN-SUFFIX,phicomm.me
+  - DOMAIN-SUFFIX,router.ctc
+  - DOMAIN-SUFFIX,routerlogin.com
+  - DOMAIN-SUFFIX,routerlogin.net
+  - DOMAIN-SUFFIX,tendawifi.com
+  - DOMAIN-SUFFIX,zte.home
+  - DOMAIN-SUFFIX,tplogin.cn
+  - DOMAIN-SUFFIX,wifi.cmcc

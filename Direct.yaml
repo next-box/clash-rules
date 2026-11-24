@@ -1,0 +1,41 @@
+payload:
+  # ============================================================
+  # 内容：Direct.yaml 第一优先级直连白名单（与 FAKEIP.txt 严格联动对齐）
+  # 路径：./rule_configs/Providers/Other/Direct.yaml
+  # 作用：排在主脚本第 1️⃣ 节第 2 行，确保订阅自举、异地组网、联网检测 0ms 直通
+  # ============================================================
+
+  # 01. 机场订阅源与规则更新自举保护（防止冷启动更新死锁）
+  - DOMAIN,fastly.jsdelivr.net
+
+  # 02. 异地组网与内网穿透控制面（Tailscale / ZeroTier / DDNSTO 直连打洞，严防绕行代理）
+  - DOMAIN-SUFFIX,tailscale.com
+  - DOMAIN-SUFFIX,tailscale.net
+  - DOMAIN-SUFFIX,tailscale.io
+  - DOMAIN-SUFFIX,ts.net
+  - DOMAIN-SUFFIX,zerotier.com
+  - DOMAIN-SUFFIX,ddnsto.com
+  - DOMAIN-SUFFIX,kooldns.cn
+
+  # 03. Windows / Apple / Android 系统联网状态检测与 NTP 时间同步
+  - DOMAIN-SUFFIX,msftncsi.com
+  - DOMAIN-SUFFIX,msftconnecttest.com
+  - DOMAIN,captive.apple.com
+  - DOMAIN,time.apple.com
+  - DOMAIN,time.windows.com
+  - DOMAIN,time.cloudflare.com
+  - DOMAIN,ntp.arlo.com
+  - DOMAIN-SUFFIX,pool.ntp.org
+  - DOMAIN-SUFFIX,ntp.org.cn
+
+  # 04. 群晖 NAS DDNS 状态检测与跨境电商卖家后台直连（防代理 IP 关联封店）
+  - DOMAIN,checkip.synology.com
+  - DOMAIN,checkipv6.synology.com
+  - DOMAIN,checkport.synology.com
+  - DOMAIN-SUFFIX,synology.cn
+  - DOMAIN-SUFFIX,sellercentral.amazon.com
+  - DOMAIN-SUFFIX,advertising.amazon.com
+
+  # 05. Steam 国内连接管理器 (CM) 与下载测速直连
+  - DOMAIN-SUFFIX,cm.steampowered.com
+  - DOMAIN-SUFFIX,test.steampowered.com

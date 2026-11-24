@@ -1,0 +1,108 @@
+payload:
+  # ==================================================
+  # 内容：ProxyMedia.yaml 海外综合流媒体、直播、音乐播客与华人点播兜底库
+  # 路径：./rule_configs/Providers/ProxyMedia.yaml
+  # 策略：🌍 国外媒体
+  # 校验：已剔除 appcenter.ms / flurry.com 等统计探针；已收拢 Twitch/Vimeo/SoundCloud/TMDB
+  # ==================================================
+
+  # 01. 国际主流视频与游戏直播平台 (Twitch / Vimeo / Dailymotion / Rumble / Odysee)
+  - DOMAIN-SUFFIX,twitch.tv
+  - DOMAIN-SUFFIX,ttvnw.net
+  - DOMAIN-SUFFIX,jtvnw.net
+  - DOMAIN-SUFFIX,twitchcdn.net
+  - DOMAIN-SUFFIX,ext-twitch.tv
+  - DOMAIN-SUFFIX,vimeo.com
+  - DOMAIN-SUFFIX,vimeocdn.com
+  - DOMAIN-SUFFIX,dailymotion.com
+  - DOMAIN-SUFFIX,dmcdn.net
+  - DOMAIN-SUFFIX,rumble.com
+  - DOMAIN-SUFFIX,rmbl.ws
+  - DOMAIN-SUFFIX,odysee.com
+  - DOMAIN-SUFFIX,bitchute.com
+  - DOMAIN-SUFFIX,dlive.tv
+  - DOMAIN-SUFFIX,vevo.com
+  - DOMAIN-SUFFIX,streamable.com
+
+  # 02. 国际音乐、Hi-Fi 流媒体与播客电台 (SoundCloud / Deezer / Pandora / TIDAL / TuneIn)
+  - DOMAIN-SUFFIX,soundcloud.com
+  - DOMAIN-SUFFIX,sndcdn.com
+  - DOMAIN-SUFFIX,deezer.com
+  - DOMAIN-SUFFIX,dzcdn.net
+  - DOMAIN-SUFFIX,pandora.com
+  - DOMAIN-SUFFIX,tidal.com
+  - DOMAIN-SUFFIX,tidalhifi.com
+  - DOMAIN-SUFFIX,qobuz.com
+  - DOMAIN-SUFFIX,tunein.com
+  - DOMAIN-SUFFIX,radiotime.com
+  - DOMAIN-SUFFIX,radio.garden
+  - DOMAIN-SUFFIX,castbox.fm
+  - DOMAIN-SUFFIX,overcast.fm
+  - DOMAIN-SUFFIX,pocketcasts.com
+  - DOMAIN-SUFFIX,anchor.fm
+  - DOMAIN-SUFFIX,buzzsprout.com
+  - DOMAIN-SUFFIX,podbean.com
+  - DOMAIN-SUFFIX,spreaker.com
+  - DOMAIN-SUFFIX,last.fm
+  - DOMAIN-SUFFIX,musixmatch.com
+  - DOMAIN-SUFFIX,bandcamp.com
+
+  # 03. 欧美综合影视、动漫流媒体与 NAS 刮削海报库 (Crunchyroll / Plex / Emby / TMDB / IMDb)
+  - DOMAIN-SUFFIX,crunchyroll.com
+  - DOMAIN-SUFFIX,vrv.co
+  - DOMAIN-SUFFIX,viki.com
+  - DOMAIN-SUFFIX,viki.io
+  - DOMAIN-SUFFIX,mubi.com
+  - DOMAIN-SUFFIX,crackle.com
+  - DOMAIN-SUFFIX,plex.tv
+  - DOMAIN-SUFFIX,plexapp.com
+  - DOMAIN-SUFFIX,emby.media
+  - DOMAIN-SUFFIX,themoviedb.org
+  - DOMAIN-SUFFIX,tmdb.org
+  - DOMAIN-SUFFIX,thetvdb.com
+  - DOMAIN-SUFFIX,imdb.com
+  - DOMAIN-SUFFIX,media-amazon.com
+  - DOMAIN-SUFFIX,rottentomatoes.com
+  - DOMAIN-SUFFIX,boxofficemojo.com
+  - DOMAIN-SUFFIX,subhd.tv
+  - DOMAIN-SUFFIX,opensubtitles.org
+
+  # 04. BBC 与欧美新闻电视直播流
+  - DOMAIN-KEYWORD,uk-live
+  - DOMAIN-SUFFIX,bbc.com
+  - DOMAIN-SUFFIX,bbc.co.uk
+  - DOMAIN-SUFFIX,bbci.co.uk
+  - DOMAIN-SUFFIX,bbc.co
+  - DOMAIN-SUFFIX,arte.tv
+  - DOMAIN-SUFFIX,comedycentral.com
+  - DOMAIN-SUFFIX,fxnetworks.com
+  - DOMAIN-SUFFIX,nbc.com
+
+  # 05. 海外华人影视点播与华语电视直播 (泥视频 Nivod / 欧乐 Olevod / 爱壹帆 iYF / 独播库 / 飞流)
+  - DOMAIN-SUFFIX,nivod.tv
+  - DOMAIN-SUFFIX,nivod4.tv
+  - DOMAIN-SUFFIX,nivodz.com
+  - DOMAIN-SUFFIX,mudvod.tv
+  - DOMAIN-SUFFIX,mudvod1.tv
+  - DOMAIN-SUFFIX,nbys.tv
+  - DOMAIN-SUFFIX,nbys1.tv
+  - DOMAIN-SUFFIX,nbyy.tv
+  - DOMAIN-SUFFIX,vod360.net
+  - DOMAIN-SUFFIX,olevod.com
+  - DOMAIN-SUFFIX,olehdtv.com
+  - DOMAIN-SUFFIX,olelive.com
+  - DOMAIN-SUFFIX,iyf.tv
+  - DOMAIN-SUFFIX,dnvod.tv
+  - DOMAIN-SUFFIX,duboku.tv
+  - DOMAIN-SUFFIX,encoretvb.com
+  - DOMAIN-SUFFIX,ocnttv.com
+  - DOMAIN-SUFFIX,neulion.com
+  - DOMAIN-SUFFIX,icntv.xyz
+  - DOMAIN-SUFFIX,flzbcdn.xyz
+  - DOMAIN-SUFFIX,ofalibi.com
+  - DOMAIN-SUFFIX,fhjasokiwq.com
+  - DOMAIN-SUFFIX,biggggg.com
+  - DOMAIN-SUFFIX,olddddd.com
+  - DOMAIN-SUFFIX,newpppp.com
+  - DOMAIN-SUFFIX,ceres9350.com
+  - DOMAIN-SUFFIX,efhie.com

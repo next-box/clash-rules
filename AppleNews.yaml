@@ -1,0 +1,19 @@
+payload:
+  # ============================================================
+  # 内容：AppleNews.yaml（苹果新闻 Apple News 境外专项代理集）
+  # 路径：./rule_configs/Providers/Ruleset/AppleNews.yaml
+  # 策略：指向 🤖 OpenAI（美区节点）或 🌍 国外媒体
+  # ============================================================
+
+  # 01. Apple News 核心内容分发、搜索与客户端接口
+  - DOMAIN-SUFFIX,apple.news
+  - DOMAIN,news-edge.apple.com
+  - DOMAIN,news-events.apple.com
+  - DOMAIN,news-client.apple.com
+  - DOMAIN,news-client-search.apple.com
+  - DOMAIN,news-assets.apple.com
+  - DOMAIN,news-sports.apple.com
+  - DOMAIN,apple.comscoreresearch.com
+
+  # 02. 苹果底层地区检测接口（⚠️注意：在路由器上开启会导致全家 iPhone 苹果地图/天气定位飘去国外，建议默认注释关闭）
+  # - DOMAIN,gspe1-ssl.ls.apple.com

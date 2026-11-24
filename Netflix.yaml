@@ -1,0 +1,64 @@
+payload:
+  # ==============================================================================
+  # 规则集：Netflix.yaml (奈飞影视、测速、API 调度与独立 IP 网段专属分流)
+  # 路径：./rule_configs/Providers/Ruleset/Netflix.yaml
+  # 策略：🎥 NETFLIX
+  # 校验：已全面补齐动态 API、测速、nflxvideo 视频流 CDN 及 17 条官方宽带 IP 段
+  # ==============================================================================
+
+  # ========== 动态 API 关键字路由 (Keyword) ==========
+  - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
+  - DOMAIN-KEYWORD,dualstack.apiproxy-
+  - DOMAIN-KEYWORD,netflixdnstest
+
+  # ========== 精确域名与边缘分发 (Domain) ==========
+  - DOMAIN,netflix.com.edgesuite.net
+  - DOMAIN,api.netflix.com
+  - DOMAIN,ichnaea.netflix.com
+
+  # ========== 核心业务后缀 (Domain-Suffix) ==========
+  - DOMAIN-SUFFIX,fast.com                 # 官方网速测试
+  - DOMAIN-SUFFIX,netflix.ca
+  - DOMAIN-SUFFIX,netflix.com
+  - DOMAIN-SUFFIX,netflix.net
+  - DOMAIN-SUFFIX,netflixinvestor.com
+  - DOMAIN-SUFFIX,netflixtechblog.com
+  # 官方测速与环境检测矩阵
+  - DOMAIN-SUFFIX,netflixdnstest0.com
+  - DOMAIN-SUFFIX,netflixdnstest1.com
+  - DOMAIN-SUFFIX,netflixdnstest2.com
+  - DOMAIN-SUFFIX,netflixdnstest3.com
+  - DOMAIN-SUFFIX,netflixdnstest4.com
+  - DOMAIN-SUFFIX,netflixdnstest5.com
+  - DOMAIN-SUFFIX,netflixdnstest6.com
+  - DOMAIN-SUFFIX,netflixdnstest7.com
+  - DOMAIN-SUFFIX,netflixdnstest8.com
+  - DOMAIN-SUFFIX,netflixdnstest9.com
+  - DOMAIN-SUFFIX,netflixdnstest10.com
+  # 客户端、图片、搜索与视频流 CDN 核心
+  - DOMAIN-SUFFIX,nflxext.com
+  - DOMAIN-SUFFIX,nflximg.com
+  - DOMAIN-SUFFIX,nflximg.net
+  - DOMAIN-SUFFIX,nflxsearch.net
+  - DOMAIN-SUFFIX,nflxso.net
+  - DOMAIN-SUFFIX,nflxvideo.net
+
+  # ========== Netflix 自有独立 AS 网段 (自带 no-resolve 零 DNS 阻塞) ==========
+  - IP-CIDR,8.41.4.0/24,no-resolve
+  - IP-CIDR,23.246.0.0/18,no-resolve
+  - IP-CIDR,37.77.184.0/21,no-resolve
+  - IP-CIDR,38.72.126.0/24,no-resolve
+  - IP-CIDR,45.57.0.0/17,no-resolve
+  - IP-CIDR,64.120.128.0/17,no-resolve
+  - IP-CIDR,66.197.128.0/17,no-resolve
+  - IP-CIDR,69.53.224.0/19,no-resolve
+  - IP-CIDR,103.87.204.0/22,no-resolve
+  - IP-CIDR,108.175.32.0/20,no-resolve
+  - IP-CIDR,185.2.220.0/22,no-resolve
+  - IP-CIDR,185.9.188.0/22,no-resolve
+  - IP-CIDR,192.173.64.0/18,no-resolve
+  - IP-CIDR,198.38.96.0/19,no-resolve
+  - IP-CIDR,198.45.48.0/20,no-resolve
+  - IP-CIDR,203.75.84.0/24,no-resolve
+  - IP-CIDR,207.45.72.0/22,no-resolve
+  - IP-CIDR,208.75.76.0/22,no-resolve

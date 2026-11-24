@@ -1,0 +1,71 @@
+payload:
+  # ==================================================
+  # 01. 核心海外纯 IP DoH 置顶（0ms 首行直接命中，配合 DNS 脚本 fallback 极速转发）
+  # ==================================================
+  - IP-CIDR,8.8.8.8/32,no-resolve
+  - IP-CIDR,8.8.4.4/32,no-resolve
+  - IP-CIDR,1.1.1.1/32,no-resolve
+  - IP-CIDR,1.0.0.1/32,no-resolve
+
+  # ==================================================
+  # 02. 海外主流加密 DoH / DoT 域名（采用 DOMAIN-SUFFIX 全覆盖子域）
+  # ==================================================
+  # Google Public DNS
+  - DOMAIN,dns.google
+  - DOMAIN,dns.google.com
+  - DOMAIN,8888.google
+  # Cloudflare DNS (自动覆盖 1dot1dot1dot1 / mozilla / chrome / security 等全部子域)
+  - DOMAIN,one.one.one.one
+  - DOMAIN-SUFFIX,cloudflare-dns.com
+  - DOMAIN,dns.cloudflare.com
+  # Quad9 / OpenDNS / Mullvad / NextDNS / AdGuard / DNS.SB
+  - DOMAIN-SUFFIX,quad9.net
+  - DOMAIN-SUFFIX,opendns.com
+  - DOMAIN-SUFFIX,mullvad.net
+  - DOMAIN-SUFFIX,nextdns.io
+  - DOMAIN-SUFFIX,adguard-dns.com
+  - DOMAIN,dns.adguard.com
+  - DOMAIN,dns-family.adguard.com
+  - DOMAIN,dns-unfiltered.adguard.com
+  - DOMAIN-SUFFIX,dns.sb
+  - DOMAIN-SUFFIX,doh.sb
+  # 亚太与海外其他知名公共 DoH (台湾 TWNIC / 日本 IIJ / ControlD / PowerDNS)
+  - DOMAIN,dns.twnic.tw
+  - DOMAIN,public.dns.iij.jp
+  - DOMAIN,freedns.controld.com
+  - DOMAIN,doh.powerdns.com
+  - DOMAIN,doh.powerdns.org
+  - DOMAIN,doh.qis.io
+  - DOMAIN,dns.dns-53.us
+  - DOMAIN-SUFFIX,dns4me.net
+
+  # ==================================================
+  # 03. 海外知名公共 DNS 服务器 IP 池（带 no-resolve 防止本地回环解析）
+  # ==================================================
+  # Quad9 Anycast IP
+  - IP-CIDR,9.9.9.9/32,no-resolve
+  - IP-CIDR,9.9.9.10/32,no-resolve
+  - IP-CIDR,9.9.9.11/32,no-resolve
+  - IP-CIDR,9.9.9.12/32,no-resolve
+  - IP-CIDR,149.112.112.112/32,no-resolve
+  - IP-CIDR,149.112.112.10/32,no-resolve
+  - IP-CIDR,149.112.112.11/32,no-resolve
+  - IP-CIDR,149.112.112.12/32,no-resolve
+  # Cisco OpenDNS Anycast IP
+  - IP-CIDR,208.67.222.222/32,no-resolve
+  - IP-CIDR,208.67.220.220/32,no-resolve
+  # AdGuard DNS (新旧两代 Anycast IP)
+  - IP-CIDR,94.140.14.14/32,no-resolve
+  - IP-CIDR,94.140.15.15/32,no-resolve
+  - IP-CIDR,176.103.130.130/32,no-resolve
+  # 台湾 TWNIC Quad101 / Mullvad / DNS.SB 及其他海外 DNS IP
+  - IP-CIDR,101.101.101.101/32,no-resolve
+  - IP-CIDR,194.242.2.2/32,no-resolve
+  - IP-CIDR,185.222.222.222/32,no-resolve
+  - IP-CIDR,185.184.222.222/32,no-resolve
+  - IP-CIDR,12.159.2.159/32,no-resolve
+  - IP-CIDR,136.243.69.38/32,no-resolve
+  - IP-CIDR,176.9.62.58/32,no-resolve
+  - IP-CIDR,213.239.207.143/32,no-resolve
+  - IP-CIDR,2620:fe::12/128,no-resolve
+  - IP-CIDR,2620:fe::fe:12/128,no-resolve

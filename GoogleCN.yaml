@@ -1,0 +1,20 @@
+payload:
+  # ==============================================================================
+  # 内容：GoogleCN.yaml (中国大陆境内 Google 安全静态资源与境内可达服务直连库)
+  # 路径：./rule_configs/Providers/Ruleset/GoogleCN.yaml
+  # 策略：DIRECT (100% 本地直连，严禁放入境外代理，防安卓推送与下载失效)
+  # ==============================================================================
+
+  # 01. Google 中国大陆官方保留域名与早期历史资产
+  - DOMAIN-SUFFIX,google.cn
+  - DOMAIN-SUFFIX,g.cn
+  - DOMAIN-SUFFIX,265.com
+
+  # 02. 境内公共字体与学术加速服务 (直连可享受 5ms 极速响应，不占用海外代理流量)
+  - DOMAIN-SUFFIX,fonts.googleapis.cn
+  - DOMAIN-SUFFIX,fonts.gstatic.cn
+  - DOMAIN-SUFFIX,gstatic.cn
+  - DOMAIN-SUFFIX,googleapis.cn
+
+  # 03. 境内在线翻译与公共前端镜像加速
+  - DOMAIN-SUFFIX,translate.google.cn

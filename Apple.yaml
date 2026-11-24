@@ -1,0 +1,69 @@
+payload:
+  # ============================================================
+  # 内容：Apple.yaml（苹果本地直连集：App Store 满速下载 / iCloud 同步 / 系统更新 / APNs 推送）
+  # 路径：./rule_configs/Providers/Ruleset/Apple.yaml
+  # 策略：🍎 苹果服务（默认 DIRECT 直连，必须排在 AppleTV 与 AppleNews 之后！）
+  # 校验：已剔除 apple.news / apple-dns.net / akadns.net / crashlytics.com，100% 纯净保下载与同步
+  # ============================================================
+
+  # 01. App Store 软件满速下载、更新与静态资源 CDN（支持国区/美区 Apple ID 国内 CDN 直连）
+  - DOMAIN-SUFFIX,mzstatic.com
+  - DOMAIN-SUFFIX,cdn-apple.com
+  - DOMAIN-SUFFIX,aaplimg.com
+  - DOMAIN-SUFFIX,appstore.com
+  - DOMAIN-SUFFIX,itunes.com
+  - DOMAIN,apps.apple.com
+  - DOMAIN,itunes.apple.com
+  - DOMAIN,iosapps.itunes.apple.com
+  - DOMAIN,osxapps.itunes.apple.com
+  - DOMAIN,ppq.apple.com
+  - DOMAIN,beta.apple.com
+  - DOMAIN,testflight.apple.com
+
+  # 02. iCloud 云盘、iCloud 照片图库、备忘录与钥匙串同步（全球与云上贵州双栈直连）
+  - DOMAIN-SUFFIX,icloud.com
+  - DOMAIN-SUFFIX,icloud.com.cn
+  - DOMAIN-SUFFIX,icloud-content.com
+  - DOMAIN-SUFFIX,apple-cloudkit.com
+  - DOMAIN-SUFFIX,me.com
+  - DOMAIN-SUFFIX,mac.com
+
+  # 03. iOS / macOS 系统固件更新、安全补丁与激活验证
+  - DOMAIN,mesu.apple.com
+  - DOMAIN,gdmf.apple.com
+  - DOMAIN,xp.apple.com
+  - DOMAIN,appldnld.apple.com
+  - DOMAIN,swscan.apple.com
+  - DOMAIN,swcdn.apple.com
+  - DOMAIN,swdist.apple.com
+  - DOMAIN,updates-http.cdn-apple.com
+  - DOMAIN,updates.cdn-apple.com
+  - DOMAIN, Albert.apple.com
+  - DOMAIN,gsa.apple.com
+  - DOMAIN,idmsa.apple.com
+
+  # 04. Apple APNs 消息推送、iMessage、FaceTime、Find My 查找与国内高德地图底座
+  - DOMAIN-SUFFIX,push.apple.com
+  - DOMAIN,captive.apple.com
+  - DOMAIN,ess.apple.com
+  - DOMAIN,init.ess.apple.com
+  - DOMAIN,fmfmobile.icloud.com
+  - DOMAIN,fmipmobile.icloud.com
+  - DOMAIN,static.ips.apple.com
+  - DOMAIN-SUFFIX,apple-mapkit.com
+  - DOMAIN-SUFFIX,apple.com.cn
+  - DOMAIN-SUFFIX,apple.co
+  # 苹果主域名兜底（因为排在 AppleTV 和 AppleNews 下方，仅接管剩余正常官网与系统服务直连）
+  - DOMAIN-SUFFIX,apple.com
+
+  # 05. Apple 官方全球核心 IPv4 网段兜底（带 no-resolve，保障 APNs 推送 IP 直连不断连）
+  - IP-CIDR,17.0.0.0/8,no-resolve
+  - IP-CIDR,63.92.224.0/19,no-resolve
+  - IP-CIDR,65.199.22.0/23,no-resolve
+  - IP-CIDR,139.178.128.0/18,no-resolve
+  - IP-CIDR,144.178.0.0/19,no-resolve
+  - IP-CIDR,144.178.36.0/22,no-resolve
+  - IP-CIDR,144.178.48.0/20,no-resolve
+  - IP-CIDR,192.35.50.0/24,no-resolve
+  - IP-CIDR,198.183.17.0/24,no-resolve
+  - IP-CIDR,205.180.175.0/24,no-resolve
