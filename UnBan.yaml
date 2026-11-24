@@ -1,0 +1,63 @@
+payload:
+  # 1. 群晖 NAS (Synology) DDNS 与内网直连域名（保留原文件合理项）
+  - DOMAIN-SUFFIX,DSCloud.biz
+  - DOMAIN-SUFFIX,DSCloud.me
+  - DOMAIN-SUFFIX,DSCloud.mobi
+  - DOMAIN-SUFFIX,DSmyNAS.com
+  - DOMAIN-SUFFIX,DSmyNAS.net
+  - DOMAIN-SUFFIX,DSmyNAS.org
+  - DOMAIN-SUFFIX,DiskStation.me
+  - DOMAIN-SUFFIX,FamilyDS.com
+  - DOMAIN-SUFFIX,FamilyDS.net
+  - DOMAIN-SUFFIX,FamilyDS.org
+  - DOMAIN-SUFFIX,i234.me
+  - DOMAIN-SUFFIX,myDS.me
+  - DOMAIN-SUFFIX,synology.me
+
+  # 2. 国内公共推送与系统联网检测（保留 getui 并补齐 Windows/Apple 联网探针直连）
+  - DOMAIN-SUFFIX,dizhensubao.getui.com
+
+  # 3. 美区 WeChat 与微信视频号底层切片防误杀直连（防止海外后缀被误判走代理）
+  - DOMAIN-SUFFIX,wechat.com
+  - DOMAIN-SUFFIX,wechatapp.com
+  - DOMAIN-SUFFIX,servicewechat.com
+  - DOMAIN-SUFFIX,finder.video.qq.com
+  - DOMAIN-SUFFIX,myqcloud.com
+  - DOMAIN-SUFFIX,smtcdns.com
+  - DOMAIN-SUFFIX,smtcdns.net
+  - DOMAIN-SUFFIX,tcdn.qq.com
+  
+  # ============================================================
+  # 01. 国内领券/下单必过的风控与人机验证 SDK 白名单 (严防去广告误杀导致“账号环境异常”)
+  # ============================================================
+  - DOMAIN-SUFFIX,fraudmetrix.cn           # 同盾科技风控 (麦当劳/航司/银行领券下单必查)
+  - DOMAIN-SUFFIX,tongdun.net
+  - DOMAIN-SUFFIX,shuzilm.cn               # 数字联盟设备安全指纹 (主流餐饮/电商防刷单必查)
+  - DOMAIN-SUFFIX,fengkongcloud.com        # 数美科技风控
+  - DOMAIN-SUFFIX,ishumei.com
+  - DOMAIN-SUFFIX,geetest.com              # 极验滑块验证码
+  - DOMAIN-SUFFIX,dingxiang-inc.com        # 顶象风控验证码
+  - DOMAIN-SUFFIX,dun.163.com              # 网易易盾风控
+  - DOMAIN-SUFFIX,ye.dun.163yun.com
+
+  # ============================================================
+  # 02. 麦当劳 / 肯德基 / 瑞幸 / 星巴克 / 喜茶 / 霸王茶姬 官方点餐与核销域
+  # ============================================================
+  - DOMAIN-SUFFIX,4008517517.cn            # 麦当劳中国官方点餐核心域
+  - DOMAIN-SUFFIX,mcd.cn                   # 麦当劳中国短链与接口
+  - DOMAIN-SUFFIX,mcdonalds.com.cn
+  - DOMAIN-SUFFIX,kfc.com.cn               # 肯德基中国
+  - DOMAIN-SUFFIX,4008823823.com.cn
+  - DOMAIN-SUFFIX,yumchina.com             # 百胜中国 (肯德基/必胜客底座)
+  - DOMAIN-SUFFIX,lkcoffee.com             # 瑞幸咖啡
+  - DOMAIN-SUFFIX,luckincoffee.com
+  - DOMAIN-SUFFIX,starbucks.com.cn         # 星巴克中国
+  - DOMAIN-SUFFIX,heytea.com               # 喜茶
+  - DOMAIN-SUFFIX,chagee.com               # 霸王茶姬
+  - DOMAIN-SUFFIX,nayuki.com               # 奈雪的茶
+
+  # ============================================================
+  # 03. 淘宝/闲鱼常见餐饮代下单与自助发卡平台直连 (防掉入漏网之鱼走美国代理)
+  # ============================================================
+  - DOMAIN-SUFFIX,maiqy.com                # 对应截图 dx1.maiqy.com 麦当劳代下单
+  - DOMAIN-SUFFIX,tri.top                  # 对应截图 mcd.tri.top 麦当劳代下单
